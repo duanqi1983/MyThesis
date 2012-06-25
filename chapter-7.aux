@@ -1,0 +1,151 @@
+\relax 
+\citation{www/XiangNR10}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Kernel-Based Social Strength Modeling}{115}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:ssm-framework}{{7}{115}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Problem Setting}{115}}
+\newlabel{sec:ssm-formulation}{{7.1}{115}}
+\citation{ml/CortesV95}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Illustration of our kernel based learning to rank framework. The first panel shows the data of three users, based on which we have three graphs in the second panel (we omit other possible graphs for illustration purpose). In the third panel, we first learn the weight $\boldsymbol  {\theta }$ by maximally aligning the combination to the friend graph. Then we adopt learning to rank framework with logistic loss to estimate the social strength.}}{116}}
+\citation{icml/CortesMR10}
+\citation{nips/CristianiniSEK01}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Illustration of the elements (both photos and the rich metadata) of a typical Flickr user (Left), a Flickr image (Middle), and Flickr interest group (Right). }}{118}}
+\newlabel{table:notation}{{7.1}{118}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces List of frequently used symbols.}}{118}}
+\citation{jmlr/LanckrietCBGJ03}
+\citation{icml/Cortes09}
+\citation{bmcbi/YuFDTSMM10}
+\citation{icml/CortesMR10}
+\citation{Vapnik98}
+\citation{icml/CortesMR10}
+\citation{nips/CristianiniSEK01}
+\citation{nips/ZhuH01}
+\citation{jcv/LoweG04}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Kernel-based Social Strength Modeling}{120}}
+\newlabel{sec:ssm-framework}{{7.2}{120}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Motivations}{120}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Kernels for Measuring User Similarity}{120}}
+\newlabel{sec:ssm-kernel}{{7.2.2}{120}}
+\citation{Baeza-YatesR99}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.1}Similarity in Visual Space}{121}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.2}Similarity in Textual Space}{121}}
+\citation{mm/NegoescuG08}
+\citation{mm/NegoescuAPVG09}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.3}Similarity by Mutual Comments}{122}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.4}Similarity by Common Interest Groups}{122}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.5}Similarity by Common Friends}{122}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.6}Similarity via Geo-tags}{122}}
+\citation{nips/CristianiniSEK01}
+\citation{nips/CristianiniSEK01}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.7}Similarity via Favorite Photos}{123}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Optimal Combination of Multiple Kernels}{123}}
+\newlabel{sec:kta}{{7.3}{123}}
+\newlabel{eqn:multi-kernel}{{\unhbox \voidb@x \hbox {\rm  7.1}}{123}}
+\citation{icml/CortesMR10}
+\citation{icml/CortesMR10}
+\citation{colt/ScholkopfHS01}
+\citation{nips/ZhuH01}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Kernel-based Learning to Rank}{125}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}Framework}{125}}
+\newlabel{eqn:primal-obj}{{\unhbox \voidb@x \hbox {\rm  7.2}}{125}}
+\newlabel{eqn:dual-obj}{{\unhbox \voidb@x \hbox {\rm  7.3}}{125}}
+\citation{nips/ZhuH01}
+\citation{nips/ZhuH01}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.2}Training Pair Selection}{126}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.3}Applications}{126}}
+\newlabel{table:dataset}{{7.5}{127}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.2}{\ignorespaces The statistics about our crawled Flick dataset.}}{127}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Experiments}{127}}
+\newlabel{sec:ssm-experiment}{{7.5}{127}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.1}Friend Recommendation}{127}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces The average top-10 friend recommendation accuracy of single kernel and combined multiple kernels.}}{128}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.3}{\ignorespaces The base kernels and the weights by KTA in the friend and group recommendation task.}}{128}}
+\newlabel{sec:kta}{{7.5.1}{128}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.2}Group Recommendation}{130}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.4}{\ignorespaces The average top-10 group recommendation accuracy of single kernel and combined multiple kernels.}}{130}}
+\citation{icml/ZhuGL03}
+\citation{nips/ZhuKGL04}
+\citation{nips/ZhouBLWS05}
+\citation{icml/ZhuGL03}
+\citation{civr/NegoescuG08}
+\citation{mm/NegoescuAPVG09}
+\citation{mm/NegoescuG08}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.3}Semi-supervised Classification}{131}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.6}Discussion and Related Work}{131}}
+\newlabel{sec:ssm-discussion}{{7.6}{131}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.5}{\ignorespaces The evaluation of inferred social strength graph for semi-supervised classification. The left figure is the accuracy of {\em  gender} prediction, the right figure is the accuracy of {\em  location}.}}{132}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6.1}Data Mining with Flickr Data}{132}}
+\citation{mm/KennedyNANR07}
+\citation{sigir/SerdyukovMZ09}
+\citation{mm/WuHJZY09}
+\citation{mm/WuHYML08}
+\citation{sn/AdamicA01}
+\citation{nips/TaskarWAK03}
+\citation{www/SinglaR08}
+\citation{chi/GilbertK09}
+\citation{www/XiangNR10}
+\citation{www/LeskovecHK10}
+\citation{www/ChoudhuryMHW10}
+\citation{mm/WuT09}
+\citation{cvpr/SinglaKLG08}
+\citation{icmcs/YuJL09}
+\citation{mm/WuT09}
+\citation{cvpr/SinglaKLG08}
+\citation{icmcs/YuJL09}
+\citation{www/XiangNR10}
+\citation{Cristianini00}
+\citation{jmlr/LanckrietCBGJ03}
+\citation{jmlr/LanckrietCBGJ03}
+\citation{jmlr/SonnenburgRSS06}
+\citation{jmlr/RakotomamonjyBCG08}
+\citation{icml/VarmaB09}
+\citation{nips/CortesMR09}
+\citation{nips/KloftBSLMZ09}
+\citation{icml/CortesMR10}
+\citation{icml/CortesMR10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6.2}Social Strength Modeling}{133}}
+\citation{sigir/Liu10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6.3}Multiple Kernel Learning to Rank}{134}}
+\@setckpt{chapter-7}{
+\setcounter{page}{135}
+\setcounter{equation}{3}
+\setcounter{enumi}{6}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{7}
+\setcounter{section}{6}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{5}
+\setcounter{table}{3}
+\setcounter{subfigure}{0}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{lotdepth}{1}
+\setcounter{parentequation}{0}
+\setcounter{ALC@line}{7}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
+\setcounter{float@type}{8}
+\setcounter{algorithm}{5}
+\setcounter{theorem}{36}
+\setcounter{theorem}{36}
+\setcounter{lemma}{4}
+\setcounter{lemma}{4}
+\setcounter{corollary}{1}
+\setcounter{corollary}{1}
+\setcounter{definition}{4}
+\setcounter{definition}{4}
+\setcounter{algo}{0}
+\setcounter{algo}{0}
+\setcounter{example}{0}
+\setcounter{alg}{0}
+\setcounter{ccc}{0}
+}

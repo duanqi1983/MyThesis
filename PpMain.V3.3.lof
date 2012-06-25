@@ -1,0 +1,52 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Organization on the topic kernel learning.}}{7}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Convergence of SimpleNPKL using square hinge loss on {\em A1a} and {\em A2a}. The parameters are $C=1$, $B=N$.}}{62}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Comparisons of clustering accuracy and CPU time by active constraint selection and random selection (constraint selection time is included) on A1a with parameters: $B=N, C=1, k=20,r=0.6$. Using all $3.9K$ constraints directly, the accuracy is $60.8\pm 2.9$ and the CPU time is $81.6$ seconds.}}{63}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Comparisons of CMVU and CMVU+NPKL on {\em senate} data set. \textbf {Time cost of CMVU+NPK is $1.50\pm 0.06$ seconds.} }}{65}
+\contentsline {subfigure}{\string \numberline {3.3.a}{\ignorespaces Time cost of CMVU with the rank.}}{65}
+\contentsline {subfigure}{\string \numberline {3.3.b}{\ignorespaces Embedding of CMVU.}}{65}
+\contentsline {subfigure}{\string \numberline {3.3.c}{\ignorespaces Embedding of CMVU+NPKL.}}{65}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Comparisons of CMVU and CMVU+NPK on {\em news20} data set. \textbf {Time cost of CMVU+NPKL is $120.4 \pm 1.7$ seconds.} }}{65}
+\contentsline {subfigure}{\string \numberline {3.4.a}{\ignorespaces Time cost of CMVU with the rank.}}{65}
+\contentsline {subfigure}{\string \numberline {3.4.b}{\ignorespaces Embedding of CMVU.}}{65}
+\contentsline {subfigure}{\string \numberline {3.4.c}{\ignorespaces Embedding of CMVU+NPKL.}}{65}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparisons of CMVU and CMVU+NPKL on {\em usps} data set. \textbf {Time cost of CMVU+NPKL is $28.95\pm 1.8$ seconds.} }}{66}
+\contentsline {subfigure}{\string \numberline {3.5.a}{\ignorespaces Time cost of CMVU with the rank.}}{66}
+\contentsline {subfigure}{\string \numberline {3.5.b}{\ignorespaces Embedding of CMVU.}}{66}
+\contentsline {subfigure}{\string \numberline {3.5.c}{\ignorespaces Embedding of CMVU+NPKL.}}{66}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Sample photos from two Flickr interest groups: {\em B\&W} and {\em Catchy Colors}.}}{68}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The 2D embedding result of Flickr users exclusively belonging to the interest group {\em B\&W} (blue points) and {\em Catchy Colors} (red points). The CPU time cost of MVE+NPKL and SPE+NPKL are 27.2 minutes and 196.4 minutes, respectively. }}{69}
+\contentsline {subfigure}{\string \numberline {3.7.a}{\ignorespaces MVE+NPKL}}{69}
+\contentsline {subfigure}{\string \numberline {3.7.b}{\ignorespaces SPE+NPKL}}{69}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The architecture of the proposed deep multiple kernel learning framework. Here shows an example of three-layer MKL, and some connections are not displayed to simplify the figure.}}{75}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Classification accuracy of UMKL and KTA by varying \#train/\#test. }}{93}
+\contentsline {subfigure}{\string \numberline {5.1.a}{\ignorespaces heart}}{93}
+\contentsline {subfigure}{\string \numberline {5.1.b}{\ignorespaces titanic}}{93}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The classification accuracy of 5-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL on 9 benchmark data sets. The parameter $B$ of UMKL is fixed to 10.}}{95}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The classification accuracy of 5-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL with varied dimensions, on the waveform dataset.}}{96}
+\contentsline {subfigure}{\string \numberline {5.3.a}{\ignorespaces 5-NN classification after KPCA with varied number of dimensions}}{96}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The classification accuracy of k-NN after KPCA with a gaussian kernel with sigma=1, the average combination of multiple kernels, the kernel learned by UMKL with varied number of nearest neighbours, on the heart dataset.}}{97}
+\contentsline {subfigure}{\string \numberline {5.4.a}{\ignorespaces K-NN classification after KPCA with varied number of nearest neighbours}}{97}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces The classification accuracy of k-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL with varied number of nearest neighbours.}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.a}{\ignorespaces Waveform}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.b}{\ignorespaces Australian}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.c}{\ignorespaces Breast}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.d}{\ignorespaces Diabetes}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.e}{\ignorespaces Flaresolar}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.f}{\ignorespaces German}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.g}{\ignorespaces Sonar}}{98}
+\contentsline {subfigure}{\string \numberline {5.5.h}{\ignorespaces Liver}}{98}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Qualitative re-ranking performance by the proposed NPK learning method.}}{111}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Log-scaled computation time of SDP and NPK on the query {\em Big Ben} which contains 200 images with the low-rank approximation scheme.}}{112}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Illustration of our kernel based learning to rank framework. The first panel shows the data of three users, based on which we have three graphs in the second panel (we omit other possible graphs for illustration purpose). In the third panel, we first learn the weight $\boldsymbol {\theta }$ by maximally aligning the combination to the friend graph. Then we adopt learning to rank framework with logistic loss to estimate the social strength.}}{116}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Illustration of the elements (both photos and the rich metadata) of a typical Flickr user (Left), a Flickr image (Middle), and Flickr interest group (Right). }}{118}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces The average top-10 friend recommendation accuracy of single kernel and combined multiple kernels.}}{128}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces The average top-10 group recommendation accuracy of single kernel and combined multiple kernels.}}{130}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces The evaluation of inferred social strength graph for semi-supervised classification. The left figure is the accuracy of {\em gender} prediction, the right figure is the accuracy of {\em location}.}}{132}
+\addvspace {10\p@ }

@@ -1,0 +1,30 @@
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Some common notations used in the thesis. }}{8}
+\contentsline {table}{\numberline {1.2}{\ignorespaces Some common abbreviations used in the thesis. }}{9}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces The statistics of the data sets used in our experiments. }}{60}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Clustering accuracy of SimpleNPKL, compared with the results of NPKL in (\unhbox \voidb@x \hbox {\rm 3.4}\hbox {}) using a standard SDP solver, and $k$-means. }}{60}
+\contentsline {table}{\numberline {3.3}{\ignorespaces CPU time of SimpleNPKL, compared with the results of NPKL in (\unhbox \voidb@x \hbox {\rm 3.4}\hbox {}) using a standard SDP solver. (The best results are in bold and the last ``Speedup" column is listed only for the linear loss case.)}}{61}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Results of varying capacity parameter $B$ with fixed $p = 2$ and $C = 1$ on {\it Iris} and {\it protein} data sets.}}{61}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Results of varying $p$ in the $p$-norm regularization over ${\bf K}$ with fixed $B = 1$ and $C = 1$ on {\it Iris} and {\it protein} data sets.}}{61}
+\contentsline {table}{\numberline {3.6}{\ignorespaces The statistics of the {\em Adult} database. }}{62}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Evaluation results on {\em Adult} data set. (The best results are in bold.)}}{62}
+\contentsline {table}{\numberline {3.8}{\ignorespaces $k$-NN classification accuracy on the 2D embedded results. (The best results are bolded.)}}{67}
+\contentsline {table}{\numberline {3.9}{\ignorespaces The evaluation of CPU time cost of different algorithms and the speedup of the SimpleNPKL method over the standard SDP solver. (The best results are bolded.)}}{67}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces The statistics of the 16 binary-class data sets used in our experiments.}}{78}
+\contentsline {table}{\numberline {4.2}{\ignorespaces The evaluation of classification performance by comparing with a number of different algorithms. Each element in the table shows the mean and standard deviation of classification accuracy (\%). The relative ranking of different MKL algorithms on each data is shown in (). The last row shows the average rank score over all data sets achieved by each algorithm.}}{81}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces The statistics of the 12 binary-class data sets used in our experiments.}}{90}
+\contentsline {table}{\numberline {5.2}{\ignorespaces The evaluation of classification performance by comparing with a number of different algorithms. Each element in the table shows the mean and standard deviation of classification accuracy (\%). The relative ranking of different MKL algorithms on each data is shown in (). The last row shows the average rank score over all data sets achieved by each algorithm. The {\bf bold} element indicates the best performance.}}{92}
+\contentsline {table}{\numberline {5.3}{\ignorespaces The classification accuracy of a 5-NN classifier on the projected data by KPCA with three different kinds of kerenls, i.e., a gaussian kernel with fixed sigma=1, the average combination of multiple kernels, and the kernel learned by UMKL on 9 benchmark data sets. The parameter $B$ of UMKL is fixed to 10. The {\bf bold} element indicates the best performance.}}{94}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces The statistics of the images used in our experiments. }}{108}
+\contentsline {table}{\numberline {6.2}{\ignorespaces The statistics of the queries in the data set. }}{108}
+\contentsline {table}{\numberline {6.3}{\ignorespaces The TopN re-rank accuracy ($\%$) of different similarity measures plugged into VisualRank framework. }}{110}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces List of frequently used symbols.}}{118}
+\contentsline {table}{\numberline {7.2}{\ignorespaces The statistics about our crawled Flick dataset.}}{127}
+\contentsline {table}{\numberline {7.3}{\ignorespaces The base kernels and the weights by KTA in the friend and group recommendation task.}}{128}
+\addvspace {10\p@ }

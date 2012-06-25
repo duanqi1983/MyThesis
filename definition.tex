@@ -1,0 +1,253 @@
+%wenfei added this
+
+\newcommand{\reminder}[1]{ [[[ \marginpar{\mbox{$<==$}} #1 ]]] }
+\newcommand{\eatreminders}[0]{\renewcommand{\reminder}[1]{}}
+\newcommand{\PB}[1]{\reminder{PLB: #1}}
+\newcommand{\WF}[1]{\reminder{WFF: #1}}
+
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+
+
+%% Macros for HTML output
+\newcommand{\eat}[1]{}
+
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\eg}{\emph{e.g.,}}
+\newcommand{\wrt}{\emph{w.r.t.}\xspace}
+
+% Environments
+\newcommand{\trule}[2]{
+                \begin{array}{c}
+                  #1 \\ \hline #2
+                \end{array}
+}
+\newcommand{\typing}[2]{\vdash #1 : #2}
+
+%Format dependant commands
+\newcommand{\df}[1]{{\bf #1}\index{#1|emph}}    % Definition font w index
+\newcommand{\dfni}[1]{{\bf #1}}                 % Definition font no index
+\newcommand{\dfsi}[2]{{\bf #1}\index{#2}}       % Definition font special index
+
+\newcommand{\OMIT}[1]{}
+
+\newcommand{\scream}[1]{{\bf $\Longrightarrow$ #1}}
+\newcommand{\jfcomment}[1]{{\bf JF: $\Longrightarrow$ #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             this might be already defined
+%\newcommand{\qed}{\hfill \mbox{\raggedright \rule{.07in}{.1in}}}
+\def\squarebox#1{\hbox to #1{\hfill\vbox to #1{\vfill}}}
+\newcommand{\qed}{\hspace*{\fill}\vbox{\hrule\hbox{\vrule\squarebox{.4em}\vrule}\hrule}\smallskip}
+\newcommand{\eop}{\hspace*{\fill}\mbox{\qed}}     % End of proof
+%\renewcommand{\thetheorem}{\nthesection.\arabic{theorem}}
+\newenvironment{prop}{\begin{em}
+        \refstepcounter{theorem}
+        {\vspace{1ex}\noindent \bf Proposition \thetheorem:}}{
+        \end{em}\eop\vspace{1ex}}%\hspace*{\fill}\vspace*{1ex}}
+\newcommand{\proofsketch}{\noindent{\em Proof (Sketch): }}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newenvironment{cdefinition}[1]{
+        \vspace{1ex}
+        \refstepcounter{definition}
+        {\noindent\bf Definition {\bf \thedefinition} #1:}}{\eop\vspace{1ex}}
+
+
+\newcounter{example}[chapter]
+\renewcommand{\theexample}{\nthesection.\arabic{example}}
+\newenvironment{example}{
+        \vspace{0.6ex}
+        \refstepcounter{example}
+        {\noindent\bf Example \theexample:}}{
+        \eop\vspace{0.6ex}}
+
+\newcounter{alg}[chapter]
+\renewcommand{\thealg}{\nthesection.\arabic{alg}}
+\newenvironment{alg}[1]{
+        \refstepcounter{alg}
+        {\vspace{1ex}\noindent\bf Algorithm \thealg:\, #1}}{
+        \vspace*{1ex}}
+
+%\newcommand{\RK}[2]{\mbox{(}#1, #2\mbox{)}}
+
+\newenvironment{choice}{\left\{\begin{array}[c]{ll}}{\end{array}\right.}
+
+
+% Symbol commands
+
+\newcommand{\exa}[2]{{\tt\begin{tabbing}\hspace{#1}\=\hspace{#1}\=\+\kill #2\end{tabbing}}}
+%\newcommand{\ra}{\rightarrow}
+%\newcommand{\la}{\leftarrow}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\mat}[2]{{\begin{tabbing}\hspace{#1}\=\+\kill #2\end{tabbing}}}
+\newcommand{\m}{\hspace{0.05in}}
+\newcommand{\ls}{\hspace{0.1in}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\beqn}{\begin{eqnarray*}}
+\newcommand{\eeqn}{\end{eqnarray*}}
+
+\newcommand{\ceq}{=_v}
+\newcommand{\AND}{\displaystyle{\bigwedge_{i=1}^{n}}}
+\newcommand{\U}[1]{\displaystyle{\bigcup_{#1}}}
+\newcommand{\Sm}[1]{\displaystyle{\sum_{#1}}}
+\newcommand{\wvec}[1]{\displaystyle{\widehat{#1}}}
+
+\newcommand{\LA}{\mbox{$\langle$}}
+\newcommand{\RA}{\mbox{$\rangle$}}
+% \newcommand{\tag}[1]{\LA #1\RA}
+% \newcommand{\taga}[2]{\LA #1\ \ #2\RA}
+
+\newcommand{\ip}{\Rightarrow_{M}}
+\newcommand{\ipu}{\Rightarrow_{M_L}}
+\newcommand{\ipp}{\rightarrow_{M}}
+\newcommand{\ippu}{\rightarrow_{M_L}}
+\newcommand{\inv}{\rightleftharpoons}
+\newcommand{\vs}{\vspace{0.1in}}
+\newcommand{\Nat}{\mbox{I$\!$N}}
+
+% Shorthands
+\newcommand{\tabstrut}{\rule{0pt}{4pt}\vspace{-0.8in}}
+
+\renewcommand{\L}{{\cal L}}
+\newcommand{\M}{{\cal M}}
+\newcommand{\bU}{{\cal U}}
+%\newcommand{\I}{{\cal I}}
+\newcommand{\Ir}{{\cal I}_r}
+\newcommand{\B}{{\cal B}}
+%\newcommand{\R}{{\cal R}}
+\renewcommand{\S}{{\cal S}}
+\newcommand{\C}{{\cal C}}
+\newcommand{\I}[1]{{\cal I}(#1)}
+\newcommand{\A}{{\cal A}}
+\renewcommand{\v}{\nu}
+\renewcommand{\t}{\tau}
+\newcommand{\T}{\Theta}
+\newcommand{\G}{\Gamma}
+\newcommand{\ann}{{\small\sf ann}}
+
+
+\newcommand{\dt}{(\C, \v)}
+\newcommand{\f}{f_{C \ra C'}}
+
+\newcommand{\imp}{\vdash_{\cal I}}
+\newcommand{\Sum}[1]{\displaystyle{\sum_{#1}}}
+\newcommand{\MyAnd}[1]{\displaystyle{\bigwedge_{#1}}}
+\newcommand{\XML}{{\sc xml}\xspace}
+\newcommand{\DTD}{{\sc dtd}\xspace}
+\newcommand{\DTDs}{{\sc dtd}{\small s}\xspace}
+\newcommand{\ATG}{{\sc atg}\xspace}
+\newcommand{\ATGs}{{\sc atg}{\small s}\xspace}
+\newcommand{\DATG}{{\sc $\Delta$ATG}\xspace}
+\newcommand{\DATGs}{{\sc $\Delta$ATGs}\xspace}
+\newcommand{\SQL}{{\sc sql}\xspace}
+\newcommand{\SQLN}{{\sc sql~99}\xspace}
+\newcommand{\DOM}{{\sc dom}\xspace}
+\newcommand{\DBMS}{{\sc dbms}\xspace}
+\newcommand{\DBMSs}{{\sc dbms}{\small s}\xspace}
+\newcommand{\ARs}{\ensuremath{AR(\sigma)}\xspace}
+\newcommand{\ERs}{\ensuremath{ER(\sigma)}\xspace}
+\newcommand{\withrec}{{\tt with}$\ldots${\tt recursive}\xspace}
+\newcommand{\RHS}{{\sc rhs}\xspace}
+
+\newcommand{\ST}{{\sc st}}
+\newcommand{\reduce}{{\tt eval}\xspace}
+\newcommand{\process}{{\tt process}}
+\newcommand{\Or}[1]{\displaystyle{\bigvee_{#1}}}
+\newcommand{\td}[1]{\widehat{#1}}
+\newcommand{\pcdata}{{\tt str}\xspace}
+
+%% Macros with excessively short names for sec-smallchange.tex
+\newcommand{\g}[1]{\ensuremath{{\mathit gen\_#1}}}
+\newcommand{\old}[1]{\ensuremath{\mathit old\_#1}}
+\newcommand{\id}[1]{{\mathit id\_#1}}
+\newcommand{\e}[2]{{\mathit edge\_#1\_#2}}
+\newcommand{\ep}[2]{{\mathit edge\_#1\_#2+}}
+\newcommand{\brname}{\ensuremath{{\mathsf{Bud}}}}
+\newcommand{\budrel}[1]{\ensuremath{{\brname_{#1}}}}
+\newcommand{\budgen}[2]{\ensuremath{Q^\brname_\e{#1}{#2}}}
+\newcommand{\budcut}[2]{\ensuremath{Q_\e{#1}{#2}}}
+
+
+\newcommand{\ltitle}[1]{\noindent{\large\bf #1}}
+\newcommand{\stitle}[1]{\vspace{0.5ex} \noindent{\bf #1}}
+\newcommand{\setitle}[1]{\noindent{\em #1}}
+
+\newcommand{\nthesection}{\arabic{section}}
+
+%
+\newcounter{ccc}
+\newcommand{\bcc}{\setcounter{ccc}{1}\theccc.}
+\newcommand{\icc}{\addtocounter{ccc}{1}\theccc.}
+
+
+\newcommand{\oneurl}[1]{\texttt{#1}}
+\renewcommand{\tabstrut}{\rule{0pt}{4pt}\vspace{-0.1in}}
+\newcommand{\tabstruct}{\rule{0pt}{8pt}\\[-2ex]}
+\newcommand{\stab}{\rule{0pt}{8pt}\\[-2.0ex]}
+\newcommand{\sstab}{\rule{0pt}{8pt}\\[-2.2ex]}
+
+
+\newcommand{\tbrule}[1]{{\tt Rule}(#1)}
+\newcommand{\frule}[1]{{\tt rule}(#1)}
+\newcommand{\card}[1]{\mid\! #1\!\mid}
+\newcommand{\fth}{\hfill $\Box$}
+
+\newcommand{\sem}[1]{[\![#1]\!]}
+\newcommand{\NN}[2]{#1\sem{#2}}
+\newcommand{\Inh}[1]{{\it Inh}({\tt #1})}
+\newcommand{\Syn}[1]{{\it Syn}({\tt #1})}
+
+\newcommand{\powerset}{{\cal P}}
+\newcommand{\determine}{\longrightarrow}
+\newcommand{\kleq}{\ll}
+
+
+\renewcommand{\r}[1]{{\it rule}(#1)}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\bc}[1]{\blue{\noindent Byron: #1}}
+
+\newcommand{\stt}[1]{{\small {\tt #1}}}
+
+\newcommand{\pf}[1]{\mbox{\sf #1}}
+
+\newenvironment{tbi}{\begin{itemize}
+        \setlength{\topsep}{0ex}\setlength{\itemsep}{-0.5ex}\vspace{-1ex}}
+        {\end{itemize}\vspace{-1ex}}
+\newenvironment{tbe}{\begin{enumerate}
+        \setlength{\topsep}{0ex}\setlength{\itemsep}{-0.5ex}\vspace{-1ex}}
+        {\end{itemize}\vspace{-1ex}}
+
+%Byron added this
+\newcommand{\XQ}{{\sc xq}\xspace}
+\newcommand{\XQwc}{{\sc xq}$^{\scriptscriptstyle[*]}$\xspace}
+\newcommand{\XQdes}{{\sc xq}$^{\scriptscriptstyle[//]}$\xspace}
+\newcommand{\XQfull}{{\sc xq}$^{\scriptscriptstyle[*,//]}$\xspace}
+\newcommand{\XP}{{\sc xp}\xspace}
+\newcommand{\XPwc}{{\sc xp}$^{\scriptscriptstyle[*]}$\xspace}
+\newcommand{\XPdes}{{\sc xp}$^{\scriptscriptstyle[//]}$\xspace}
+\newcommand{\XPfull}{{\sc xp}$^{\scriptscriptstyle[*,//]}$\xspace}
+\newcommand{\XMILL}{{\sc xmill}\xspace}
+\newcommand{\DAG}{{\sc dag}\xspace}
+\newcommand{\PRAM}{{\sc pram}\xspace}
+\newcommand{\VEC}[1]{{\sc vec}(#1)}
+\newcommand{\DVEC}[2]{{\sc dvec}(#1,#2)}
+\newcommand{\DVECA}{{\sc dvec}\xspace}
+\newcommand{\DVECB}{{\sc dvec}}
+\newcommand{\SAX}{{\sc sax}}

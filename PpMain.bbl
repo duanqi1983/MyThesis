@@ -1,0 +1,980 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{rMMR{\etalchar{+}}01}
+
+\bibitem[AA01]{sn/AdamicA01}
+Lada~A. Adamic and Eytan Adar.
+\newblock Friends and neighbors on the web.
+\newblock {\em SOCIAL NETWORKS}, 25:211--230, 2001.
+
+\bibitem[AB99]{Anthony99}
+M.~Anthony and P.L. Bartlett.
+\newblock {\em Neural Networks Learning: Theoretical Foundations}.
+\newblock Cambridge University Press, 1999.
+
+\bibitem[AHMP06]{icml/ArgyriouHMP06}
+Andreas Argyriou, Raphael Hauser, Charles~A. Micchelli, and Massimiliano
+  Pontil.
+\newblock A dc-programming algorithm for kernel selection.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 41--48, 2006.
+
+\bibitem[AHO97]{mp/AlizadehHO97}
+Farid Alizadeh, Jean-Pierre~A. Haeberly, and Michael~L. Overton.
+\newblock Complementarity and nondegeneracy in semidefinite programming.
+\newblock {\em Math. Program.}, 77:111--128, 1997.
+
+\bibitem[AHP05]{nips/ArgyriouHP05}
+Andreas Argyriou, Mark Herbster, and Massimiliano Pontil.
+\newblock Combining graph laplacians for semi-supervised learning.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2005.
+
+\bibitem[AMP05]{colt/ArgyriouMP05}
+Andreas Argyriou, Charles~A. Micchelli, and Massimiliano Pontil.
+\newblock Learning convex combinations of continuously parameterized basic
+  kernels.
+\newblock In {\em COLT}, pages 338--352, 2005.
+
+\bibitem[Aro50]{tams/Aronszajn1950}
+N.~Aronszajn.
+\newblock Theory of reproducing kernels.
+\newblock {\em Transactions of the American Mathematical Society}, 68, 1950.
+
+\bibitem[BBL02]{ml/BartlettBL02}
+Peter~L. Bartlett, St{\'e}phane Boucheron, and G{\'a}bor Lugosi.
+\newblock Model selection and error estimation.
+\newblock {\em Machine Learning}, 48(1-3):85--113, 2002.
+
+\bibitem[BBL03]{ac/BousquetBL03}
+Olivier Bousquet, St{\'e}phane Boucheron, and G{\'a}bor Lugosi.
+\newblock Introduction to statistical learning theory.
+\newblock In {\em Advanced Lectures on Machine Learning}, pages 169--207, 2003.
+
+\bibitem[BBV06]{ml/BalcanBV06}
+Maria-Florina Balcan, Avrim Blum, and Santosh Vempala.
+\newblock Kernels as features: On kernels, margins, and low-dimensional
+  mappings.
+\newblock {\em Machine Learning}, 65(1):79--94, 2006.
+
+\bibitem[BBV08]{stoc/BalcanBV08}
+Maria-Florina Balcan, Avrim Blum, and Santosh Vempala.
+\newblock A discriminative framework for clustering via similarity functions.
+\newblock In {\em STOC}, pages 671--680, 2008.
+
+\bibitem[Ben09]{ftml/Bengio09}
+Yoshua Bengio.
+\newblock Learning deep architectures for ai.
+\newblock {\em Foundations and Trends in Machine Learning}, 2(1):1--127, 2009.
+
+\bibitem[BH02]{nips/BousquetH02}
+Olivier Bousquet and Daniel J.~L. Herrmann.
+\newblock On the complexity of learning the kernel matrix.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  399--406, 2002.
+
+\bibitem[BH08]{nips/BachH08}
+F.~Bach and Z.~Harchaoui.
+\newblock Diffrac: a discriminative and flexible framework for clustering.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  49--56, 2008.
+
+\bibitem[BKD09]{jmlr/KulisSD09}
+Matyas A.~Sustik Brian~Kulis and Inderjit~S. Dhillon.
+\newblock Low-rank kernel learning with bregman matrix divergences.
+\newblock 10, 2009.
+
+\bibitem[BKL06]{icml/BeygelzimerKL06}
+Alina Beygelzimer, Sham Kakade, and John Langford.
+\newblock Cover trees for nearest neighbor.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 97--104, 2006.
+
+\bibitem[BLJ04]{icml/BachLJ04}
+Francis~R. Bach, Gert R.~G. Lanckriet, and Michael~I. Jordan.
+\newblock Multiple kernel learning, conic duality, and the smo algorithm.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, 2004.
+
+\bibitem[BM02]{jmlr/BartlettM02}
+Peter~L. Bartlett and Shahar Mendelson.
+\newblock Rademacher and gaussian complexities: Risk bounds and structural
+  results.
+\newblock {\em Journal of Machine Learning Research}, 3:463--482, 2002.
+
+\bibitem[BP98]{cn/BrinP98}
+Sergey Brin and Lawrence Page.
+\newblock The anatomy of a large-scale hypertextual web search engine.
+\newblock {\em Computer Networks}, 30(1-7):107--117, 1998.
+
+\bibitem[BPH06]{jmlr/BennettP06}
+Kristin~P. Bennett and Emilio Parrado-Hern{\'a}ndez.
+\newblock The interplay of optimization and machine learning research.
+\newblock {\em Journal of Machine Learning Research}, 7:1265--1281, 2006.
+
+\bibitem[BRL06]{nips/BurgesRL06}
+Christopher J.~C. Burges, Robert Ragno, and Quoc~Viet Le.
+\newblock Learning to rank with nonsmooth cost functions.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  193--200, 2006.
+
+\bibitem[BS96]{siam/BonnansS98}
+J.~F. Bonnans and Alexander Shapiro.
+\newblock Optimization problems with perturbations, a guided tour.
+\newblock {\em SIAM REVIEW}, 40:228--264, 1996.
+
+\bibitem[BSR{\etalchar{+}}05]{icml/BurgesSRLDHH05}
+Christopher J.~C. Burges, Tal Shaked, Erin Renshaw, Ari Lazier, Matt Deeds,
+  Nicole Hamilton, and Gregory~N. Hullender.
+\newblock Learning to rank using gradient descent.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 89--96, 2005.
+
+\bibitem[Bur98]{datamine/Burges98}
+Christopher J.~C. Burges.
+\newblock A tutorial on support vector machines for pattern recognition.
+\newblock {\em Data Min. Knowl. Discov.}, 2(2):121--167, 1998.
+
+\bibitem[BV04]{Boyd}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[BX05]{siam/BoydX05}
+Stephen Boyd and Lin Xiao.
+\newblock Least-squaures covariance matrix adjustment.
+\newblock {\em SIAM Journal of Matrix Anal. Appl.}, 27(2):532--546, 2005.
+
+\bibitem[BYRN99]{Baeza-YatesR99}
+Ricardo~A. Baeza-Yates and Berthier~A. Ribeiro-Neto.
+\newblock {\em Modern Information Retrieval}.
+\newblock ACM Press / Addison-Wesley, 1999.
+
+\bibitem[CCR09]{nips/CortesMR09}
+Mehryar~Mohri Corinna~Cortes and Afshin Rostamizadeh.
+\newblock Learning non-linear combinations of kernels.
+\newblock In {\em NIPS}, 2009.
+
+\bibitem[CHL{\etalchar{+}}04]{MM04Cai}
+Deng Cai, Xiaofei He, Zhiwei Li, Wei-Ying Ma, and Ji-Rong Wen.
+\newblock Hierarchical clustering of www image search results using visual,
+  textual and link information.
+\newblock In {\em MULTIMEDIA '04: Proceedings of the 12th annual ACM
+  international conference on Multimedia}, pages 952--959, New York, NY, USA,
+  2004. ACM.
+
+\bibitem[CKM07]{colt/CortesKM07}
+Corinna Cortes, Leonid Kontorovich, and Mehryar Mohri.
+\newblock Learning languages with rational kernels.
+\newblock In {\em COLT}, pages 349--364, 2007.
+
+\bibitem[CMHW10]{www/ChoudhuryMHW10}
+Munmun~De Choudhury, Winter~A. Mason, Jake~M. Hofman, and Duncan~J. Watts.
+\newblock Inferring relevant social networks from interpersonal communication.
+\newblock In {\em WWW}, pages 301--310, 2010.
+
+\bibitem[CMR10a]{icml/CortesMR10a}
+Corinna Cortes, Mehryar Mohri, and Afshin Rostamizadeh.
+\newblock Generalization bounds for learning kernels.
+\newblock In {\em ICML}, pages 247--254, 2010.
+
+\bibitem[CMR10b]{icml/CortesMR10}
+Corinna Cortes, Mehryar Mohri, and Afshin Rostamizadeh.
+\newblock Two-stage learning kernel algorithms.
+\newblock In {\em ICML}, pages 239--246, 2010.
+
+\bibitem[Cor09]{icml/Cortes09}
+Corinna Cortes.
+\newblock Invited talk: Can learning kernels help performance?
+\newblock In {\em ICML}, page 161, 2009.
+
+\bibitem[CQL{\etalchar{+}}07]{icml/CaoQLTL07}
+Zhe Cao, Tao Qin, Tie-Yan Liu, Ming-Feng Tsai, and Hang Li.
+\newblock Learning to rank: from pairwise approach to listwise approach.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 129--136, 2007.
+
+\bibitem[CS09]{nips/ChoS09}
+Youngmin Cho and Lawrence~K. Saul.
+\newblock Kernel methods for deep learning.
+\newblock In {\em NIPS}, pages 342--350, 2009.
+
+\bibitem[CS10]{nc/ChoS10}
+Youngmin Cho and Lawrence~K. Saul.
+\newblock Large-margin classification in infinite neural networks.
+\newblock {\em Neural Comput.}, 22(10):2678--2697, 2010.
+
+\bibitem[CST00]{Cristianini00}
+Nello Cristianini and John Shawe-Taylor.
+\newblock {\em An introduction to support Vector Machines: and other
+  kernel-based learning methods}.
+\newblock Cambridge University Press, New York, NY, USA, 2000.
+
+\bibitem[CSTEK01]{nips/CristianiniSEK01}
+Nello Cristianini, John Shawe-Taylor, Andr{\'e} Elisseeff, and Jaz~S. Kandola.
+\newblock On kernel-target alignment.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  367--373, 2001.
+
+\bibitem[CV95]{ml/CortesV95}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine Learning}, 20(3):273--297, 1995.
+
+\bibitem[CWS02]{nips/ChapelleWS02}
+Olivier Chapelle, Jason Weston, and Bernhard Sch{\"o}lkopf.
+\newblock Cluster kernels for semi-supervised learning.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  585--592, 2002.
+
+\bibitem[CY08]{icml/ChenY08}
+Jianhui Chen and Jieping Ye.
+\newblock Training svm with indefinite kernels.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 136--143, 2008.
+
+\bibitem[DGLW06]{mm/DattaGLW06}
+Ritendra Datta, Weina Ge, Jia Li, and James~Ze Wang.
+\newblock Toward bridging the annotation-retrieval gap in image search by a
+  generative modeling approach.
+\newblock In {\em ACM Multimedia}, pages 977--986, 2006.
+
+\bibitem[DTXM09]{cvpr/DuanTXM09}
+Lixin Duan, Ivor Wai-Hung Tsang, Dong Xu, and Stephen~J. Maybank.
+\newblock Domain transfer svm for video concept detection.
+\newblock In {\em CVPR}, pages 1375--1381, 2009.
+
+\bibitem[DY07]{icml/DaiY07}
+Guang Dai and Dit-Yan Yeung.
+\newblock Kernel selection forl semi-supervised kernel machines.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 185--192, 2007.
+
+\bibitem[EYP07]{colt/El-YanivP07}
+Ran El-Yaniv and Dmitry Pechyony.
+\newblock Transductive rademacher complexity and its applications.
+\newblock In {\em COLT}, pages 157--171, 2007.
+
+\bibitem[FDBR04]{icml/FungDBR04}
+Glenn Fung, Murat Dundar, Jinbo Bi, and R.~Bharat Rao.
+\newblock A fast iterative algorithm for fisher discriminant using
+  heterogeneous kernels.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, 2004.
+
+\bibitem[FLW09]{aistats/LiFDSW09}
+Yu-Hong Dai Cristian~Sminchisescu Fuxin~Li, Yunshan~Fu and Jue Wang.
+\newblock Kernel learning by unconstrained optimization.
+\newblock In {\em AISTATS}, 2009.
+
+\bibitem[GA08]{icml/GonenA08}
+Mehmet G{\"o}nen and Ethem Alpaydin.
+\newblock Localized multiple kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 352--359, 2008.
+
+\bibitem[G{\"a}r03]{kdd/Gartner03}
+Thomas G{\"a}rtner.
+\newblock A survey of kernels for structured data.
+\newblock {\em SIGKDD Explorations}, 5(1):49--58, 2003.
+
+\bibitem[GB08]{pami/GrangierB08}
+David Grangier and Samy Bengio.
+\newblock A discriminative kernel-based approach to rank images from text
+  queries.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 30(8):1371--1384,
+  2008.
+
+\bibitem[GBSS05]{alt/GrettonBSS05}
+Arthur Gretton, Olivier Bousquet, Alex~J. Smola, and Bernhard Sch{\"o}lkopf.
+\newblock Measuring statistical dependence with hilbert-schmidt norms.
+\newblock In {\em ALT}, pages 63--77, 2005.
+
+\bibitem[GD07]{jmlr/GraumanD07}
+Kristen Grauman and Trevor Darrell.
+\newblock The pyramid match kernel: Efficient learning with sets of features.
+\newblock 8:725--760, 2007.
+
+\bibitem[GFKS02]{icml/GartnerFKS02}
+Thomas Gartner, Peter~A. Flach, Adam Kowalczyk, and Alex~J. Smola.
+\newblock Multi-instance kernels.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 179--186. Morgan Kaufmann, 2002.
+
+\bibitem[GK09]{chi/GilbertK09}
+Eric Gilbert and Karrie Karahalios.
+\newblock Predicting tie strength with social media.
+\newblock In {\em CHI}, pages 211--220, 2009.
+
+\bibitem[GN08]{tr/GehlerN08}
+Peter~Vincent Gehler and Sebastian Nowozin.
+\newblock Infinite kernel learning.
+\newblock In {\em TECHNICAL REPORT NO. TR-178,Max Planck Institute for
+  Biological Cybernetics}, 2008.
+
+\bibitem[Hau99]{tr/Haussler99}
+David Haussler.
+\newblock Convolution kernels on discrete structures.
+\newblock Technical Report UCSC-CRL-99-10, University of California at Santa
+  Cruz, 1999.
+
+\bibitem[HJ08]{icml/HoiJ08}
+Steven C.~H. Hoi and Rong Jin.
+\newblock Active kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 400--407, 2008.
+
+\bibitem[HJL07]{icml/HoiJL07}
+Steven C.~H. Hoi, Rong Jin, and Michael~R. Lyu.
+\newblock Learning nonparametric kernel matrices from pairwise constraints.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 361--368, 2007.
+
+\bibitem[HLC06]{kdd/HoiLC06}
+Steven C.~H. Hoi, Michael~R. Lyu, and Edward~Y. Chang.
+\newblock Learning the unified kernel machines for classification.
+\newblock In {\em KDD}, pages 187--196, 2006.
+
+\bibitem[HLZ{\etalchar{+}}04]{mm/HeLZTZ04}
+Jingrui He, Mingjing Li, HongJiang Zhang, Hanghang Tong, and Changshui Zhang.
+\newblock Manifold-ranking based image retrieval.
+\newblock In {\em ACM Multimedia}, pages 9--16, 2004.
+
+\bibitem[HOT06]{neco/HintonOT06}
+Geoffrey~E. Hinton, Simon Osindero, and Yee~Whye Teh.
+\newblock A fast learning algorithm for deep belief nets.
+\newblock {\em Neural Computation}, 18(7):1527--1554, 2006.
+
+\bibitem[HS06]{science/HintonS06}
+G.~E. Hinton and R.~Salakhutdinov.
+\newblock Reducing the dimensionality of data with neural networks.
+\newblock {\em Science}, 313(5786):504--507, 2006.
+
+\bibitem[HSS08]{as/HofmannSAS08}
+Thomas Hofmann, Bernhard Scholkopf, and Alexander~J. Smola.
+\newblock Kernel methods in machine learning.
+\newblock {\em The Annals of Statistics}, 36(3):1171--1220, 2008.
+
+\bibitem[HST11]{corr/HussainS11}
+Zakria Hussain and John Shawe-Taylor.
+\newblock A note on improved loss bounds for multiple kernel learning.
+\newblock {\em CoRR}, abs/1106.6258, 2011.
+
+\bibitem[JB08]{pami/JingB08}
+Yushi Jing and Shumeet Baluja.
+\newblock Visualrank: Applying pagerank to large-scale image search.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 30(11):1877--1890,
+  2008.
+
+\bibitem[Joa02]{kdd/Joachims02}
+Thorsten Joachims.
+\newblock Optimizing search engines using clickthrough data.
+\newblock In {\em KDD}, pages 133--142, 2002.
+
+\bibitem[JS06]{ecml/JebaraS06}
+Tony Jebara and Vlad Shchogolev.
+\newblock B-matching for spectral clustering.
+\newblock In {\em ECML}, pages 679--686, 2006.
+
+\bibitem[JZ08]{tit/JohnsonZ08}
+Rie Johnson and Tong Zhang.
+\newblock Graph-based semi-supervised learning and spectral kernel design.
+\newblock {\em IEEE Transactions on Information Theory}, 54(1):275--288, 2008.
+
+\bibitem[KB11]{arxiv/KloftB11}
+Marius Kloft and Gilles Blanchard.
+\newblock The local rademacher complexity of lp-norm multiple kernel learning.
+\newblock In {\em arXiv:1103.0790v1}, 2011.
+
+\bibitem[KBS{\etalchar{+}}09]{nips/KloftBSLMZ09}
+Marius Kloft, Ulf Brefeld, Soren Sonnenburg, Pavel Laskov, Klaus-Robert Muller,
+  and Alexander Zien.
+\newblock Efficient and accurate $l_p$-norm multiple kernel learning.
+\newblock In {\em NIPS}, 2009.
+
+\bibitem[KK06]{oms/KrishynanM06}
+John E.~Mitchell Kartik~Krishnan.
+\newblock A unifying framework for several cutting plane methods for
+  semidefinite programming.
+\newblock {\em Optimization Methods and Software}, 21(1):57--74, 2006.
+
+\bibitem[KL02]{icml/KondorL02}
+Risi~Imre Kondor and John~D. Lafferty.
+\newblock Diffusion kernels on graphs and other discrete input spaces.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 315--322, 2002.
+
+\bibitem[KMB06]{icml/KimMB06}
+Seung-Jean Kim, Alessandro Magnani, and Stephen~P. Boyd.
+\newblock Optimal kernel selection in kernel fisher discriminant analysis.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 465--472, 2006.
+
+\bibitem[KNA{\etalchar{+}}07]{mm/KennedyNANR07}
+Lyndon~S. Kennedy, Mor Naaman, Shane Ahern, Rahul Nair, and Tye Rattenbury.
+\newblock How flickr helps us make sense of the world: context and content in
+  community-contributed media collections.
+\newblock In {\em ACM Multimedia}, pages 631--640, 2007.
+
+\bibitem[KP00]{pp/KoltchinskiiP00}
+V.~Koltchinskii and D.~Panchenko.
+\newblock Rademacher processes and bounding the risk of function learning.
+\newblock {\em Progress in Probability}, 47:443--458, 2000.
+
+\bibitem[KRB10]{ecml/KloftRB10}
+Marius Kloft, Ulrich R{\"u}ckert, and Peter~L. Bartlett.
+\newblock A unifying view of multiple kernel learning.
+\newblock In {\em ECML/PKDD (2)}, pages 66--81, 2010.
+
+\bibitem[KSD06]{icml/KulisSD06}
+Brian Kulis, M{\'a}ty{\'a}s Sustik, and Inderjit~S. Dhillon.
+\newblock Learning low-rank kernel matrices.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 505--512, 2006.
+
+\bibitem[KT03]{icml/Kwok03}
+James Kwok and Ivor Tsang.
+\newblock Learning with idealized kernels.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 400--407, 2003.
+
+\bibitem[LBC{\etalchar{+}}04]{bioinformatics/LanckrietBCJN04}
+Gert R.~G. Lanckriet, Tijl~De Bie, Nello Cristianini, Michael~I. Jordan, and
+  William~Stafford Noble.
+\newblock A statistical framework for genomic data fusion.
+\newblock {\em Bioinformatics}, 20(16):2626--2635, 2004.
+
+\bibitem[LBRN06]{nips/Lee06}
+Honglak Lee, Alexis Battle, Rajat Raina, and Andrew~Y. Ng.
+\newblock Efficient sparse coding algorithms.
+\newblock In {\em NIPS}, pages 801--808, 2006.
+
+\bibitem[LCB{\etalchar{+}}02]{icml/LanckrietCBGJ02}
+Gert R.~G. Lanckriet, Nello Cristianini, Peter~L. Bartlett, Laurent~El Ghaoui,
+  and Michael~I. Jordan.
+\newblock Learning the kernel matrix with semi-definite programming.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 323--330, 2002.
+
+\bibitem[LCB{\etalchar{+}}04]{jmlr/LanckrietCBGJ03}
+Gert R.~G. Lanckriet, Nello Cristianini, Peter~L. Bartlett, Laurent~El Ghaoui,
+  and Michael~I. Jordan.
+\newblock Learning the kernel matrix with semidefinite programming.
+\newblock {\em Journal of Machine Learning Research}, 5:27--72, 2004.
+
+\bibitem[Ld07]{nips/LussD07}
+Ronny Luss and Alexandre d'Aspremont.
+\newblock Support vector machine classification with indefinite kernels.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2007.
+
+\bibitem[LEC{\etalchar{+}}07]{icml/LarochelleECBB07}
+Hugo Larochelle, Dumitru Erhan, Aaron~C. Courville, James Bergstra, and Yoshua
+  Bengio.
+\newblock An empirical evaluation of deep architectures on problems with many
+  factors of variation.
+\newblock In {\em ICML}, pages 473--480, 2007.
+
+\bibitem[LHK10]{www/LeskovecHK10}
+Jure Leskovec, Daniel~P. Huttenlocher, and Jon~M. Kleinberg.
+\newblock Predicting positive and negative links in online social networks.
+\newblock In {\em WWW}, pages 641--650, 2010.
+
+\bibitem[Liu10]{sigir/Liu10}
+Tie-Yan Liu.
+\newblock Learning to rank for information retrieval.
+\newblock In {\em SIGIR}, page 904, 2010.
+
+\bibitem[LJH03]{WIR03}
+Wei-Hao Lin, Rong Jin, and Alexander Hauptmann.
+\newblock Web image retrieval re-ranking with relevance model.
+\newblock In {\em WI '03: Proceedings of the 2003 IEEE/WIC International
+  Conference on Web Intelligence}, page 242, Washington, DC, USA, 2003. IEEE
+  Computer Society.
+
+\bibitem[LJN06]{icml/LewisJN06}
+Darrin~P. Lewis, Tony Jebara, and William~Stafford Noble.
+\newblock Nonstationary kernel combination.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 553--560, 2006.
+
+\bibitem[LJY{\etalchar{+}}08]{mir/LiuJYXSL08}
+Xianming Liu, Rongrong Ji, Hongxun Yao, Pengfei Xu, Xiaoshuai Sun, and
+  Tianqiang Liu.
+\newblock Cross-media manifold learning for image retrieval {\&} annotation.
+\newblock In {\em Multimedia Information Retrieval}, pages 141--148, 2008.
+
+\bibitem[Low04]{jcv/LoweG04}
+David~G. Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em Int. J. Comput. Vision}, 60(2):91--110, 2004.
+
+\bibitem[LSST{\etalchar{+}}02]{jmlr/LodhiSSCW02}
+Huma Lodhi, Craig Saunders, John Shawe-Taylor, Nello Cristianini, and
+  Christopher J. C.~H. Watkins.
+\newblock Text classification using string kernels.
+\newblock {\em Journal of Machine Learning Research}, 2:419--444, 2002.
+
+\bibitem[LSY98]{tr/LehoucqSY98}
+R.~B. Lehoucq, D.~C. Sorensen, and C.~Yang.
+\newblock Arpack users guide: Solution of large scale eigenvalue problems with
+  implicitly restarted arnoldi methods.
+\newblock Technical report, 1998.
+
+\bibitem[LVB{\etalchar{+}}93]{tc/LadesVBLMWK93}
+Martin Lades, Jan~C. Vorbr{\"u}ggen, Joachim~M. Buhmann, J{\"o}rg Lange,
+  Christoph von~der Malsburg, Rolf~P. W{\"u}rtz, and Wolfgang Konen.
+\newblock Distortion invariant object recognition in the dynamic link
+  architecture.
+\newblock {\em IEEE Trans. Computers}, 42(3):300--311, 1993.
+
+\bibitem[LVBL98]{laa/LoboVBL98}
+M.~Lobo, L.~Vandenberghe, S.~Boyd, and H.~Lebret.
+\newblock Applications of second-order cone programming.
+\newblock {\em Linear Algebra Applications}, 284:193--228, 1998.
+
+\bibitem[LYW07]{icml/LiYW07}
+Fuxin Li, Jian Yang, and Jue Wang.
+\newblock A transductive framework of distance metric learning by spectral
+  dimensionality reduction.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 513--520, 2007.
+
+\bibitem[McD89]{McDiarmid89}
+C.~McDiarmid.
+\newblock On the method of bounded differences.
+\newblock In {\em Surveys in Combinatorics 1989}, pages 148--188. Cambridage
+  University Press, 1989.
+
+\bibitem[Mik99]{nn/MikaRWSM99}
+G.; Weston-J.; Scholkopf B.; Mullers~K.R. Mika, S.;~Ratsch.
+\newblock Fisher discriminant analysis with kernels.
+\newblock In {\em Neural Networks for Signal Processing IX, 1999. Proceedings
+  of the 1999 IEEE Signal Processing Society Workshop}, 1999.
+
+\bibitem[MKZ11]{jmlr/KloftBSZ11}
+S.~Sonnenburg M.~Kloft, U.~Brefeld and A.~Zien.
+\newblock Lp-norm multiple kernel learning.
+\newblock 2011.
+
+\bibitem[Mm06]{ss/MoguerzaM06}
+Javier~M. Moguerza and Alberto munoz.
+\newblock Support vector machines with applications.
+\newblock {\em Statistical Science}, 21(3):322--336, 2006.
+
+\bibitem[MP05]{jmlr/MicchelliP05}
+Charles~A. Micchelli and Massimiliano Pontil.
+\newblock Learning the kernel function via regularization.
+\newblock {\em Journal of Machine Learning Research}, 6:1099--1125, 2005.
+
+\bibitem[MT11a]{corr/MaoT11}
+Qi~Mao and Ivor~W. Tsang.
+\newblock Multiple template learning for structured prediction.
+\newblock {\em CoRR}, abs/1103.0890, 2011.
+
+\bibitem[MT11b]{uai/MaoT10}
+Qi~Mao and Ivor~W. Tsang.
+\newblock Parameter-free spectral kernel learning.
+\newblock 2011.
+
+\bibitem[NAP{\etalchar{+}}09]{mm/NegoescuAPVG09}
+Radu~Andrei Negoescu, Brett Adams, Dinh~Q. Phung, Svetha Venkatesh, and Daniel
+  Gatica-Perez.
+\newblock Flickr hypergroups.
+\newblock In {\em ACM Multimedia}, pages 813--816, 2009.
+
+\bibitem[Nes05]{mp/Nesterov05}
+Yu. Nesterov.
+\newblock Smooth minimization of non-smooth functions.
+\newblock {\em Mathematical Programming}, 103:127--152, 2005.
+
+\bibitem[NGP08a]{civr/NegoescuG08}
+Radu~Andrei Negoescu and Daniel Gatica-Perez.
+\newblock Analyzing flickr groups.
+\newblock In {\em CIVR}, pages 417--426, 2008.
+
+\bibitem[NGP08b]{mm/NegoescuG08}
+Radu~Andrei Negoescu and Daniel Gatica-Perez.
+\newblock Topickr: flickr groups and users reloaded.
+\newblock In {\em ACM Multimedia}, pages 857--860, 2008.
+
+\bibitem[NN94]{NesterovN94}
+Y.~Nesterov and A.~Nemirovski.
+\newblock {\em Interior-point Polynomial Algorithms in Convex Programming}.
+\newblock Society for Industrial and Applied Mathematics, 1994.
+
+\bibitem[OBL05]{esiam/BousquetBL05}
+Stephane~Boucheron Olivier~Bousquet and Gabor Lugosi.
+\newblock Theory of classification : a survey of some recent advances.
+\newblock 9, 2005.
+
+\bibitem[OCK08]{jmlr/ChapelleSK08}
+Vikas~Sindhwani Olivier~Chapelle and Sathiya~S. Keerthi.
+\newblock Optimization techniques for semi-supervised support vector machines.
+\newblock {\em Journal of Machine Learning Research}, 9:203--233, 2008.
+
+\bibitem[OPH96]{pr/OjalaPH96}
+Timo Ojala, Matti Pietik{\"a}inen, and David Harwood.
+\newblock A comparative study of texture measures with classification based on
+  featured distributions.
+\newblock {\em Pattern Recognition}, 29(1):51--59, 1996.
+
+\bibitem[OZ08]{wabi/OngZ08}
+Cheng~Soon Ong and Alexander Zien.
+\newblock An automated combination of kernels for predicting protein
+  subcellular localization.
+\newblock In {\em WABI}, pages 186--197, 2008.
+
+\bibitem[Pat95]{tr/Pataki95}
+G.~Pataki.
+\newblock On the rank of extreme matrices in semidefinite programs and the
+  multiplicity of optimal eigenvalues.
+\newblock Technical Report MSRR-604, Carnegie Mellon University, August 1995.
+
+\bibitem[PBM06]{jasa/BartlettJM06}
+M.I.~Jordan P.L.~Bartlett and J.D. McAuliffe.
+\newblock Convexity, classification, and risk bounds.
+\newblock {\em J. of the American Statistical Association}, 473:138--156, 2006.
+
+\bibitem[PSG08]{cvpr/SinglaKLG08}
+J~Luo P~Singla, H~Kautz and A~Gallagher.
+\newblock Discovery of social relationships in consumer photo collections using
+  markov logic.
+\newblock In {\em CVPR workshop}, 2008.
+
+\bibitem[RBCG07]{icml/RakotomamonjyBCG07}
+Alain Rakotomamonjy, Francis Bach, St{\'e}phane Canu, and Yves Grandvalet.
+\newblock More efficiency in multiple kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 775--782, 2007.
+
+\bibitem[RBCG08]{jmlr/RakotomamonjyBCG08}
+Alain Rakotomamonjy, Francis~R. Bach, Stephane Canu, and Yves Grandvalet.
+\newblock Simplemkl.
+\newblock {\em Journal of Machine Learning Research}, 9:2491--2521, 2008.
+
+\bibitem[RC85]{HornJ85}
+R.A.Horn and C.A.Johnson.
+\newblock {\em Matrix Analysis}.
+\newblock Cambridge University Press, 1985.
+
+\bibitem[RHOM98]{tcsvt/RuiHOM98}
+Y.~Rui, T.~S. Huang, M.~Ortega, and S.~Mehrotra.
+\newblock Relevance feedback: A power tool in interactive content-based image
+  retrieval.
+\newblock {\em IEEE Trans. CSVT}, 8(5):644--655, September 1998.
+
+\bibitem[rMMR{\etalchar{+}}01]{tnn/MullerM01}
+Klaus robert M¨¹ller, Sebastian Mika, Gunnar Ratsch, Koji Tsuda, and Bernhard
+  Scholkopf.
+\newblock An introduction to kernel-based learning algorithms.
+\newblock {\em IEEE Transactions on Neural Networks}, 12:181--201, 2001.
+
+\bibitem[SARK08]{icml/SahbiARK08}
+Hichem Sahbi, Jean-Yves Audibert, Jaonary Rabarisoa, and Renaud Keriven.
+\newblock Robust matching and recognition using context-dependent kernels.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 856--863, 2008.
+
+\bibitem[SBD06]{colt/SrebroB06}
+Nathan Srebro and Shai Ben-David.
+\newblock Learning bounds for support vector machines with learned kernels.
+\newblock In {\em COLT}, pages 169--183, 2006.
+
+\bibitem[SHS01]{colt/ScholkopfHS01}
+Bernhard Sch{\"o}lkopf, Ralf Herbrich, and Alex~J. Smola.
+\newblock A generalized representer theorem.
+\newblock In {\em COLT/EuroCOLT}, pages 416--426, 2001.
+
+\bibitem[SJ07]{aistats/ShawJ07}
+B.~Shaw and T.~Jebara.
+\newblock Minimum volume embedding.
+\newblock In {\em AISTATS}, 2007.
+
+\bibitem[SJ09]{icml/ShawJ09}
+Blake Shaw and Tony Jebara.
+\newblock Structure preserving embedding.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, page 118, 2009.
+
+\bibitem[SK08]{icml/ShinK08}
+Kilho Shin and Tetsuji Kuboyama.
+\newblock A generalization of haussler's convolution kernel: mapping kernel.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 944--951, 2008.
+
+\bibitem[SMvZ09]{sigir/SerdyukovMZ09}
+Pavel Serdyukov, Vanessa Murdock, and Roelof van Zwol.
+\newblock Placing flickr photos on a map.
+\newblock In {\em SIGIR}, pages 484--491, 2009.
+
+\bibitem[SNB05]{icml/SindhwaniNB05}
+Vikas Sindhwani, Partha Niyogi, and Mikhail Belkin.
+\newblock Beyond the point cloud: from transductive to semi-supervised
+  learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 824--831, 2005.
+
+\bibitem[SR08]{www/SinglaR08}
+Parag Singla and Matthew Richardson.
+\newblock Yes, there is a correlation: - from social networks to personal
+  behavior on the web.
+\newblock In {\em WWW}, pages 655--664, 2008.
+
+\bibitem[SRS05]{nips/SonnenburgRS05}
+S{\"o}ren Sonnenburg, Gunnar R{\"a}tsch, and Christin Sch{\"a}fer.
+\newblock A general and efficient multiple kernel learning algorithm.
+\newblock In {\em NIPS}, 2005.
+
+\bibitem[SRSS06]{jmlr/SonnenburgRSS06}
+S{\"o}ren Sonnenburg, Gunnar R{\"a}tsch, Christin Sch{\"a}fer, and Bernhard
+  Sch{\"o}lkopf.
+\newblock Large scale multiple kernel learning.
+\newblock {\em Journal of Machine Learning Research}, 7:1531--1565, 2006.
+
+\bibitem[SS02]{Scholkopf2002}
+B.~Sch\"{o}lkopf and A.~Smola.
+\newblock {\em Learning with Kernels}.
+\newblock MIT Press., 2002.
+
+\bibitem[SSBG07]{nips/SongSBG07}
+Le~Song, Alex~J. Smola, Karsten~M. Borgwardt, and Arthur Gretton.
+\newblock Colored maximum variance unfolding.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2007.
+
+\bibitem[SSM98]{neco/ScholkopfSM98}
+Bernhard Sch{\"o}lkopf, Alex~J. Smola, and Klaus-Robert M{\"u}ller.
+\newblock Nonlinear component analysis as a kernel eigenvalue problem.
+\newblock {\em Neural Computation}, 10(5):1299--1319, 1998.
+
+\bibitem[Stu99]{oms/Sturm99}
+J.F. Sturm.
+\newblock Using sedumi: a matlab toolbox for optimization over symmetric cones.
+\newblock {\em Optimization Methods and Software}, 11--12:625--653, 1999.
+
+\bibitem[SWS{\etalchar{+}}00]{pami/SmeuldersWSGJ00}
+Arnold W.~M. Smeulders, Marcel Worring, Simone Santini, Amarnath Gupta, and
+  Ramesh Jain.
+\newblock Content-based image retrieval at the end of the early years.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 22(12):1349--1380,
+  2000.
+
+\bibitem[SWY{\etalchar{+}}09]{cvpr/SunWYCCL09}
+Ju~Sun, Xiao Wu, Shuicheng Yan, Loong~Fah Cheong, Tat-Seng Chua, and Jintao Li.
+\newblock Hierarchical spatio-temporal context modeling for action recognition.
+\newblock In {\em CVPR}, pages 2004--2011, 2009.
+
+\bibitem[TN04]{ismb/TsudaN04}
+Koji Tsuda and William~Stafford Noble.
+\newblock Learning kernels from biological networks by maximizing entropy.
+\newblock In {\em ISMB/ECCB (Supplement of Bioinformatics)}, pages 326--333,
+  2004.
+
+\bibitem[TRW05]{jmlr/TsudaRW05}
+Koji Tsuda, Gunnar R{\"a}tsch, and Manfred~K. Warmuth.
+\newblock Matrix exponentiated gradient updates for on-line learning and
+  bregman projection.
+\newblock {\em Journal of Machine Learning Research}, 6:995--1018, 2005.
+
+\bibitem[TWAK03]{nips/TaskarWAK03}
+Benjamin Taskar, Ming~Fai Wong, Pieter Abbeel, and Daphne Koller.
+\newblock Link prediction in relational data.
+\newblock In {\em NIPS}, 2003.
+
+\bibitem[TWT10]{icml/TanWT10}
+Mingkui Tan, Li~Wang, and Ivor~W. Tsang.
+\newblock Learning sparse svm for feature selection on very high dimensional
+  datasets.
+\newblock In {\em ICML}, pages 1047--1054, 2010.
+
+\bibitem[Vap98]{Vapnik98}
+V.~N. Vapnik.
+\newblock {\em Statistical Learning Theory}.
+\newblock Wiley, 1998.
+
+\bibitem[VB09]{icml/VarmaB09}
+Manik Varma and Bodla~Rakesh Babu.
+\newblock More generality in efficient multiple kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, page 134, 2009.
+
+\bibitem[VGVZ09]{iccv/VedaldiGVZ09}
+Andrea Vedaldi, Varun Gulshan, Manik Varma, and Andrew Zisserman.
+\newblock Multiple kernels for object detection.
+\newblock In {\em ICCV}, pages 606--613, 2009.
+
+\bibitem[WHJ{\etalchar{+}}09]{mm/WuHJZY09}
+Lei Wu, Steven C.~H. Hoi, Rong Jin, Jianke Zhu, and Nenghai Yu.
+\newblock Distance metric learning from uncertain side information with
+  application to automated photo tagging.
+\newblock In {\em ACM Multimedia}, pages 135--144, 2009.
+
+\bibitem[WHY{\etalchar{+}}08]{mm/WuHYML08}
+Lei Wu, Xian-Sheng Hua, Nenghai Yu, Wei-Ying Ma, and Shipeng Li.
+\newblock Flickr distance.
+\newblock In {\em ACM Multimedia}, pages 31--40, 2008.
+
+\bibitem[WS08]{icml/weinberger08}
+Kilian~Q. Weinberger and Lawrence~K. Saul.
+\newblock Fast solvers and efficient implementations for distance metric
+  learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 1160--1167, 2008.
+
+\bibitem[WSS04]{icml/WeinbergerSS04}
+Kilian~Q. Weinberger, Fei Sha, and Lawrence~K. Saul.
+\newblock Learning a kernel matrix for nonlinear dimensionality reduction.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, 2004.
+
+\bibitem[WT09]{mm/WuT09}
+Peng Wu and Daniel Tretter.
+\newblock Close {\&} closer: social cluster and closeness from photo
+  collections.
+\newblock In {\em ACM Multimedia}, pages 709--712, 2009.
+
+\bibitem[WYY{\etalchar{+}}10]{cvpr/WangYYLHG10}
+Jinjun Wang, Jianchao Yang, Kai Yu, Fengjun Lv, Thomas~S. Huang, and Yihong
+  Gong.
+\newblock Locality-constrained linear coding for image classification.
+\newblock In {\em CVPR}, pages 3360--3367, 2010.
+
+\bibitem[WZZ08]{sigir/WangZZ08}
+Changhu Wang, Lei Zhang, and Hong-Jiang Zhang.
+\newblock Learning to reduce the semantic gap in web image retrieval and
+  annotation.
+\newblock In {\em Proceedings of ACM Special Interest Group on Information
+  Retrieval}, pages 355--362, 2008.
+
+\bibitem[XJKL08]{nips/XuJKL08}
+Zenglin Xu, Rong Jin, Irwin King, and Michael~R. Lyu.
+\newblock An extended level method for efficient multiple kernel learning.
+\newblock In {\em NIPS}, pages 1825--1832, 2008.
+
+\bibitem[XNJR02]{nips/XingNJR02}
+E.~P. Xing, A.~Y. Ng, M.~I. Jordan, and S.~Russell.
+\newblock Distance metric learning with application to clustering with
+  side-information.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2002.
+
+\bibitem[XNR10]{www/XiangNR10}
+Rongjing Xiang, Jennifer Neville, and Monica Rogati.
+\newblock Modeling relationship strength in online social networks.
+\newblock In {\em WWW}, pages 981--990, 2010.
+
+\bibitem[YC09]{colt/YingC09}
+Yiming Ying and Colin Campbell.
+\newblock Generalization bounds for learning the kernel.
+\newblock In {\em COLT}, 2009.
+
+\bibitem[YC10]{tr/rcc010}
+Yiming Ying and Colin Campbell.
+\newblock Rademacher chaos complexity for learning the kernel problem.
+\newblock In {\em TECHNICAL REPORT,
+  http://secamlocal.ex.ac.uk/people/staff/yy267/KLbound-version3.pdf}, 2010.
+
+\bibitem[YFD{\etalchar{+}}10]{bmcbi/YuFDTSMM10}
+Shi Yu, Tillmann Falck, Anneleen Daemen, L{\'e}on-Charles Tranchevent, Johan
+  A.~K. Suykens, Bart~De Moor, and Yves Moreau.
+\newblock L2-norm multiple kernel learning and its application to biomedical
+  data fusion.
+\newblock {\em BMC Bioinformatics}, 11:309, 2010.
+
+\bibitem[YFL09]{aistats/LiTKZ09}
+James T. Kwok Zhi-Hua~Zhou Yu-Feng~Li, Ivor W.~Tsang.
+\newblock Tighter and convex maximum margin clustering.
+\newblock In {\em AISTATS}, 2009.
+
+\bibitem[YJL09]{icmcs/YuJL09}
+Jie Yu, Dhiraj Joshi, and Jiebo Luo.
+\newblock Connecting people in photo-sharing sites by photo content and user
+  annotations.
+\newblock In {\em ICME}, pages 1464--1467, 2009.
+
+\bibitem[YYG09]{nips/YingCG09}
+C.~Campbell Y.~Ying and M.~Girolami.
+\newblock Analysis of svm with indefinite kernels.
+\newblock In {\em NIPS}, 2009.
+
+\bibitem[YZ10]{icml/YuZ10}
+Kai Yu and Tong Zhang.
+\newblock Improved local coordinate coding using local tangents.
+\newblock In {\em ICML}, pages 1215--1222, 2010.
+
+\bibitem[YZG09]{nips/YuZG09}
+Kai Yu, Tong Zhang, and Yihong Gong.
+\newblock Nonlinear learning using local coordinate coding.
+\newblock In {\em NIPS}, 2009.
+
+\bibitem[ZA05]{nips/ZhangA05}
+Tong Zhang and Rie Ando.
+\newblock Analysis of spectral kernel design based semi-supervised learning.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2005.
+
+\bibitem[ZBL{\etalchar{+}}05]{nips/ZhouBLWS05}
+D.~Zhou, O.~Bousquet, T.~Lal, J.~Weston, and B.~Schlkopf.
+\newblock Learning with local and global consistency.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2005.
+
+\bibitem[ZGL03]{icml/ZhuGL03}
+Xiaojin Zhu, Zoubin Ghahramani, and John~D. Lafferty.
+\newblock Semi-supervised learning using gaussian fields and harmonic
+  functions.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 912--919, 2003.
+
+\bibitem[ZH01]{nips/ZhuH01}
+Ji~Zhu and Trevor Hastie.
+\newblock Kernel logistic regression and the import vector machine.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1081--1088, 2001.
+
+\bibitem[ZH10]{civr/ZhuangH10}
+Jinfeng Zhuang and Steven C.~H. Hoi.
+\newblock Non-parametric kernel ranking approach for social image retrieval.
+\newblock In {\em CIVR}, pages 26--33, 2010.
+
+\bibitem[Zha04]{as/Zhang04}
+Tong Zhang.
+\newblock Statistical behavior and consistency of classification methods based
+  on convex risk minimization.
+\newblock {\em Annals of Statistics}, 32:56--85, 2004.
+
+\bibitem[ZHLY08]{mm/ZhuHLY08}
+Jianke Zhu, Steven C.~H. Hoi, Michael~R. Lyu, and Shuicheng Yan.
+\newblock Near-duplicate keyframe retrieval by nonrigid image matching.
+\newblock In {\em ACM Multimedia}, pages 41--50, 2008.
+
+\bibitem[ZHT11]{aistats/ZhuangTH11}
+Jinfeng Zhuang, Steven Hoi, and Ivor Tsang.
+\newblock Two-layer multiple kernel learning.
+\newblock In {\em AISTATS}, 2011.
+
+\bibitem[Zhu05]{tr/Zhu05}
+Xiaojin Zhu.
+\newblock Semi-supervised learning literature survey.
+\newblock Technical Report 1530, Computer Sciences, University of
+  Wisconsin-Madison, 2005.
+
+\bibitem[ZKGL04]{nips/ZhuKGL04}
+Xiaojin Zhu, Jaz~S. Kandola, Zoubin Ghahramani, and John~D. Lafferty.
+\newblock Nonparametric transforms of graph kernels for semi-supervised
+  learning.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2004.
+
+\bibitem[ZMH{\etalchar{+}}11]{mm/ZhuangMHHL11}
+Jinfeng Zhuang, Tao Mei, Steven~C.H. Hoi, Xian sheng Hua, and Shipeng Li.
+\newblock Modeling social strength in social media community via kernel-based
+  learning.
+\newblock In {\em ACM Multimedia}, 2011.
+
+\bibitem[ZO07]{icml/ZienO07}
+Alexander Zien and Cheng~Soon Ong.
+\newblock Multiclass multiple kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, pages 1191--1198, 2007.
+
+\bibitem[ZTH09]{icml/ZhuangTH09}
+Jinfeng Zhuang, Ivor~W. Tsang, and Steven C.~H. Hoi.
+\newblock Simplenpkl: simple non-parametric kernel learning.
+\newblock In {\em Proceedings of the International Conference on Machine
+  Learning}, page 160, 2009.
+
+\end{thebibliography}

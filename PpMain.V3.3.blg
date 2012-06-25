@@ -1,0 +1,451 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PpMain.V3.3.aux
+The style file: alpha.bst
+A level-1 auxiliary file: chapter-1.aux
+A level-1 auxiliary file: chapter-2.aux
+A level-1 auxiliary file: chapter-3.aux
+A level-1 auxiliary file: chapter-4.aux
+A level-1 auxiliary file: chapter-5.aux
+A level-1 auxiliary file: chapter-6.aux
+A level-1 auxiliary file: chapter-7.aux
+A level-1 auxiliary file: chapter-8.aux
+A level-1 auxiliary file: publication_list.aux
+Database file #1: proposal_ref.bib
+Warning--entry type for "Joachims" isn't style-file defined
+--line 44 of file proposal_ref.bib
+"{" immediately follows a field name---line 966 of file proposal_ref.bib
+ : @article
+ :         {pami/SmeuldersWSGJ00,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1269 of file proposal_ref.bib
+ : %@book{Boyd
+ :            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1277 of file proposal_ref.bib
+ : %@book{Boyd
+ :            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1329 of file proposal_ref.bib
+ : @inproceedings{nips/CristianiniSEK01
+ :                                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1601 of file proposal_ref.bib
+ : @article{jmlr/LanckrietCBGJ03
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1687 of file proposal_ref.bib
+ : @inproceedings{icml/FungDBR04
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1830 of file proposal_ref.bib
+ : @article{jmlr/BennettP06
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1978 of file proposal_ref.bib
+ : @article{jmlr/MicchelliP05
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2011 of file proposal_ref.bib
+ : @inproceedings{colt/ArgyriouMP05
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2024 of file proposal_ref.bib
+ : @inproceedings{icml/DaiY07
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2035 of file proposal_ref.bib
+ : @inproceedings{icml/ArgyriouHMP06
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2048 of file proposal_ref.bib
+ : @article{bioinformatics/LanckrietBCJN04
+ :                                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2063 of file proposal_ref.bib
+ : @article{jmlr/LanckrietCBGJ03
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2077 of file proposal_ref.bib
+ : @inproceedings{icml/HoiJL07
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2140 of file proposal_ref.bib
+ : @inproceedings{icml/ChenY08
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2222 of file proposal_ref.bib
+ : @inproceedings{icml/DaiY07
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2381 of file proposal_ref.bib
+ : @book{Vapnik98
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2387 of file proposal_ref.bib
+ : @article{jmlr/MicchelliP05
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2410 of file proposal_ref.bib
+ : @inproceedings{nips/BousquetH02
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2421 of file proposal_ref.bib
+ : @inproceedings{icml/FungDBR04
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2434 of file proposal_ref.bib
+ : @inproceedings{icml/HoiJL07
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2446 of file proposal_ref.bib
+ : @inproceedings{icml/HoiJ08
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2483 of file proposal_ref.bib
+ : @inproceedings{icml/ChenY08
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2602 of file proposal_ref.bib
+ : @inproceedings{nips/ZhangA05
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2621 of file proposal_ref.bib
+ : @inproceedings{icml/ZhuGL03
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2633 of file proposal_ref.bib
+ : @inproceedings{nips/ZhuKGL04
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2666 of file proposal_ref.bib
+ : @inproceedings{nips/ZhuKGL04
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2679 of file proposal_ref.bib
+ : @inproceedings{nips/ArgyriouHP05
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2701 of file proposal_ref.bib
+ : @article{jmlr/LanckrietCBGJ03
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2750 of file proposal_ref.bib
+ : @inproceedings{kdd/HoiLC06
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2918 of file proposal_ref.bib
+ : @inproceedings{ac/BousquetBL03
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3323 of file proposal_ref.bib
+ : @book{Baeza-YatesR99
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3487 of file proposal_ref.bib
+ : @inproceedings{icml/LanckrietCBGJ02
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3531 of file proposal_ref.bib
+ : @inproceedings{nips/YingCG09
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4049 of file proposal_ref.bib
+ : @inproceedings{www/SinglaR08
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4145 of file proposal_ref.bib
+ : @inproceedings{www/ChoudhuryMHW10
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4171 of file proposal_ref.bib
+ : @inproceedings{www/XiangNR10
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4379 of file proposal_ref.bib
+ : @inproceedings{icml/CortesMR10
+ :                               ,
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "icml/KondorL02"
+refers to entry "DBLP:conf/icml/2002", which doesn't exist
+A bad cross reference---entry "icml/KulisSD06"
+refers to entry "DBLP:conf/icml/2006", which doesn't exist
+A bad cross reference---entry "icml/HoiJL07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "icml/LiYW07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "nips/SongSBG07"
+refers to entry "DBLP:conf/nips/2007", which doesn't exist
+A bad cross reference---entry "icml/ShawJ09"
+refers to entry "DBLP:conf/icml/2009", which doesn't exist
+A bad cross reference---entry "nips/ZhuH01"
+refers to entry "DBLP:conf/nips/2001", which doesn't exist
+A bad cross reference---entry "colt/ScholkopfHS01"
+refers to entry "DBLP:conf/colt/2001", which doesn't exist
+A bad cross reference---entry "ac/BousquetBL03"
+refers to entry "DBLP:conf/ac/2003ml", which doesn't exist
+A bad cross reference---entry "colt/BartlettBM02"
+refers to entry "DBLP:conf/colt/2002", which doesn't exist
+A bad cross reference---entry "icml/LanckrietCBGJ02"
+refers to entry "DBLP:conf/icml/2002", which doesn't exist
+A bad cross reference---entry "stoc/BalcanBV08"
+refers to entry "DBLP:conf/stoc/2008", which doesn't exist
+A bad cross reference---entry "colt/CortesKM07"
+refers to entry "DBLP:conf/colt/2007", which doesn't exist
+A bad cross reference---entry "icml/SahbiARK08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "icml/ShinK08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "icml/BachLJ04"
+refers to entry "DBLP:conf/icml/2004", which doesn't exist
+A bad cross reference---entry "nips/XuJKL08"
+refers to entry "DBLP:conf/nips/2008", which doesn't exist
+A bad cross reference---entry "nips/ChapelleWS02"
+refers to entry "DBLP:conf/nips/2002", which doesn't exist
+A bad cross reference---entry "icml/ZhuGL03"
+refers to entry "DBLP:conf/icml/2003", which doesn't exist
+A bad cross reference---entry "nips/CristianiniSEK01"
+refers to entry "DBLP:conf/nips/2001", which doesn't exist
+A bad cross reference---entry "nips/ZhuKGL04"
+refers to entry "DBLP:conf/nips/2004", which doesn't exist
+A bad cross reference---entry "icml/HoiJ08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "colt/ArgyriouMP05"
+refers to entry "DBLP:conf/colt/2005", which doesn't exist
+A bad cross reference---entry "icml/ZienO07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "icml/ArgyriouHMP06"
+refers to entry "DBLP:conf/icml/2006", which doesn't exist
+A bad cross reference---entry "nips/SonnenburgRS05"
+refers to entry "DBLP:conf/nips/2005", which doesn't exist
+A bad cross reference---entry "icml/RakotomamonjyBCG07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "icml/DaiY07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "icml/FungDBR04"
+refers to entry "DBLP:conf/icml/2004", which doesn't exist
+A bad cross reference---entry "icml/KimMB06"
+refers to entry "DBLP:conf/icml/2006", which doesn't exist
+A bad cross reference---entry "wabi/OngZ08"
+refers to entry "DBLP:conf/wabi/2008", which doesn't exist
+A bad cross reference---entry "icml/LewisJN06"
+refers to entry "DBLP:conf/icml/2006", which doesn't exist
+A bad cross reference---entry "icml/GonenA08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "nips/ArgyriouHP05"
+refers to entry "DBLP:conf/nips/2005", which doesn't exist
+A bad cross reference---entry "icml/Cortes09"
+refers to entry "DBLP:conf/icml/2009", which doesn't exist
+A bad cross reference---entry "ecml/KloftRB10"
+refers to entry "DBLP:conf/pkdd/2010-2", which doesn't exist
+A bad cross reference---entry "icml/VarmaB09"
+refers to entry "DBLP:conf/icml/2009", which doesn't exist
+A bad cross reference---entry "kdd/HoiLC06"
+refers to entry "DBLP:conf/kdd/2006", which doesn't exist
+A bad cross reference---entry "nips/ZhangA05"
+refers to entry "DBLP:conf/nips/2005", which doesn't exist
+A bad cross reference---entry "nips/LussD07"
+refers to entry "DBLP:conf/nips/2007", which doesn't exist
+A bad cross reference---entry "icml/ChenY08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "ismb/TsudaN04"
+refers to entry "DBLP:conf/ismb/2004", which doesn't exist
+A bad cross reference---entry "nips/BousquetH02"
+refers to entry "DBLP:conf/nips/2002", which doesn't exist
+A bad cross reference---entry "colt/El-YanivP07"
+refers to entry "DBLP:conf/colt/2007", which doesn't exist
+A bad cross reference---entry "icml/CortesMR10a"
+refers to entry "DBLP:conf/icml/2010", which doesn't exist
+A bad cross reference---entry "cvpr/DuanTXM09"
+refers to entry "DBLP:conf/cvpr/2009", which doesn't exist
+A bad cross reference---entry "cvpr/SunWYCCL09"
+refers to entry "DBLP:conf/cvpr/2009", which doesn't exist
+A bad cross reference---entry "iccv/VedaldiGVZ09"
+refers to entry "DBLP:conf/iccv/2009", which doesn't exist
+A bad cross reference---entry "icml/ZhuangTH09"
+refers to entry "DBLP:conf/icml/2009", which doesn't exist
+A bad cross reference---entry "civr/ZhuangH10"
+refers to entry "DBLP:conf/civr/2010", which doesn't exist
+A bad cross reference---entry "icml/SindhwaniNB05"
+refers to entry "DBLP:conf/icml/2005", which doesn't exist
+A bad cross reference---entry "ecml/JebaraS06"
+refers to entry "DBLP:conf/ecml/2006", which doesn't exist
+A bad cross reference---entry "icml/BeygelzimerKL06"
+refers to entry "DBLP:conf/icml/2006", which doesn't exist
+A bad cross reference---entry "icml/weinberger08"
+refers to entry "DBLP:conf/icml/2008", which doesn't exist
+A bad cross reference---entry "icml/WeinbergerSS04"
+refers to entry "DBLP:conf/icml/2004", which doesn't exist
+A bad cross reference---entry "alt/GrettonBSS05"
+refers to entry "DBLP:conf/alt/2005", which doesn't exist
+A bad cross reference---entry "icml/LarochelleECBB07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "icml/TanWT10"
+refers to entry "DBLP:conf/icml/2010", which doesn't exist
+A bad cross reference---entry "nips/Lee06"
+refers to entry "DBLP:conf/nips/2006", which doesn't exist
+A bad cross reference---entry "nips/ValizadeganJ06"
+refers to entry "DBLP:conf/nips/2006", which doesn't exist
+A bad cross reference---entry "mm/ZhuHLY08"
+refers to entry "DBLP:conf/mm/2008", which doesn't exist
+A bad cross reference---entry "mm/DattaGLW06"
+refers to entry "DBLP:conf/mm/2006", which doesn't exist
+A bad cross reference---entry "sigir/WangZZ08"
+refers to entry "DBLP:conf/sigir/2008", which doesn't exist
+A bad cross reference---entry "mir/LiuJYXSL08"
+refers to entry "DBLP:conf/mir/2008", which doesn't exist
+A bad cross reference---entry "mm/WuHJZY09"
+refers to entry "DBLP:conf/mm/2009", which doesn't exist
+A bad cross reference---entry "kdd/Joachims02"
+refers to entry "DBLP:conf/kdd/2002", which doesn't exist
+A bad cross reference---entry "icml/BurgesSRLDHH05"
+refers to entry "DBLP:conf/icml/2005", which doesn't exist
+A bad cross reference---entry "nips/BurgesRL06"
+refers to entry "DBLP:conf/nips/2006", which doesn't exist
+A bad cross reference---entry "icml/CaoQLTL07"
+refers to entry "DBLP:conf/icml/2007", which doesn't exist
+A bad cross reference---entry "mm/HeLZTZ04"
+refers to entry "DBLP:conf/mm/2004", which doesn't exist
+A bad cross reference---entry "www/XiangNR10"
+refers to entry "DBLP:conf/www/2010", which doesn't exist
+A bad cross reference---entry "icml/CortesMR10"
+refers to entry "DBLP:conf/icml/2010", which doesn't exist
+A bad cross reference---entry "mm/NegoescuG08"
+refers to entry "DBLP:conf/mm/2008", which doesn't exist
+A bad cross reference---entry "mm/NegoescuAPVG09"
+refers to entry "DBLP:conf/mm/2009", which doesn't exist
+A bad cross reference---entry "civr/NegoescuG08"
+refers to entry "DBLP:conf/civr/2008", which doesn't exist
+A bad cross reference---entry "mm/KennedyNANR07"
+refers to entry "DBLP:conf/mm/2007", which doesn't exist
+A bad cross reference---entry "sigir/SerdyukovMZ09"
+refers to entry "DBLP:conf/sigir/2009", which doesn't exist
+A bad cross reference---entry "mm/WuHYML08"
+refers to entry "DBLP:conf/mm/2008", which doesn't exist
+A bad cross reference---entry "nips/TaskarWAK03"
+refers to entry "DBLP:conf/nips/2003", which doesn't exist
+A bad cross reference---entry "www/SinglaR08"
+refers to entry "DBLP:conf/www/2008", which doesn't exist
+A bad cross reference---entry "chi/GilbertK09"
+refers to entry "DBLP:conf/chi/2009", which doesn't exist
+A bad cross reference---entry "www/LeskovecHK10"
+refers to entry "DBLP:conf/www/2010", which doesn't exist
+A bad cross reference---entry "www/ChoudhuryMHW10"
+refers to entry "DBLP:conf/www/2010", which doesn't exist
+A bad cross reference---entry "mm/WuT09"
+refers to entry "DBLP:conf/mm/2009", which doesn't exist
+A bad cross reference---entry "icmcs/YuJL09"
+refers to entry "DBLP:conf/icmcs/2009", which doesn't exist
+A bad cross reference---entry "sigir/Liu10"
+refers to entry "DBLP:conf/sigir/2010", which doesn't exist
+A bad cross reference---entry "icml/YuZ10"
+refers to entry "DBLP:conf/icml/2010", which doesn't exist
+A bad cross reference---entry "cvpr/WangYYLHG10"
+refers to entry "DBLP:conf/cvpr/2010", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/colt/2002"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2006"
+Warning--I didn't find a database entry for "DBLP:conf/sigir/2010"
+Warning--I didn't find a database entry for "DBLP:conf/ecml/2006"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2010"
+Warning--I didn't find a database entry for "DBLP:conf/cvpr/2010"
+Warning--I didn't find a database entry for "DBLP:conf/civr/2010"
+Warning--I didn't find a database entry for "DBLP:conf/iccv/2009"
+Warning--I didn't find a database entry for "DBLP:conf/cvpr/2009"
+Warning--I didn't find a database entry for "DBLP:conf/stoc/2008"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2009"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2007"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2002"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2001"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2004"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2008"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2006"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2002"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2004"
+Warning--I didn't find a database entry for "DBLP:conf/kdd/2006"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2005"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2003"
+Warning--I didn't find a database entry for "DBLP:conf/colt/2007"
+Warning--I didn't find a database entry for "DBLP:conf/colt/2005"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2008"
+Warning--I didn't find a database entry for "DBLP:conf/wabi/2008"
+Warning--I didn't find a database entry for "DBLP:conf/colt/2001"
+Warning--I didn't find a database entry for "DBLP:conf/ac/2003ml"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2007"
+Warning--I didn't find a database entry for "DBLP:conf/icml/2005"
+Warning--I didn't find a database entry for "DBLP:conf/ismb/2004"
+Warning--I didn't find a database entry for "DBLP:conf/alt/2005"
+Warning--I didn't find a database entry for "DBLP:conf/kdd/2002"
+Warning--I didn't find a database entry for "DBLP:conf/mm/2004"
+Warning--I didn't find a database entry for "DBLP:conf/mm/2006"
+Warning--I didn't find a database entry for "DBLP:conf/sigir/2008"
+Warning--I didn't find a database entry for "DBLP:conf/mir/2008"
+Warning--I didn't find a database entry for "DBLP:conf/mm/2009"
+Warning--I didn't find a database entry for "DBLP:conf/mm/2008"
+Warning--I didn't find a database entry for "DBLP:conf/pkdd/2010-2"
+Warning--I didn't find a database entry for "DBLP:conf/civr/2008"
+Warning--I didn't find a database entry for "DBLP:conf/www/2008"
+Warning--I didn't find a database entry for "DBLP:conf/www/2010"
+Warning--I didn't find a database entry for "DBLP:conf/mm/2007"
+Warning--I didn't find a database entry for "DBLP:conf/sigir/2009"
+Warning--I didn't find a database entry for "DBLP:conf/icmcs/2009"
+Warning--I didn't find a database entry for "DBLP:conf/chi/2009"
+Warning--I didn't find a database entry for "DBLP:conf/nips/2003"
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1185 of file alpha.bst
+Name 1 in "Ronan Collobert, Samy Bengio, and Johnny Mariethoz" has a comma at the end for entry tr/CollobertBM
+while executing---line 1185 of file alpha.bst
+Name 1 in "Ronan Collobert, Samy Bengio, and Johnny Mariethoz" has a comma at the end for entry tr/CollobertBM
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Yu-Feng Li, Ivor W. Tsang, James T. Kwok, Zhi-Hua Zhou" for entry aistats/LiTKZ09
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Yu-Feng Li, Ivor W. Tsang, James T. Kwok, Zhi-Hua Zhou" for entry aistats/LiTKZ09
+while executing---line 1185 of file alpha.bst
+Name 1 in "M. Kloft, U. Brefeld, S. Sonnenburg, and A. Zien" has a comma at the end for entry jmlr/KloftBSZ11
+while executing---line 1185 of file alpha.bst
+Name 1 in "M. Kloft, U. Brefeld, S. Sonnenburg, and A. Zien" has a comma at the end for entry jmlr/KloftBSZ11
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Fuxin Li, Yunshan Fu, Yu-Hong Dai, Cristian Sminchisescu and Jue Wang" for entry aistats/LiFDSW09
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Fuxin Li, Yunshan Fu, Yu-Hong Dai, Cristian Sminchisescu and Jue Wang" for entry aistats/LiFDSW09
+while executing---line 1185 of file alpha.bst
+Name 1 in "P Singla, H Kautz, J Luo, and A Gallagher" has a comma at the end for entry cvpr/SinglaKLG08
+while executing---line 1185 of file alpha.bst
+Name 1 in "P Singla, H Kautz, J Luo, and A Gallagher" has a comma at the end for entry cvpr/SinglaKLG08
+while executing---line 1185 of file alpha.bst
+Warning--empty journal in jmlr/KulisSD09
+Too many commas in name 1 of "Fuxin Li, Yunshan Fu, Yu-Hong Dai, Cristian Sminchisescu and Jue Wang" for entry aistats/LiFDSW09
+while executing---line 1250 of file alpha.bst
+Warning--empty journal in jmlr/GraumanD07
+Warning--empty institution in tr/LehoucqSY98
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1250 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1250 of file alpha.bst
+Too many commas in name 1 of "Mika, S.; Ratsch, G.; Weston, J.; Scholkopf, B.; Mullers, K.R." for entry nn/MikaRWSM99
+while executing---line 1250 of file alpha.bst
+Name 1 in "M. Kloft, U. Brefeld, S. Sonnenburg, and A. Zien" has a comma at the end for entry jmlr/KloftBSZ11
+while executing---line 1250 of file alpha.bst
+Warning--empty journal in jmlr/KloftBSZ11
+Warning--empty booktitle in uai/MaoT10
+Warning--empty journal in esiam/BousquetBL05
+Name 1 in "P Singla, H Kautz, J Luo, and A Gallagher" has a comma at the end for entry cvpr/SinglaKLG08
+while executing---line 1250 of file alpha.bst
+Name 1 in "Ronan Collobert, Samy Bengio, and Johnny Mariethoz" has a comma at the end for entry tr/CollobertBM
+while executing---line 1250 of file alpha.bst
+Too many commas in name 1 of "Yu-Feng Li, Ivor W. Tsang, James T. Kwok, Zhi-Hua Zhou" for entry aistats/LiTKZ09
+while executing---line 1250 of file alpha.bst
+(There were 153 error messages)

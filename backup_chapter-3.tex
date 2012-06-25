@@ -1,0 +1,558 @@
+%---------------------------------------------------------------------------------
+%\chapter{Kernel Learning} \label{chp:kernel-learning}
+\section{Kernel Learning}
+%---------------------------------------------------------------------------------
+
+Classical kernel machines, for instance, support vector machines (SVM), view a kernel as mapping data points into a possibly very high dimensional space implicitly, and describe a kernel function as being good for a given learning problem if data is better separated by a large margin in that implicit space. However, while seems elegant, this theory does not directly correspond to one's intuition of a good kernel as a good similarity function (refer to the argument in \cite{stoc/BalcanBV08}). Furthermore, it may be difficult for a domain expert to use the theory to help design an appropriate kernel for the learning task at hand since the implicit mapping may not be easy to calculate. Therefore, there exists a gap between the design of kernels as a similarity functions and the underlying RKHS theories. Moreover, the positive definiteness is often difficult to justify.
+
+Researchers have proposed various techniques to learn or construct a kernel. Due to the diversity of this topic, it is not easy to categorize all the works in a neat way. One possible method is to distinguish kernels by the ability whether they could handle unseen data. In the first case the goal is to learn a kernel $k: \X\times\X\mapsto\R$ defined on the whole space $\X\times\X$. In the other case, given both the $n$ (feature / label ) pairs of labeled and $u$ unlabeled test data $\mathbf X=\{(\x_1,y_1),\dots,(\x_n,y_n),\x_{n+1},\ldots,\x_{n+u}\}$, or just a known kernel matrix $\mathbf K$, or a similarity graph $\mathbf G$ defined on $\mathbf X$, or a set of side information $\T$ over $\mathbf X$, the goal is to learn a kernel $k:\mathbf X\times\mathbf X\mapsto\R$ which is defined only on the fixed set $\mathbf X\times\mathbf X$. In the former case, people need to devise new parametric-form kernel functions (for instance, \cite{icml/GartnerFKS02,jmlr/LodhiSSCW02,kdd/Gartner03,colt/CortesKM07,jmlr/GraumanD07,icml/SahbiARK08}), which often involves some tricks (e.g.,convolutional kernel\cite{tr/Haussler99,icml/ShinK08}), or new methods of aggregating known kernels (for instance, multiple kernel learning method, \cite{icml/BachLJ04,jmlr/LanckrietCBGJ03,jmlr/SonnenburgRSS06,jmlr/RakotomamonjyBCG08,nips/XuJKL08}). In the second case, one group of recent studies focuses on semi-supervised learning settings where the kernels are learned from mixtures of labeled and unlabeled data (example techniques include diffusion kernels~\cite{icml/KondorL02}, cluster kernels~\cite{nips/ChapelleWS02}, and  gaussian random field
+technique~\cite{icml/ZhuGL03}). These techniques often assume certain {\it parametric} forms of the target kernel functions and thus limit their capacity of fitting diverse patterns. Instead of assuming parametric forms for target kernels, an emerging
+group of kernel learning studies are devoted to {\em nonparametric} kernel
+learning~\cite{nips/CristianiniSEK01,jmlr/LanckrietCBGJ03,nips/ZhuKGL04,icml/KulisSD06,icml/HoiJL07,icml/HoiJ08}. One can see that in either case, the learning can be supervised or unsupervised.
+
+%=======================================================
+\subsection{Multiple Kernel Learning}
+%=======================================================
+
+The target of kernel learning is to make the learned kernel reveal the inherent similarity between instances drawn from some space $\X$. Thus ``flexibility" is an important guideline of kernel learning. {\em Multiple kernel learning (MKL)}\cite{jmlr/LanckrietCBGJ03}, targeting at a linear combination of given kernels, is a representative work along this line. It often produces better result than single kernel. It also provides a more elegant method for hyper-parameter tuning by constructing base kernels with varying hyper-parameters.
+
+%============================================
+\subsubsection{Convex Multiple Kernel Learning}
+%============================================
+
+Depending on the selection of kernel class $\k$, we obtain different kernel learning algorithms. The most widely used case is the convex combination of a series of base kernels $\k_{base} = \{k_t: 1\leq t\leq m\}$:
+
+%Among various methods, we focus on the well studied convex {\em multiple kernel learning} in this section \cite{jmlr/LanckrietCBGJ03}:
+\begin{equation}
+\k =\{k = \sum_{t=1}^{m} \theta_tk_t: d\geq 0, \bm\theta'\mathbf 1 = 1, \tr \mathbf K_t = \tau\} \label{eqn:linear-mkl}
+\end{equation}
+here $\bm\theta$ is the weighing vector of candidate kernels, $\mathbf K_t$ is the kernel matrix of the $t$-th kernel function evaluated on the training data. A bunch of works have
+been done on how to solve $\mathbf d$ efficiently, for example, \cite{jmlr/SonnenburgRSS06}, \cite{jmlr/RakotomamonjyBCG08} and \cite{nips/XuJKL08}.
+
+Apparently, the richness of $\k$ provides more flexibility to fit the complex data. Meanwhile, it induces more risk of estimating the optimal classifier. Here our focus is theoretical guarantees, that is, we consider the risk bound of the solution $f^{l}_k$ of (\ref{eqn:kl}). Note, both $k$ and $f$ are optimization variables in learning, i.e., the risk is not only affected by the capacity of $\h_k$ for a fixed $k$, but also the richness of the candidate set of kernels $\k$. In the sequel of this section, we summarize some existing work on this topic. The theoretical foundations for supervised classification case are established in \cite{jmlr/MicchelliP05, colt/ArgyriouMP05}.
+
+Substituting the target kernel $k=\sum_{i=1}^{m} \theta_tk_t$ into the dual formulation of SVM, MKL problem is formulated into a saddle-point problem:
+\begin{eqnarray}
+&\min_{\bm\theta}\max_\a& \a^\top\1-\frac{1}{2}(\ba\circ\y)^\top(\sum_{i=1}^m\theta_i\mathbf K_i)(\ba\circ\y)\label{eqn:mkl}\\
+&\mbox{s.t.}& \ba^\top\y=0,0\leq\a_i\leq C, i=1,\ldots,n \label{eqn:cnstrnt-a}\\
+&&\bm\theta^\top\1=1,0\leq \theta_t\leq 1,t=1,\ldots, m \label{eqn:cnstrnt-p}
+\end{eqnarray}
+This is min-max saddle point problem. It is convex on $\bm\theta$ and concave in $\a$. Therefore, the saddle-point is the unique global optimal.
+
+The learned kernel is able to handle unseen data naturally due to the parametric form of the basic kernels. Most of the existing MKL research focus on the efficiency aspect, i.e., how to solve (\ref{eqn:linear-mkl}) efficiently. Many algorithms have been proposed to solve the presenting problem, for instance, SMO-similar method~\cite{icml/BachLJ04}, SDP~\cite{jmlr/LanckrietCBGJ03}, QCQP~\cite{bioinformatics/LanckrietBCJN04} (multiclass case~\cite{icml/ZienO07}), iterative method with DC programming~\cite{icml/ArgyriouHMP06}, SILP~\cite{nips/SonnenburgRS05,jmlr/SonnenburgRSS06}, Subgradient Decent~\cite{icml/RakotomamonjyBCG07, jmlr/RakotomamonjyBCG08}, level method~\cite{nips/XuJKL08}. Among these methods, the extended level algorithm proposed by Xu et. al.~\cite{nips/XuJKL08} has shown the state-of-the-art performance. It is quicker than SILP and SD method. The level method is from the family of bundle methods, which have recently been employed to efficiently solve regularized risk minimization problems. 
+
+The level method of MKL (MKL$^{\mathrm{Level}}$) is an iterative approach designed for optimizing a non-smooth objective function. Let $J(\bm\theta, \ba)$ denote the objective function of MKL. According to van Neuman Lemma, for the optimal solution $(\bt^*,\ba^*)$, we have
+\[
+J(\bt, \ba^*) = \max_\ba J(\bt, \ba) \geq J(\bt^*, \ba^*) \geq J(\bt^*, \ba) = \min_\bt J(\bt, \ba).
+\]
+The key idea of MKL$^{\mathrm{Level}}$ is to iteratively update both the lower and the upper bound of $J(\bt,\ba)$\cite{nips/XuJKL08} in order to find the saddle point $(\bt^*, \ba^*)$.
+
+%Let $f(x)$ denote the convex objective function to be minimized over a convex domain $G$. In the $i$-th iteration, the level method first constructs a lower bound for $f(x)$ by a cutting plane model, denoted by $g^i(x)$. The optimal solution, denoted by $\hat{x}^i$, that minimizes the cutting plane model $g^i(x)$ is then computed. An upper bound $\bar{f}^i$ and a lower bound $\underline{f}^i$ are computed for the optimal value of the target optimization problem based on $\hat{x}^i$. Next, a level set for the cutting plane model $g^i(x)$ is constructed, denoted by $\mathcal L^i = \{x\in G: g^i(x)\leq\lambda\bar{f}^i + (1-\lambda)\underline{f}^i\}$ where $\lambda\in(0, 1)$ is a tradeoff constant. Finally, a new solution $x^{i+1}$ is computed by projecting $x^i$ onto the level set $\mathcal L^i$. It is important to note that the projection step, serving a similar purpose to the regularization term in SD, prevents the new solution $x^{i+1}$ from being too far away from the old one $x^i$. Refer to \cite{nips/XuJKL08} and references therein.
+
+MKL is also applied in the semi-supervised setting by Dai and Yeung~\cite{icml/DaiY07}. The key problem in semi-supervised learning is how to make use of the unlabeled data to speed up the learning. The author makes use of the clustering assumption~\cite{icml/DaiY07}. The unknown label $\hat{y}$ is also an optimization variable. Therefore, the convexity is violated. They used an annealing method to overcome this difficulty. MKL methods can also been extended to other problems, e.g., KFDA~\cite{icml/FungDBR04,icml/KimMB06}, Regression~\cite{nips/SonnenburgRS05}. Besides the toy set, application of MKL on bioinformatics is reported in~\cite{bioinformatics/LanckrietBCJN04,wabi/OngZ08}.
+
+
+In seek of flexibility, researchers have proposed a method by which each instance $\x$ has its own kernel weight $\theta(\x)$. See~\cite{icml/LewisJN06, icml/GonenA08} for examples. The work on constructing Laplacian matrix can also be deemed as a MKL problem~\cite{nips/ArgyriouHP05}. It also has been shown that MKL can be applied in maximum margin clustering and exhibits very good performance~\cite{aistats/LiTKZ09}.
+
+%==================================================
+\subsubsection{$L_p$-norm Multiple Kernel Learning}
+%==================================================
+
+The $L_1$ norm over the kernel weight $\bm\theta$ encourages the sparsity over the selected kernels. However, such sparse combination does not always produces good performance. It can even be worse than trivial uniform combination\cite{icml/Cortes09}, i.e., each kernel has the same weight in the target kernel. A natural try to solve this problem is to generalize $L_1$ norm to $L_p$ norm for $p > 1$:
+\[
+\| \bm\theta \|_p = \sqrt[p]{\sum_{t=1}^{m}\theta_t^p}.
+\]
+The development of $L_p$-norm MKL including algorithms and theories mainly attributes to \cite{nips/KloftBSLMZ09,ecml/KloftRB10,jmlr/KloftBSZ11}. With the $L_p$-norm constraint over $\bm\theta$, we obtain the $L_p$-norm MKL formulation:
+\begin{eqnarray}
+&\min_{\bm\theta}\max_{\ba}& \1^\top\ba - \frac{1}{2} \ba^\top \sum_{t=1}^{m}\mathbf Q_t\ba \nonumber\\
+&\st& \0\leq \ba \leq C\1, \mathbf y^\top\ba=0,\bm\theta \geq 0,\| \bm\theta \|_p^p \leq 1,\nonumber
+\end{eqnarray}
+where $\mathbf Q_t = \diag(\y)\K_t\diag(\y)$.
+
+The above problem can be solved by adopting the idea of {\em semi-infinite programming}\cite{jmlr/SonnenburgRSS06}. We first re-write the problem in the form
+ \begin{eqnarray}
+ &\min_{\eta}& \eta \;\;\st\;\; \eta \geq \ba^\top\1 - \ba^\top\sum_{t=1}^{m}\mathbf Q_t\ba \nonumber\\
+ \end{eqnarray}
+With a fixed $\eta$, we solve $\ba$ to find the most violated constraint by SVM solver. Then minimize the objective w.r.t. $\eta$ and $\bm\theta$. However, it is not easy as the $L_p$-norm induces non-linearity and unlikely can be solved by off-the-shelf toolkits which often only contains solvers for linear or quadratic problem. Here we approximate the $L_p$-norm by two-order Taylor expansion\cite{nips/KloftBSLMZ09}:
+
+\[
+\| \bm\theta \|^p_p \approx 1 + \frac{p(p - 3)}{2} - \sum_{t=1}^{m}p(p - 2)(\tilde{\theta}_t)^{p - 1}\theta_t + \frac{p(p - 1)}{2}\sum_{t = 1}^{m}\tilde(\theta)_t^{p - 2}\theta_t^2,
+\]
+where the exponential $\bm\theta^p$ is defined element-wise, i.e., $\bm\theta := [\theta_1^p,\ldots,\theta_{m}^p]^\top$. After initializing $\|\bt(0)\|^p_p=1$ with uniform weight, the successive $\bt(k + 1)$ at the $k+1$ step is computed using $\tilde{\bt} = \bt(k + 1)$.
+
+The experiments according to \cite{nips/KloftBSLMZ09} show $L-p$-norm regularization over $\bt$ provides more flexibility than traditional $L_1$-norm regularization and often yields better performance.
+
+%==================================================
+\subsubsection{Polynomial Multiple Kernel Learning}
+%==================================================
+
+Following the line of exploring kernel class $\k$, Cortes et. al. studied {\em polynomial multiple kernel learning} (PMKL) beyond the traditional linear kernel combination in MKL. Given the base kernels $\k_{base}$, the kernel class of PMKL is defined as
+\[
+\k_{poly}=\{ \K = \sum_{0\sum_{t=1}^{m}p_t\leq d, p_t \geq 0, t\in[0,m]}\theta_{\mathbf p}\K_1^{p_1}\ldots\K_{m}^{p_{m}}\;:\;\theta \geq 0 \}.
+\]
+According to \cite{nips/CortesMR09}, the kernel of this form is {\em positive definite and symmetric (PDS)}, which implies the exponential operation is entry-wise. However, the number of base number of kernel is in order of $\mathcal O(m^d)$, which can be too large for estimating the weight $\bm\theta$. For practical purpose, Cortes et. al. choose the case $d=2$, where $\K$ comes to a simpler expression:
+\[
+\K = \sum_{a,b=1}^{m}\theta_a\theta_b\K_a\circ\K_b.
+\]
+Instead of minimizing the SVM-based objective function, the authors choose to minimize square loss to learn the kernel weight
+\[
+\min_{\bm\theta} J(\bm\theta) = \y^\top(\K_{\bm\theta} + \lambda\mathbf I)^{-1}\y,
+\]
+which in turn can be solved by {\em projection-based gradient descent}, i.e, the $\bm\theta$ at each step is projected to satisfy the constraints.
+
+The empirical performance of the above polynomial MKL is comparable with previous results.
+
+
+%==================================================
+\subsubsection{More Generalized Multiple Kernel Learning}
+%==================================================
+
+The $L_p$-norm MKL and PMKL inspire that we can consider the problem in a more general manner. Suppose the target kernel $\K_{\bt}$ is parameterized by a parameter vector $\bt$ and a set of base kernels $\k_{base}$, the SVM-based kernel learning framework can be expressed as\cite{icml/VarmaB09}
+\begin{equation}
+\min_\bt    \1^\top\ba - \frac{1}{2}\ba^\top\mathbf Y\K_\bt\mathbf Y\ba + \Omega(\bt).\label{eqn:general-mkl}
+\end{equation}
+Note here the combination can be in any form, including non-convex function over $\bt$. While the candidate kernel class $\k=\{\K_\bt\}$ introduces more flexibility than single kernel, it also incurs the higher risk of overfitting. The last term $\Omega(\bt)$ is for regularization purpose.
+
+Eqn (\ref{eqn:general-mkl}) is in form of Tikhonov regularization and MKL with hard constraint on $\bt$ is in form of Ivanov regularization. Thus, the aforementioned various MKL algorithms are special cases of (\ref{eqn:general-mkl}) as the Ivanov and Tikhonov regularization can be shown equivalent to each other\cite{jmlr/KloftBSZ11}. Varma and Bahu use entry-wise product between Gaussian kernels with varying band-width parameter. In some UCI datasets, it achieves better performance than MKL.
+
+
+%==================================================
+\subsection{Nonparametric Kernel Learning}
+%==================================================
+
+In classical methods, we have a closed-form kernel function $k$. The similarity between any pair of instances $(\x,\x')$ can be evaluated by $k(\x,\x')$. This parametric form limits their capacity of fitting diverse patterns. It is guaranteed that any positive definite matrix corresponds to a valid kernel. Therefore, in the transductive setting, one can just focus on learning a p.s.d. matrix.
+
+Such nonparametric kernels usually make use of information like: (1) the marginal distribution of the data, or prior parametric kernel. For example, Gaussian kernel is widely used for many kinds of data. The data may form manifolds; (2) side information. Empirical observations about the data can be provided by domain experts. We introduce a few representative examples on this method.
+
+Suppose we have a prior kernel matrix $\K_0$, which is typically obtained by evaluations of some parametric kernel on the data. A general scheme is to do spectral transformations on $\K_0$. Consider the eigendecomposition of $\K_0=\sum_{i=1}^n\lambda_i\mathbf v_i\mathbf v_i^\top$, we construct the target kernel as $\K=\sum_{i=1}^n\psi(\lambda_i)\mathbf v_i\mathbf v_i^\top$. \cite{nips/ChapelleWS02}\cite{kdd/HoiLC06} proposed some examples. For example, we could set $\psi(\lambda)=1$, or a polynomial function $\psi(\lambda)=\lambda^t$. Zhu et. al. enforces $\psi$ to be a decreasing function\cite{nips/ZhuKGL04}. The resultant optimization problems is solved by QCQP. Though empirical improvements are obtained, the theoretical analysis is developed by \cite{nips/ZhangA05,tit/JohnsonZ08}.
+
+Another scheme is to minimize the distance between the target $\K$ and the prior kernel $\K_0$ and enforce some side constraints or heuristics.
+
+Kulis et. al. used Bregman divergences to measure the distance between kernels \cite{icml/KulisSD06}:
+\begin{eqnarray}
+&\min_{\K\psd}& D_{\phi}(\K,\K_0)\\
+&\mbox{s.t.}& \tr(\K\mathbf A_i)\leq b_i,1\leq c,\\
+&&  \mbox{rank}(\K)\leq r \label{eqn:lowrank}.
+\end{eqnarray}
+They restrict the rank of $\K$ explicitly by (\ref{eqn:lowrank}). Thus the learned kernel may speed up training by a low-rank representation of the $\K$.
+
+Hoi et. al. constructed the graph Laplacian $\L$ first and minimized $\tr \L\K$ ~\cite{icml/HoiJL07}. They also made use of pair-wise constraints to fit the data better:
+\begin{eqnarray}
+&\min_{\K\psd}& \tr \L\K+C\sum_{ij}\max(0,1-A_{ij}K_{ij})
+\end{eqnarray}
+here $\mathbf A$ is a constraint matrix taking values in $\{\pm1\}$. If two points $(\x_i,\x_j)$ have the same label, $\A_{ij}=1$; if they cannot have the same label, $\A_{ij}=-1$. Such side information is more general than class label. In real application, the label is often difficult to obtain, while the pairwise constraints can be observed by some experiments. Hoi evaluate this method by clustering. Active learning in this framework was proposed later \cite{icml/HoiJ08}.
+
+Tsuda et. al. proposed method by maximizing the von Neumann entropy\cite{ismb/TsudaN04}:
+\begin{eqnarray}
+&\min_{\K\succ\0}& \tr(\K\log\K)\\
+&&  \tr \K\A\leq b_i,i=1,\ldots,c
+\end{eqnarray}
+Roughly speaking, maximizing entropy amounts to placing the samples in the feature space as evenly as possible. In biological networks, this heuristic was shown to be useful.
+
+Very recently, Li et. al. formulated the kernel learning into a more general framework:
+\begin{eqnarray}
+&\min_{\K\psd}& \frac{\gamma}{c}\sum_{i=1}^c L(\tr\K\mathbf A_i)+D_{\phi}(\K,\K_0)
+\end{eqnarray}
+here $L()$ is any convex loss function. Instead of using general SDP solver, they used an inexact Newton method to speed up efficiency.
+
+Methods belonging to this category are still under explorations. First, the learning of the kernel and the classifier are isolated. Thus the resultant kernel may not be optimized for classification. We need theoretical analysis to connect $\K$ and the classification performance. Moreover, it is imperative to develop quicker solvers to make NPK practical for real applications. Regarding the efficiency aspect of NPKL, we would conduct a more detailed survey in chapter 4.1.
+
+%
+%%==================================================
+%\subsection{Indefinite Kernel Learning}
+%%==================================================
+%
+%Most of the current research on kernel methods focuses on positive definite ones. Actually there is a much larger class of kernel function is available, which do not necessarily correspond to a RKHS but which
+%nonetheless can be used for machine learning. Such kernels are known as indefinite kernels, as the scalar product matrix may contain a mix of positive and negative eigenvalues. There are several motivations for studying indefinite kernels: (1) Testing PSD condition for a given kernel can be a challenging task which may well lie beyond the abilities of practitioner. (2) Sometimes functions which can be proven not to satisfy PSD condition may be of other interest. One such instance is the hyperbolic tangent kernel $k(\x,\x')=\mbox{tanh}(\langle\x,\x'\rangle-1)$ of neural networks, which is indefinite for any range of parameters or dimensions. There have been promising empirical reports on the use of indefinite kernels~\cite{tr/LinL03}. (3) Recent studies showed that indefinite kernel methods have theoretic interpretation~\cite{icml/OngMCS04,pami/Haasdonk05}.
+%
+%Each PSD kernel induces an RKHS. When the PSD property does not hold, we come to the {\em reproducing kernel Krein space}, i.e., for every kernel there is an associated Krein space, and for every RKKS, there is a unique kernel.
+%\begin{definition}
+%An inner product space $(\mathcal K, \langle\cdot,\cdot\rangle_{\mathcal K})$ is a Krein space if there exist two Hilbert spaces $\H_+,\H_-$ spanning $\mathcal K$ such that
+%\begin{enumerate}
+%  \item All $f\in\mathcal K$ can be decomposed into $f=f_++f_-$, where $f_+\in\H_+$ and $f_-\in\H_-$.
+%  \item $\forall f,g\in\mathcal K,\langle f, g \rangle=\langle f_+,g_+\rangle_{\H_+}-\langle f_-,g_-\rangle_{\H_-}$.
+%\end{enumerate}
+%\end{definition}
+%
+%Let $k$ be a symmetric real valued function on $\X\times\X$, we have~\cite{icml/OngMCS04}:
+%\begin{theorem}
+%The following are equivalent:
+%\begin{itemize}
+% \item There exist (at least) one RKKS with kernel $k$.
+% \item $k$ admits a positive decomposition, that is there exist two positive kernels $k_+$ and $k_-$ such that $k=k_+k_-$.
+% \item $k$ is dominated by some positive kernel $p$ (that is, $p-k$ is a positive kernel).
+%\end{itemize}
+%\end{theorem}
+%There is no bijection but a surjection between the set of RKKS and the set of generalized kernels defined in the vector space generated out of the cone of positive kernels.
+%
+%The analysis of the learning problem in a RKKS gives similar representer theorems to the Hilbertian case~\cite{colt/ScholkopfHS01}. The key difference is that the problem of minimizing a regularized risk functional becomes one of finding the stationary point of a similar
+%functional. Moreover, the solution need not be unique any more. The proof technique, however, is rather similar. The main difference is that a) we deal with a constrained optimization problem directly and b) the
+%Gateaux derivative has to vanish due to the nondegeneracy of the inner product. The learning in RKKS is described in the following theorem:
+%\begin{theorem}
+%Let $\mathcal K$ be an RKKS with kernel $k$. Denote by $L\{f,\mathbf X\}$ a continuous convex loss functional depending on $f\in\mathcal K$ only via its evaluations $f(\x_i)$ with $\x_i\in\mathbf X$, let $\Omega(\langle f,f \rangle)$ be a continuous stabilizer with strictly monotonic $\Omega:\R\mapsto\R$ and let $C\{f,\mathbf X\}$ be a continuous functional imposing a set of constraints on $f$, that is $C:\mathcal K\times\mathbf X\mapsto\R^n$. Then if the optimization problem
+%\begin{eqnarray}
+%&\mbox{stabilize}_{f\in\mathcal K}& L\{f,\mathbf X\}+\Omega(\langle f,f \rangle_{\mathcal K}) \nonumber\\
+%&\mbox{s.t.}& C\{f,\mathbf X\}\leq d \nonumber
+%\end{eqnarray}
+%has a saddle point $f^*$, it admits the expansion
+%\[
+%f^*=\sum_i \a_ik(\x_i,\cdot) \;\;where\;\;\x_i\in\mathbf X\;\;and\;\;\a_i\in\R.
+%\]
+%\end{theorem}
+%
+%The above theorem is for learning with indefinite kernel. Haasdonk shows an equivalent formulation in pseudo-Euclidean space ~\cite{pami/Haasdonk05}. However, there is not much work dealing with this framework directly. More generally, people try to find a PSD kernel matrix as a perturbation of the indefinite one, e.g., the problem in \cite{nips/LussD07} is:
+%\[
+%\max_{\ba^\top\mathbf y=0,0\leq\ba\leq C}\min_{\mathbf K\psd}\ba^\top\1-\frac{1}{2}\mbox{tr}(\mathbf K(\mathbf y\circ\ba)(\mathbf y\circ\ba)^\top)+\rho\|\mathbf K-\mathbf K_0\|_F^2
+%\]
+%Chen and Ye proposed cutting plane method for solving this problem~\cite{icml/ChenY08}. They show that this problem
+%can be reformulated as a semi-infinite quadratically constrained
+%linear program (SIQCLP), which includes a finite number of optimization variables with an infinite number of constraints. We then propose an iterative algorithm to solve this SIQCLP problem, which consists of two key steps: computing an intermediate SVM solution by solving a quadratically constraint linear program with a restricted
+%subset of constraints, and updating the subset of constraints
+%based on the obtained intermediate SVM solution. Basic convergence property and inactive constraint pruning scheme are also included~\cite{icml/ChenY08}.
+%
+%We approximate the characteristics of an indefinite kernel by the above formulation and deserve convexity which facilitates the training phase in a kernel machine, such as SVM. Indefinite kernel learning is not well studied yet. We think a major concern is whether such kernels are well motivated comparing with PSD kernels. Other examples on this topic include ~\cite{icdm/WoznicaKH06,ml/HaasdonkB07,icpr/HaasdonkP08}.
+%
+%==========================================================================
+\subsection{Generalization Bounds of Multiple Kernel Learning}
+%==========================================================================
+
+In last section we introduce the learning in RKHS. For this kind of learning
+scheme, the kernel function plays a central role for the performance.
+However, it is nontrivial to select a good kernel. An inappropriate kernel
+could result in suboptimal or bad performance. Recently, the idea of
+learning / selecting a kernel from given data has attracted much attention
+in machine learning research.
+
+In the problem of {\em kernel learning}, we learn the classifier $f \in
+\h_K$ and the associate kernel $K$ simultaneously. Thus the learning is
+cast as a two-layer minimization problem:
+\begin{eqnarray}
+&\min_{k \in \k} \min_{f \in \h_K}& L^{l}_n(f) + \lambda \|f\|_{\h_k} \label{eqn:kl}
+\end{eqnarray}
+Typically, the optimization domain $\k$ is defined over a set of basic kernels $\k_{base} = \{k_1, \ldots, k_m\}$. Throughout this section, we use $\f_\k$ to denote the function class with bounded norm in Hilbert space depending the kernel class $\k$:
+\begin{equation}
+\f_\k := \{ \sum_{i=1}^n \alpha_ik(\x_i, \cdot): \| f \|_{\h_\k} \leq B, k \in \k \} \label{eqn:linear-f-class}
+\end{equation}
+
+%==================================================
+\subsubsection{Transductive Bounds}
+%==================================================
+
+The kernel learning is initiated by \cite{icml/LanckrietCBGJ02}. By assuming the size of test set equals to the size of training set in the transductive setting, the risk on test data is bounded via the Rademacher complexity defined on the training data and test data \cite{icml/LanckrietCBGJ02,jmlr/LanckrietCBGJ03,nips/BousquetH02}.
+Later \cite{colt/SrebroB06} proved the above bounds are vacuous. Recently
+\cite{colt/El-YanivP07} proposed a notion of {\em transductive Rademacher
+complexity}, by which the restriction over the number of test points can be removed and a tighter bound is derived.
+
+The focus of this chapter is the generalization ability of kernel learning schemes. We do not expose the details on transductive setting.
+
+%==================================================
+\subsubsection{Risk Bounds with Rademacher Complexity}
+%==================================================
+
+Recall Remark (\ref{rmk:vc-fails}), a natural choice is to compute the risk bound using Rademacher complexity involving kernels. With the results shown Theorem \ref{thm:bnd-rdm} and \ref{thm:L-L-phi}, we follow Definition \ref{def:r-com} to compute the Rademacher complexity of $\f$ defined by (\ref{eqn:linear-f-class}).
+
+\begin{theorem} \label{thm:rbd-mkl}
+\cite[Theorem 2]{nips/BousquetH02}Let $\K_1, \ldots, \K_m$ be some fixed kernel
+matrices and $\k$ as defined by (\ref{eqn:linear-mkl}) then
+\begin{equation}
+\hat{R}(\f_\k) \leq 2B\max_{i=1,\ldots,m} \sqrt{\| \K_i \| / n}  \label{eqn:rdmchr-mkl}
+\end{equation}
+here $\|\K\| = \sup_{\| \mathbf v \|_2 \leq 1}\mathbf v' \K \mathbf v = \max
+\lambda(\K)$ is the induced norm.
+\end{theorem}
+\begin{proof}
+\begin{eqnarray}
+\hat{R}(\f_\k) &=& \e_{\sigma} \sup_{\K \in \k} \sup_{f \in \f_\k} \frac{2}{n} \sum_{i=1}^n \sigma_i f(\x_i) \nonumber\\
+&\leq& \e_\sigma \sup_{\K \in \k}\frac{2B}{n} \sqrt{\langle \bm\sigma, \K\bm\sigma \rangle} \nonumber\\
+&&\mbox{(From the proof of Lemma \ref{lemma:rdm-is-bounded})} \nonumber\\
+&=& \frac{2B}{n} \e_\sigma \sup_{\mathbf d}\sqrt{\langle\bm\sigma, \sum_{i=1}^m\K_i\bm\sigma\rangle}\nonumber\\
+&=& \frac{2B}{n} \e_\sigma \max_{i=1,\ldots,m}\sqrt{\langle\bm\sigma, \K_i\bm\sigma\rangle} \nonumber\\
+&&\mbox{(Due to the linearity)} \nonumber\\
+&=&\frac{2B}{n} \e_\sigma \max_{i=1,\ldots,m} \sqrt{\| \bm\sigma \|_2^2 (\bm\sigma'/\|\bm\sigma\|_2)\K_i(\bm\sigma/\|\bm\sigma\|_2)} \nonumber\\
+&\leq& \frac{2B}{\sqrt{n}} \max_{i=1,\ldots,m} \sqrt{\| \K_i \|} \nonumber\\
+&&\mbox{(From the definition of induced norm of square matrix)} \nonumber
+\end{eqnarray}
+
+\end{proof}
+
+We can obtain the risk bound with Rademacher complexity by plugging
+(\ref{eqn:rdmchr-mkl}) into Theorem \ref{thm:bnd-rdm}. Unfortunately, the
+following theorem shows that simply applying Rademacher complexity is meaningless \cite{colt/SrebroB06}.
+
+\begin{theorem} \label{thm:rdm-fails}
+For the multiple kernel combination defined in (\ref{eqn:linear-mkl}), the learned
+classifier by solving (\ref{eqn:rkhs}) with Hinge loss results in a risk bound always
+greater than 1 when applying Rademacher complexity in Theorem \ref{thm:L-L-phi}.
+\end{theorem}
+\begin{proof}
+Let $f(\mathbf X^n)$ denote the prediction vector of the training data $\mathbf
+X^n$, i.e., $[f(\mathbf X^n)]_i = f(\x_i)$. Defining $\bm\beta = \K^{1/2}\bm\alpha$,
+we have $f(\mathbf X^n) = \K\bm\alpha = \K^{1/2}\bm\beta$.
+
+For the points in $\mathbf X^n$ that are correctly classified, we have
+\[
+\sum_{i: y_if(\x_i) \geq 0} (y_if(\x_i))^2 \geq | i: y_if(\x_i) \geq 1|\cdot 1 = n(1 - L_n(f))
+\]
+\begin{eqnarray}
+\| f(\mathbf X^n) \|_2^2 &=& \| \K^{1/2}\bm\beta \|^2_2 \nonumber\\
+&\leq& \bigg(\| \bm\beta \|_2 \max_{\beta}\bigg\| \K^{1/2} \frac{\bm\beta}{\|\bm\beta\|_2} \bigg\|_2\bigg)^2 \nonumber\\
+&=& \| \bm\beta \|_2^2 \cdot\| \K^{1/2} \|^2 \nonumber\\
+&=& \bm\beta'\bm\beta\| \K^{1/2} \|^2 \nonumber\\
+&=& \bm\alpha \K^{1/2}\K^{1/2}\bm\alpha\| \K^{1/2} \|^2 \nonumber\\
+&\leq& B^2\| \K \| \nonumber
+\end{eqnarray}
+So
+\[
+\| \K \| \geq \frac{1}{B^2}\|f(\mathbf X^n)\|^2_2 \geq \frac{n}{B^2}(1 - L_n(f))
+\]
+Therefore, the right-hand side of (\ref{eqn:L-L-phi}) is greater than
+\begin{eqnarray}
+L^l_n(f) + \frac{R_n(\f_\k)}{2} &\geq& L_n(f) + \frac{B}{\sqrt{n}} \sqrt{\|\K\|} \nonumber\\
+&\geq& L_n(f) + \sqrt{1 - L_n(f)} \nonumber\\
+&\geq& 1  \nonumber
+\end{eqnarray}
+\end{proof}
+
+
+\begin{remark} \label{rmk:rdmchr-fails}
+When we take the kernel class $\k$ into optimization, Rademacher complexity fails to give meaningful risk bound with a candidate kernel
+class $\k$, which implies we need to define better complexity measure
+that takes $\k$ into account.
+\end{remark}
+
+%==================================================
+\subsubsection{Risk Bounds with Covering Number and Pseudo-Dimension}
+%==================================================
+
+\begin{definition} \label{def:cov-num}
+A subset $\tilde{A} \subset A$ is an $\epsilon$-net of $A$ under the metric $d$ if for
+any $a\in A$ there exist $\tilde{a} \in \tilde{A}$ with $d(a, \tilde{a}) \leq \epsilon$.
+The {\bf covering number} $\mathcal N(A, \epsilon, d)$ is the size of the smallest
+$\epsilon$-net of $A$. The {\bf uniform $l_\infty$ covering number} $\mathcal
+N_n(\f, \epsilon, d^{\mathbf X^n}_\infty)$ of a predictor class $\f$ is given by
+considering all possible samples $\mathbf X^n$ of size $n$:
+\[
+\mathcal N_n(\f, \epsilon, , d^{\mathbf X^n}_\infty) = \sup_{\mathbf X^n}\mathcal N(\f, \epsilon, , d^{\mathbf X^n}_\infty),
+\]
+where the metric is
+\[
+d_{\infty}^{\mathbf X^n}(f_1, f_2) = \max_{\x_i \in \mathbf X^n}\bigg| f_1(\x_i) - f_2(\x_i) \bigg|.
+\]
+\end{definition}
+
+\begin{definition} \label{def:pseudo-dim}
+Let $\k$ be a set of kernel functions mapping from $\X\times\X$ to $\r$. We say that
+$S_{n^2} = \{(\x_i, \x_i') \in \X\times\X \}$ is pseudo-shattered by $\k$ if there are
+real numbers $\{r_i \in \r \}$ such that for any $b \in \{-1, 1\}^{n^2}$ there is a
+function $\K \in \k$ with property $\mbox{sgn}(k(\x_i, \x_i') - r_i) = b_i$ for any $i\leq n^2$. Then, we define a {\bf pseudo-dimension} $d_{\k}$ of $\k$ to be the maximum cardinality of $S_{n^2}$ that is pseudo-shattered by $\k$.
+\end{definition}
+
+With the notion {\em pseudo-dimension}, we have
+\begin{theorem} \label{thm:bnd-psdim-phi} \cite{colt/SrebroB06}
+With probability at least $1 - \delta$,
+\[
+L(f) \leq L_n(f) + \sqrt{\tilde{O}(d_{\k} + 1 / \gamma^2) / n},
+\]
+here $\gamma$ is the margin which relates to the loss function $\phi(t) =
+\max(\gamma - t, 0)$.
+\end{theorem}
+
+The complete proof can be found in \cite{colt/SrebroB06}. Instead of the technical
+details, we sketch the attack plans: 1) use an $\epsilon$-net of {\em kernels} to
+construct an $\epsilon$-net of {\em classifiers} with respect to the kernels, where the
+key observation is that kernels that are close as real-valued functions also yield similar
+classes of classifiers; 2) apply standard results bounding the estimation error in terms of
+covering numbers; 3) bound the covering number  in terms of pseudo-dimension; 4)
+instantiate the pseudo-dimension for the specific kernel class (\ref{eqn:linear-mkl}).
+
+In the first tip, for any two kernel functions $k$ and $\tilde{k}$, for any predictor $f
+\in \f_k$, there exists a predictor $\tilde{f} \in \f_{\tilde{k}}$ satisfy
+\[
+d_\infty^{\mathbf X^n}(f, \tilde{f}) \leq \sqrt{nd^{\mathbf X^n}_\infty(k, \tilde{k})} := \sqrt{ n\max_{\x_i, \x_j \in \mathbf X^n}| k(\x_i, \x_j) - \tilde{k}(\x_i, \x_j) |}
+\]
+The above inequality implies the distance between two functions contained in some
+RKHS can actually be bounded by the distance between their underlying kernel
+functions. Consequently, the covering number $\mathcal N_{\f_\k}$ between function
+classes can be bounded by the covering number between kernel classes $\mathcal
+N_{\k}$:
+\[
+\mathcal N_n(\f_\k, \epsilon) \leq 2\mathcal N_n\bigg(\k, \frac{\epsilon^2}{4n}\bigg)\cdot\bigg(\frac{16n\kappa}{\epsilon^2}\bigg)
+^{\frac{64\kappa}{\epsilon^2}\log(\frac{\epsilon e n}{8\sqrt{\kappa}})},
+\]
+where $\kappa = \max_{\x_i \in \mathbf X^n} k(\x_i, \x_i)$.
+
+For the second step, we have the following result bounding estimation error with
+uniform $l_\infty$ covering number \cite{Anthony99}: for a function class $\f$ and
+fixed $\gamma > 0$ in hinge loss, with probability at least $1 - \delta$
+\[
+L(f) \leq L_n(f) + \sqrt{8\frac{1 + \log\mathcal N_{2n}(\f, \gamma / 2) - \log \delta}{n}}
+\]
+Therefore, all we need to do is to bound the covering number for the function class
+under consideration.
+
+In the third step, for any kernel family $\k$ bounded by $\kappa$ with
+pseudo-dimension $d_\k$ we have the result
+\[
+\mathcal N_n(\k, \epsilon) \leq \bigg(\frac{en^2\kappa}{\epsilon d_\k}\bigg)^{d_\k}
+\]
+
+Finally, for the kernel class defined in (\ref{eqn:linear-mkl}), we bound its
+pseudo-dimension by Theorem \ref{thm:pseudo-d-mkl}.
+
+For the kernel family $\k$ defined in (\ref{eqn:linear-mkl}), we have
+\begin{theorem} \label{thm:pseudo-d-mkl}
+For the kernel class $\k$ defined by (\ref{eqn:linear-mkl}), the pseudo-dimension is
+bounded by
+\[
+d_\k \leq m.
+\]
+\end{theorem}
+
+\begin{proof}
+The pseudo-dimension of a $k$-dimensional vector space of real-valued functions is
+$\K$ \cite[Theorem 11.4]{Anthony99}. For the candidate kernel set $\k$ defined in
+(\ref{eqn:linear-mkl}), its dimension is less than or equal to $m$.
+\end{proof}
+
+\begin{remark} \label{rmk:psdim}
+We conduct two key observations:
+\begin{itemize}
+    \item Pseudo-dimension relates the properties of candidate kernel class $\k$ to the risk
+    bound. This verifies the conjecture that we should characterize the richness of
+    $\k$ to compute the risk bound. Including pseudo-dimension of $\k$ makes a
+    better capacity measure than Rademacher complexity on $\f_\k$.
+    \item Pseudo-dimension can be computed for convex kernel combination. However, it
+     could be difficult to derive in general.
+\end{itemize}
+\end{remark}
+
+%==================================================
+\subsubsection{Risk Bounds with Rademacher Chaos Complexity}
+%==================================================
+
+Recall that we introduce random label (the Rademacher variables) to
+measure to which extent a classifier $f$ fits noise data, which leads to the
+definition of Rademacher complexity. Similarly, one can introduce random
+kernel evaluation results to test the capacity of kernel functions. This
+motivates the {\em Rademacher chaos complexity}.
+
+\begin{definition} \cite{colt/YingC09}
+Given a sample $\mathbf X^n$, the homogeneous Rademacher chaos process of order
+two, with respect to the Rademacher variable $\sigma$, is a random variable system
+defined by
+\[
+\{ \hat{U}_k(\mathbf X^n) = \frac{1}{n} \sum_{i < j} \sigma_i\sigma_jk(\x_i, \x_j): k \in \k \},
+\]
+and we refer to the expectation of its superma
+\[
+\hat{U}_n(\k) = \e_{\sigma}[\sup_{k \in \k}|\hat{U}_k(\sigma)|]
+\]
+as the empirical {\bf Rademacher chaos complexity} over $\k$.
+\end{definition}
+
+With $\hat{\u_n(\k)}$, we can bound the $l$-risk:
+\begin{theorem} \label{thm:bnd-rdmchr-chaos} \cite{colt/YingC09}
+With probability at least $1 - \delta$,
+\[
+L^{l} \leq L^{l}_n + 4C_{l}B\bigg(\frac{2\hat{U}_n(\k)}{n}\bigg)^{1/2}
+ + 4\kappa C_l B\bigg(\frac{2}{n}\bigg)^{1/2} + 3D_{l}\bigg(\frac{\ln 1 / \delta}{2n}\bigg)^{1/2}
+  + \frac{2}{\sqrt{n}},
+\]
+where $D_{l} = \sup\{|l(t)| : |t| \leq \kappa B\}$, $C_{l} = \sup\{|l(t) -
+l(t')|/|t - t'|: \forall |t|,|t'| \leq \kappa B\}$, $B = \sqrt{1 / \lambda}$.
+\end{theorem}
+\begin{proof}
+For the sample $\mathbf X^n$, we replace its $k$-th sample $(\x_k, y_k)$ with
+$(\x_k', y_k')$. Let $\mathbf Z^n$ denote this new sample. Then
+\begin{eqnarray}
+&&| \sup_{f\in\f_\k}| L^l(f) - L^l_n(f(\mathbf X^n)) |
+ - \sup_{f\in\f_\k}| L^l(f) - L^l_n(f(\mathbf Z^n)) | | \nonumber\\
+&\leq&
+    \sup_{f\in\f_\k}| L^l_n(f(\mathbf X^n)) - L^l_n(f(\mathbf Z^n)) | \nonumber\\
+&\leq& D_l \nonumber
+\end{eqnarray}
+Here $D_l = \sup_{f\in\f_\k}l(f)$ is the maximum possible loss. Applying McDiarmid's inequality, we have
+\begin{equation}
+\sup_{f\in\f_\k}| L^l(f) - L^l_n(f) | \leq \e\sup_{f\in\f_\k}| L^l(f) - L^l_n(f) | + D_l\sqrt{\frac{\ln 1 / \delta}{2n}} \label{eqn:first-risk-rdm-chaos}
+\end{equation}
+We apply symmetrization trick to the first term on RHS:
+\[
+\e\sup_{f\in\f_\k}| L^l(f) - L_n^l(f) | \leq 2\e\e_{\bm\sigma}\bigg| \frac{1}{n}\sum_{i=1}^n\sigma_il(y_if(\x_i)) \bigg| \nonumber\\
+\]
+Since $\e_{\bm\sigma}| \frac{1}{n}\sum_{i=1}^n\sigma_il(y_if(\x_i)) |$ satisfies
+the bounded difference property, we can apply McDiarmid's inequality again:
+\[
+2\e\e_{\bm\sigma}\bigg| \frac{1}{n}\sum_{i=1}^n\sigma_il(y_if(\x_i)) \bigg|
+\leq 2\e_{\bm\sigma}\bigg| \frac{1}{n}\sum_{i=1}^n\sigma_il(y_if(\x_i)) \bigg| + 2D_l\sqrt{\frac{\ln 1 / \delta}{2n}}\nonumber\\
+\]
+Let $\bar{l} = l - l(0)$, then we have $\bar{l}(0) = 0$. So we can apply
+the contraction property of Rademacher complexity \cite[Theorem
+12]{jmlr/BartlettM02}:
+\begin{eqnarray}
+\e_{\bm\sigma}\bigg| \sum_{i=1}^n\sigma_il(y_if(\x_i)) \bigg|
+&\leq& \e_{\bm\sigma}\bigg| \sum_{i=1}^n\sigma_i\bar{l}(y_if(\x_i)) \bigg| + \e_{\bm\sigma}\bigg| \sum_{i=1}^n \sigma_i \bigg| \nonumber\\
+&\leq& 2C_l\e_{\bm\sigma}\sup_{f\in\f_\k}\bigg| \sum_{i=1}^n \sigma_if(\x_i) \bigg| + (\e_{\bm\sigma}\sum_{i,j}\sigma_i\sigma_j)^{1/2} \nonumber\\
+&\leq& 2C_l\e_{\bm\sigma}\sup_{f\in\f_\k}\bigg| \sum_{i=1}^n\sigma_if(\x_i) \bigg| + \sqrt{n} \nonumber
+\end{eqnarray}
+Finally, we re-write $\e_{\bm\sigma}\sup_{f\in\f_\k}\bigg|
+\sum_{i=1}^n\sigma_if(\x_i) \bigg|$ as
+\begin{eqnarray}
+&&\e_{\bm\sigma} \sup_{\K \in \k}\sup_{\| f \| \leq B}\bigg| \sum_{i=1}^n\sigma_if(\x_i) \bigg| \nonumber\\
+&=&\e_{\bm\sigma} \sup_{\K \in \k}\sup_{\| f \| \leq B}\bigg| \langle \sum_{i=1}^n\sigma_i\K(\x_i, \cdot), f \rangle \bigg| \nonumber\\
+&\leq& B\e_{\bm\sigma} \sup_{\K \in \k}\bigg| \sum_{i,j=1}^n \sigma_i\sigma_jk(\x_i, \x_j) \bigg|^{1/2} \nonumber\\
+&\leq& B\sqrt{2n\hat{\u}_n(\k)} + B\sup_{\K\in\k}\sqrt{\tr \K} \nonumber\\
+\end{eqnarray}
+Substituting all the above inequalities into (\ref{eqn:first-risk-rdm-chaos}) yields that
+\[
+\sup_{f\in\f_\k} | L^l(f) - L^l_n(f) | \leq  4C_l B \sqrt{2\frac{\hat{\u}_n(\k)}{n}} + 4C_l B \sqrt{\frac{\kappa}{n}} + \frac{2}{\sqrt{n}}  + 3D_l\sqrt{\frac{\ln 1 / \delta}{2n}}
+\]
+\end{proof}
+
+
+Rademacher chaos complexity can be bounded by covering number. To show this, we first define the empirical metric w.r.t. the sample $\mathbf X^n$ for $\k$:
+\begin{equation}
+d^{\mathbf X^n}_2(K_1, K_2) = \bigg( \frac{1}{n^2}\sum_{i < j}^n (K_{1ij} - K_{2ij})^2 \bigg)^{1/2}
+\label{eqn:d2}
+\end{equation}
+Be ware of the difference with the metric in Definition \ref{def:cov-num}. Then we have
+\begin{theorem} \label{thm:u-cov-num}
+There exist an absolute constant $C$ such that, for any $\mathbf X^n$, there holds
+\begin{equation}
+\eu(\k) \leq C \int_0^\infty\log\mathcal N(\k\cup\{\0\}, \epsilon, d^{\mathbf X^n}_2)d\epsilon. \label{eqn:u-cov-num}
+\end{equation}
+\end{theorem}
+
+Therefore, Rademacher chaos complexity can be further bounded in terms of
+pseudo-dimension by the following theorem:
+\begin{theorem} \label{thm:u-pseudo-d}
+There exist a universal constant $C$ such that for any sample $\mathbf X^n$, there holds
+\begin{equation}
+\eu(\k) \leq C(1 + \kappa)^2d_\k\ln(2en^2) \label{eqn:u-psd}
+\end{equation}
+\end{theorem}
+This provides us two choices for bounding the risk: 1) Compute $d_\k$. Substituting $d_\k$ into either Theorem \ref{thm:bnd-psdim-phi} or Theorem
+\ref{thm:bnd-rdmchr-chaos} with (\ref{eqn:u-psd}) yields generalization risk; 2)
+when $d_\k$ is difficult to compute, one can estimate $\hat{\u}$ directly.
+
+\begin{theorem} \label{thm:u-mkl}
+For the kernel classes given by (\ref{eqn:linear-mkl}) with a sample $\mathbf X^n$,
+its Rademacher chaos complexity is bounded by
+\[
+\eu(\k) \leq C\kappa^2\ln(m + 1).
+\]
+\end{theorem}
+
+
+\begin{remark} \label{rmk:rdmchr-chaos}
+The Rademacher chaos complexity leads to bound related to the kernel
+class $\k$.
+\begin{itemize}
+  \item Rademacher complexity yields a bound over the trace or induced norm of $K$,
+   which is shown to be vacuous by \cite{colt/SrebroB06}. Rademacher chaos
+   complexity avoids this problem by measuring the capacity of $K$ through its
+   ability of fitting random similarity between pairs of points.
+  \item The main result of Theorem \ref{thm:bnd-rdmchr-chaos} is meaningful only if we can
+    estimate $\eu$ directly. If the only way to use it is (\ref{eqn:u-psd}), we need
+    NOT define $\eu$.
+\end{itemize}
+\end{remark} 

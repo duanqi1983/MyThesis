@@ -1,0 +1,715 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2011.4.6)  22 OCT 2011 21:03
+entering extended mode
+**PpMain.V3.3.tex
+(C:\Research\Thesis_V3.3\PpMain.V3.3.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Research\Thesis_V3.3\PpHd.tex (C:\Research\Thesis_V3.3\subfigure.sty
+Package: subfigure 1995/03/06 v2.0 subfigure package
+
+Package: subfigure 1995/03/06 v2.0
+\c@subfigure=\count88
+\c@lofdepth=\count89
+\c@subtable=\count90
+\c@lotdepth=\count91
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks16
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+\epsfxsize=\dimen114
+\epsfysize=\dimen115
+)
+(C:\Research\Thesis_V3.3\fancyheadings.sty
+\headrulewidth=\dimen116
+\footrulewidth=\dimen117
+\plainheadrulewidth=\dimen118
+\plainfootrulewidth=\dimen119
+\headwidth=\dimen120
+)
+(C:\Research\Thesis_V3.3\algorithmic.sty
+Package: algorithmic 2006/06/02
+
+Document Style `algorithmic' - environment
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen121
+\calc@Bdimen=\dimen122
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count106
+\calc@Cskip=\skip48
+)
+\c@ALC@line=\count107
+\c@ALC@rem=\count108
+\c@ALC@depth=\count109
+\ALC@tlm=\skip49
+\algorithmicindent=\skip50
+)
+(C:\Research\Thesis_V3.3\algorithm.sty
+Package: algorithm 
+
+Document Style `algorithm' - floating environment
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count110
+\float@exts=\toks21
+\float@box=\box28
+\@float@everytoks=\toks22
+\@floatcapt=\box29
+)
+\@float@every@algorithm=\toks23
+\c@algorithm=\count111
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+\c@theorem=\count112
+\c@theorem=\count113
+\c@lemma=\count114
+\c@lemma=\count115
+\c@corollary=\count116
+\c@corollary=\count117
+\c@definition=\count118
+\c@definition=\count119
+\c@algo=\count120
+\c@algo=\count121
+)
+(C:\Research\Thesis_V3.3\definition.tex
+\c@example=\count122
+\c@alg=\count123
+\c@ccc=\count124
+)
+(C:\Research\Thesis_V3.3\PpMain.V3.3.aux (C:\Research\Thesis_V3.3\chapter-1.aux
+) (C:\Research\Thesis_V3.3\chapter-2.aux)
+(C:\Research\Thesis_V3.3\chapter-3.aux) (C:\Research\Thesis_V3.3\chapter-4.aux
+
+LaTeX Warning: Label `def:pseudo-dim' multiply defined.
+
+
+LaTeX Warning: Label `eqn:bnd-rdm' multiply defined.
+
+) (C:\Research\Thesis_V3.3\chapter-5.aux
+
+LaTeX Warning: Label `eqn:obj' multiply defined.
+
+) (C:\Research\Thesis_V3.3\chapter-6.aux
+
+LaTeX Warning: Label `eqn:AB-sdp' multiply defined.
+
+
+LaTeX Warning: Label `eqn:AB-sdp' multiply defined.
+
+
+LaTeX Warning: Label `alg:iterative-npk' multiply defined.
+
+) (C:\Research\Thesis_V3.3\chapter-7.aux
+
+LaTeX Warning: Label `table:notation' multiply defined.
+
+
+LaTeX Warning: Label `sec:ssm-framework' multiply defined.
+
+
+LaTeX Warning: Label `table:dataset' multiply defined.
+
+
+LaTeX Warning: Label `sec:kta' multiply defined.
+
+) (C:\Research\Thesis_V3.3\chapter-8.aux)
+(C:\Research\Thesis_V3.3\publication_list.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
+(C:\Research\Thesis_V3.3\PpCover.tex
+File: figures/PpNtu.eps Graphic file (type eps)
+ <figures/PpNtu.eps>
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1
+
+])
+(C:\Research\Thesis_V3.3\PpPref.tex (C:\Research\Thesis_V3.3\abstract.tex)
+[1
+
+] (C:\Research\Thesis_V3.3\ack.tex)) [2
+
+]
+(C:\Research\Thesis_V3.3\PpMain.V3.3.toc [3
+
+] [4] [5] [6])
+\tf@toc=\write3
+ [7]
+(C:\Research\Thesis_V3.3\PpMain.V3.3.lof [8
+
+])
+\tf@lof=\write4
+ [9] [10]
+(C:\Research\Thesis_V3.3\PpMain.V3.3.lot [11
+
+])
+\tf@lot=\write5
+ [12]
+(C:\Research\Thesis_V3.3\chapter-1.tex
+Chapter 1.
+[1
+
+
+] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
+ [4]
+[5]
+File: figures/organization.eps Graphic file (type eps)
+ <figures/organization.eps> [6] [7]) [8] [9]
+(C:\Research\Thesis_V3.3\chapter-2.tex
+Chapter 2.
+[10
+
+
+
+] [11] [12]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
+
+Overfull \hbox (25.83504pt too wide) in paragraph at lines 152--153
+[][]\OT1/cmr/m/it/12 If $\OML/cmm/m/it/12 k[]$ \OT1/cmr/m/it/12 and $\OML/cmm/m
+/it/12 k[]$ \OT1/cmr/m/it/12 are ker-nels, then $\OML/cmm/m/it/12 k[]k[]$\OT1/c
+mr/m/it/12 , de-fined by $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k[]k[]\OT1/cmr/m/n/
+12 )(\OT1/cmr/bx/n/12 x\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 x[]\OT1/cmr/m/n/12 )
+ := \OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 x\OML/cmm/m/it/12 ; \
+OT1/cmr/bx/n/12 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 k[]\OT1/cmr/m/n/12 (\OT1/c
+mr/bx/n/12 x\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 x[]\OT1/cmr/m/n/12 )$\OT1/cmr/m
+/it/12 ,
+ []
+
+[13] [14] [15] [16] [17] [18]
+Overfull \hbox (4.67618pt too wide) in paragraph at lines 408--410
+[][]\OT1/cmr/m/it/12 For classes of func-tions $\OMS/cmsy/m/n/12 F$ \OT1/cmr/m/
+it/12 map-ping to $\OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$ \OT
+1/cmr/m/it/12 and a sam-ple $\OT1/cmr/bx/n/12 X[] \OT1/cmr/m/n/12 = \OMS/cmsy/m
+/n/12 f\OT1/cmr/bx/n/12 x[]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/bx/n/12 x[]\OMS/cms
+y/m/n/12 g$\OT1/cmr/m/it/12 ,
+ []
+
+[19] [20] [21]
+Overfull \hbox (1.55945pt too wide) in paragraph at lines 672--674
+[][]\OT1/cmr/m/n/12 The fol-low-ing the-o-rem re-veals how the reg-u-lar-iza-ti
+on $\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 k[]$ \OT1/cmr/m/n/12 r
+e-lates to the Rademacher
+ []
+
+[22] [23] [24] [25] [26] [27]
+Overfull \hbox (25.6884pt too wide) in paragraph at lines 853--854
+\OT1/cmr/m/n/12 QCQP [[]] (mul-ti-class case [[]]), it-er-a-tive method with DC
+ pro-gram-ming [[]],
+ []
+
+
+Overfull \hbox (2.47318pt too wide) in paragraph at lines 853--854
+\OT1/cmr/m/n/12 SILP [[], []], Sub-gra-di-ent De-cent [[], []], level method [[
+]].
+ []
+
+[28]
+Overfull \hbox (34.23651pt too wide) in paragraph at lines 883--884
+[][]\OT1/cmr/m/n/12 The above prob-lem can be solved by adopt-ing the idea of \
+OT1/cmr/m/it/12 semi-infinite programming\OT1/cmr/m/n/12 [[]].
+ []
+
+[29] [30]
+Overfull \hbox (7.82024pt too wide) in paragraph at lines 938--939
+[][]\OT1/cmr/m/n/12 An im-por-tant tech-nique is the ker-nel tar-get align-ment
+ cri-te-rion pro-posed in [[]],
+ []
+
+[31] [32] [33] [34]
+Overfull \hbox (11.30585pt too wide) in paragraph at lines 1150--1153
+\OT1/cmr/m/n/12 The-o-rem 2.8[]. Un-for-tu-nately, the fol-low-ing the-o-rem sh
+ows that sim-ply ap-ply-ing Rademacher
+ []
+
+[35] [36]
+Overfull \hbox (1.41927pt too wide) in paragraph at lines 1286--1288
+[][]\OT1/cmr/m/it/12 For the ker-nel class $\OMS/cmsy/m/n/12 K$ \OT1/cmr/m/it/1
+2 de-fined by ([][]), the pseudo-dimension is bounded
+ []
+
+[37]) [38] (C:\Research\Thesis_V3.3\chapter-3.tex
+Chapter 3.
+[39
+
+
+
+] [40] [41]
+Overfull \hbox (34.30232pt too wide) in paragraph at lines 279--279
+[]\OT1/cmr/bx/n/17.28 SimpleNPKL: Sim-ple Non-Parametric Ker-nel Learn-
+ []
+
+[42] [43] [44] [45] [46] [47] [48]
+Overfull \hbox (0.22128pt too wide) in alignment at lines 639--645
+ [][][] []
+ []
+
+[49]
+Overfull \hbox (20.79922pt too wide) in alignment at lines 669--675
+ [][][] []
+ []
+
+[50]
+Overfull \hbox (3.88774pt too wide) detected at line 702
+\OML/cmm/m/it/12 J\OT1/cmr/m/n/12 ([][]) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 J\
+OT1/cmr/m/n/12 ([][]) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 \OMS/cmsy/m/n/12 h[
+][]   [][]\OML/cmm/m/it/12 ; [][] \OMS/cmsy/m/n/12   [][]i   []k[][]   [][]k[] 
+\OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 k[][]   [][]k[]   []k[][]   [][]k[]\OML/cm
+m/m/it/12 :
+ []
+
+[51] [52] [53] [54] [55] [56]
+Overfull \hbox (10.38101pt too wide) in alignment at lines 923--925
+ [][][] []
+ []
+
+[57] [58]
+Overfull \hbox (15.45842pt too wide) in paragraph at lines 1014--1043
+ [][] 
+ []
+
+
+Overfull \hbox (19.59084pt too wide) in paragraph at lines 1086--1100
+ [][][] 
+ []
+
+
+Overfull \hbox (22.92416pt too wide) in paragraph at lines 1107--1121
+ [][][] 
+ []
+
+[59] [60]
+Overfull \hbox (12.84778pt too wide) in paragraph at lines 1165--1184
+ [][] 
+ []
+
+File: figures/a1a_cnvrgnc.eps Graphic file (type eps)
+<figures/a1a_cnvrgnc.eps>
+File: figures/a2a_cnvrgnc.eps Graphic file (type eps)
+ <figures/a2a_cnvrgnc.eps> [61] [62]
+File: figures/cnst_acc.eps Graphic file (type eps)
+
+<figures/cnst_acc.eps>
+File: figures/cnst_time.eps Graphic file (type eps)
+ <figures/cnst_time.eps> [63]
+File: figures/cmvu_time_senate.eps Graphic file (type eps)
+
+<figures/cmvu_time_senate.eps>
+File: figures/senate_cmvu.eps Graphic file (type eps)
+ <figures/senate_cmvu.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1288--1288
+[][]|\OT1/cmr/m/n/10 3.3.b: Em-bed-ding of
+ []
+
+File: figures/senate_cmvu_npk.eps Graphic file (type eps)
+<figures/senate_cmvu_npk.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1292
+[][]|\OT1/cmr/m/n/10 3.3.c: Em-bed-ding of
+ []
+
+File: figures/cmvu_time_news20.eps Graphic file (type eps)
+<figures/cmvu_time_news20.eps>
+File: figures/news20_cmvu.eps Graphic file (type eps)
+ <figures/news20_cmvu.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1308
+[][]|\OT1/cmr/m/n/10 3.4.b: Em-bed-ding of
+ []
+
+File: figures/news20_cmvu_npk.eps Graphic file (type eps)
+<figures/news20_cmvu_npk.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1312--1312
+[][]|\OT1/cmr/m/n/10 3.4.c: Em-bed-ding of
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/cmvu_time_usps.eps Graphic file (type eps)
+<figures/cmvu_time_usps.eps>
+File: figures/usps_cmvu_d20.eps Graphic file (type eps)
+ <figures/usps_cmvu_d20.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1329--1329
+[][]|\OT1/cmr/m/n/10 3.5.b: Em-bed-ding of
+ []
+
+File: figures/usps_cmvu_npk.eps Graphic file (type eps)
+<figures/usps_cmvu_npk.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 1333--1333
+[][]|\OT1/cmr/m/n/10 3.5.c: Em-bed-ding of
+ []
+
+[64] [65]
+Overfull \hbox (5.03543pt too wide) in paragraph at lines 1400--1424
+ [][] 
+ []
+
+[66] [67]
+File: figures/sample.eps Graphic file (type eps)
+ <figures/sample.eps>
+File: figures/mve.eps Graphic file (type eps)
+ <figures/mve.eps>
+File: figures/flickr.eps Graphic file (type eps)
+ <figures/flickr.eps> [68]
+[69]) [70] [71] (C:\Research\Thesis_V3.3\chapter-4.tex
+Chapter 4.
+[72
+
+
+
+] [73]
+File: figures/dmkl.eps Graphic file (type eps)
+ <figures/dmkl.eps> [74] [75] [76] [77]
+Overfull \hbox (7.86897pt too wide) in paragraph at lines 255--272
+ [][] 
+ []
+
+[78]
+
+LaTeX Warning: Command \l invalid in math mode on input line 292.
+
+[79]
+Overfull \hbox (1.49669pt too wide) in paragraph at lines 354--356
+[]\OT1/cmr/m/n/12 The above corol-lary can be fol-lowed di-rectly by com-bin-in
+g The-o-rem 2 and the Rademacher
+ []
+
+
+Overfull \hbox (4.05496pt too wide) in paragraph at lines 377--407
+ [][] 
+ []
+
+[80] [81] [82]
+Overfull \hbox (16.46321pt too wide) in paragraph at lines 483--485
+[]\OT1/cmr/m/n/12 This chap-ter pre-sented a gen-eral frame-work of multi-layer
+ mul-ti-ple ker-nel learn-ing (MLMKL)
+ []
+
+[83]) [84] (C:\Research\Thesis_V3.3\chapter-5.tex
+Chapter 5.
+[85
+
+
+
+] [86] [87] [88] [89] [90]
+Overfull \hbox (2.10204pt too wide) in paragraph at lines 228--228
+[]\OT1/cmr/bx/n/14.4 Experiment I:Unsupervised MKL ver-sus Su-per-vised MKL 
+ []
+
+[91]
+File: figures/acml-heart.eps Graphic file (type eps)
+ <figures/acml-heart.eps>
+File: figures/acml-titanic.eps Graphic file (type eps)
+ <figures/acml-titanic.eps> [92] [93]
+File: figures/acml-KernelPCA.eps Graphic file (type eps)
+
+<figures/acml-KernelPCA.eps>
+Overfull \hbox (18.06749pt too wide) in paragraph at lines 353--355
+ [][] 
+ []
+
+[94]
+File: figures/acml-KPCA.eps Graphic file (type eps)
+ <figures/acml-KPCA.eps>
+File: figures/acml-K-NN.eps Graphic file (type eps)
+ <figures/acml-K-NN.eps>
+File: figures/acml-KPCAonwaveform.eps Graphic file (type eps)
+
+<figures/acml-KPCAonwaveform.eps>
+File: figures/acml-KPCAaustralian.eps Graphic file (type eps)
+ <figures/acml-KPCAaustralian.eps>
+File: figures/acml-KPCAbreast.eps Graphic file (type eps)
+
+<figures/acml-KPCAbreast.eps>
+File: figures/acml-KPCAdiabetes.eps Graphic file (type eps)
+ <figures/acml-KPCAdiabetes.eps>
+File: figures/acml-KPCAflaresolar.eps Graphic file (type eps)
+
+<figures/acml-KPCAflaresolar.eps>
+File: figures/acml-KPCAgerman.eps Graphic file (type eps)
+ <figures/acml-KPCAgerman.eps>
+File: figures/acml-KPCAsonar.eps Graphic file (type eps)
+
+<figures/acml-KPCAsonar.eps>
+File: figures/acml-KPCAliver.eps Graphic file (type eps)
+ <figures/acml-KPCAliver.eps>
+
+LaTeX Warning: Float too large for page by 105.61548pt on input line 416.
+
+
+Overfull \hbox (0.76068pt too wide) in paragraph at lines 422--423
+[]\OT1/cmr/m/n/12 In this chap-ter we pro-pose a novel un-su-per-vised mul-ti-p
+le ker-nel learn-ing (UMKL) method,
+ []
+
+[95]) [96] [97] [98] (C:\Research\Thesis_V3.3\chapter-6.tex
+Chapter 6.
+[99
+
+
+
+] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110]
+File: figures/civr-results.eps Graphic file (type eps)
+
+<figures/civr-results.eps>
+Underfull \vbox (badness 3612) has occurred while \output is active []
+
+ [111]
+File: figures/cvir_time.eps Graphic file (type eps)
+
+<figures/cvir_time.eps> [112] [113]) [114]
+(C:\Research\Thesis_V3.3\chapter-7.tex
+Chapter 7.
+[115
+
+
+
+]
+File: figures/mm_framework.eps Graphic file (type eps)
+ <figures/mm_framework.eps> [116]
+File: figures/mm_sample.eps Graphic file (type eps)
+ <figures/mm_sample.eps> [117] [118]
+Overfull \hbox (1.18275pt too wide) in paragraph at lines 96--99
+[][]\OT1/cmr/m/it/12 Each \OT1/cmr/m/n/12 Flickr user $\OML/cmm/m/it/12 u[] \OM
+S/cmsy/m/n/12 2 U$ \OT1/cmr/m/it/12 is mod-eled as a three-dimensional
+ []
+
+[119] [120] [121] [122] [123] [124]
+Overfull \hbox (4.06055pt too wide) in paragraph at lines 342--345
+[]\OT1/cmr/m/n/12 The dual ob-jec-tive (3) can be solved ef-fi-ciently as an im
+- port vec-tor ma-chine (IVM)[[]]. 
+ []
+
+[125] [126]
+File: figures/friend.eps Graphic file (type eps)
+ <figures/friend.eps> [127] [128]
+File: figures/group.eps Graphic file (type eps)
+ <figures/group.eps> [129] [130]
+File: figures/gender.eps Graphic file (type eps)
+
+<figures/gender.eps>
+File: figures/location.eps Graphic file (type eps)
+ <figures/location.eps> [131]
+Overfull \vbox (18.10825pt too high) has occurred while \output is active []
+
+
+[132] [133]) [134] (C:\Research\Thesis_V3.3\chapter-8.tex
+Chapter 8.
+
+Overfull \hbox (10.00078pt too wide) in paragraph at lines 13--14
+[][]\OT1/cmr/m/n/12 We present a fam-ily of sim-ple non-parametric ker-nel lear
+n-ing al-go-rithms (Sim-pleNPKL).
+ []
+
+[135
+
+
+
+]
+Overfull \hbox (32.68048pt too wide) in paragraph at lines 41--42
+[][]\OT1/cmr/m/n/12 Recent ad-vances in \OT1/cmr/m/it/12 lo-cal co-or-di-nate c
+od-ing \OT1/cmr/m/n/12 in-spires pure un-su-per-vised ker-nel learning[[],
+ []
+
+[136]) [137] (C:\Research\Thesis_V3.3\publication_list.tex) [138
+
+
+]
+(C:\Research\Thesis_V3.3\PpMain.V3.3.bbl [139
+
+
+] [140] [141] [142] [143] [144]
+[145] [146] [147] [148] [149]
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no ¹ in font cmr12!
+ [150]
+Underfull \hbox (badness 1675) in paragraph at lines 752--756
+[][]\OT1/cmr/m/n/12 Soren Son-nen-burg, Gun-nar Ratsch, Christin Schafer, an
+d Bern-hard
+ []
+
+[151] [152]
+Underfull \hbox (badness 3780) in paragraph at lines 899--903
+[][]\OT1/cmr/m/n/12 Yiming Ying and Colin Camp-bell.  Rademacher chaos com-plex
+-
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 899--903
+\OT1/cmr/m/n/12 ity for learn-ing the ker-nel prob-lem.  In \OT1/cmr/m/it/12 TE
+CH-NI-CAL RE-PORT,
+ []
+
+[153] [154]) [155] (C:\Research\Thesis_V3.3\PpMain.V3.3.aux
+(C:\Research\Thesis_V3.3\chapter-1.aux) (C:\Research\Thesis_V3.3\chapter-2.aux)
+(C:\Research\Thesis_V3.3\chapter-3.aux) (C:\Research\Thesis_V3.3\chapter-4.aux)
+(C:\Research\Thesis_V3.3\chapter-5.aux) (C:\Research\Thesis_V3.3\chapter-6.aux)
+(C:\Research\Thesis_V3.3\chapter-7.aux) (C:\Research\Thesis_V3.3\chapter-8.aux)
+(C:\Research\Thesis_V3.3\publication_list.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2912 strings out of 494054
+ 36422 string characters out of 3148624
+ 108675 words of memory out of 3000000
+ 6039 multiletter control sequences out of 15000+200000
+ 21140 words of font info for 79 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 34i,13n,33p,1941b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on PpMain.V3.3.dvi (168 pages, 659180 bytes).

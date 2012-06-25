@@ -1,0 +1,487 @@
+\def\k{{\mathcal K}}
+\def\h{{\mathcal H}}
+\def\x{{\bf x}}
+\def\d{{\bf d}}
+\def\K{{\bf K}}
+\def\M{{\bf M}}
+\def\I{{\bf I}}
+\def\U{{\bf U}}
+\def\u{{\bf u}}
+\def\v{{\bf v}}
+\def\a{{\alpha}}
+\def\ba{{\bm\alpha}}
+\def\eu{{\widehat{\u}_n}}
+\def\1{{\bf 1}}
+\def\0{{\bf 0}}
+\def\y{{\bf y}}
+\def\X{{\mathbf X}}
+\def\D{{\mathbf D}}
+\def\conv{{\mbox{conv}}}
+\def\rk{{\mbox{r}}}
+\def\r{{\mathbb R}}
+\def\e{{\mathbb E}}
+\def\p{{\mathbb P}}
+\def\n{{\mathbb N}}
+%%---------------------------------------------------------------------------------
+%\chapter{Two Novel Directions Towards Kernel Learning}
+%%---------------------------------------------------------------------------------
+%---------------------------
+\chapter{Deep Multiple Kernel Learning}
+%---------------------------
+
+In chapter 2, we introduced related works on multiple kernel learning (MKL) algorithms and theories. Now we investigate two novel directions towards improving MKL: Deep MKL (DMKL, \cite{aistats/ZhuangTH11}) and Unsupervised MKL (UMKL, submitted to ACML'11). The former one is inspired by the recent development of deep learning\cite{neco/HintonOT06}\cite{ftml/Bengio09}\cite{nips/ChoS09}. We embed the summation of base kernels into a single (series of) base kernels for next layer of MKL. We introduce the framework of DMKL in this chapter and UMKL in chapter 5.
+
+Multiple Kernel Learning (MKL) aims to learn kernel machines for solving a real machine learning problem (e.g. classification) by exploring the combinations of multiple kernels.
+The traditional MKL approach is in general ``shallow" in the sense that the target kernel is simply a linear (or convex) combination of some base kernels. In this chapter, we investigate a framework of Multi-Layer Multiple Kernel Learning (MLMKL) that aims to learn ``deep" kernel machines by exploring the combinations of multiple kernels in a multi-layer structure, which goes beyond the conventional MKL approach. Through a multiple layer mapping, the proposed MLMKL framework offers higher flexibility than the regular MKL for finding the optimal kernel for applications. As the first attempt to this new MKL framework, we present a Two-Layer Multiple Kernel Learning (2LMKL) method together with two efficient algorithms for classification tasks. We analyze their generalization performances and have conducted an extensive set of experiments over 16 benchmark datasets, in which encouraging results showed that our method performed better than the conventional MKL methods.
+
+Despite being studied actively, unfortunately existing MKL methods do not always produce considerably better empirical performance when comparing with a single kernel whose parameters were tuned by cross validation~\cite{tr/GehlerN08}. There are several possible reasons to account for such failure. One conjecture is that the target kernel domain $\k$ of MKL using a linear combination may not be rich enough to contain the optimal kernel. Therefore, some emerging study has attempted to improve the regular MKL by explore more general kernel domain $\k$ using some nonlinear combination~\cite{icml/VarmaB09}. Following the similar motivation, we
+speculate that the insignificant performance gain is probably due to the {\it shallow} learning nature of regular MKL that simply adopts a flat (linear/nonlinear) combination of multiple kernels.
+
+To this end, this chapter presents a novel framework of Multi-Layer Multiple Kernel Learning (MLMKL), which applies the idea of deep learning to improve the MKL task. Deep architecture has been being actively studied in machine learning community and has shown promising performance for some applications~\cite{neco/HintonOT06,science/HintonS06,icml/LarochelleECBB07,ftml/Bengio09}.
+Our study was partially inspired by the recent work~\cite{nips/ChoS09} that first explored kernel methods with the idea of deep learning. However, unlike the previous work, our study in this chapter mainly aims to address the challenge of improving the existing MKL techniques with deep learning. Specifically, we introduce a multilayer architecture for MLMKL, in
+which all base kernels in antecedent-layers are combined to form some inputs to other kernels in subsequent layers. We also provide an efficient alternating optimization algorithm to learn the decision function and the weight of base kernels simultaneously. To further minimize the requirement of domain knowledge to design the choices and the numbers of base kernels in each antecedent-layers, we also present an infinite base kernel learning algorithm for our proposed MLMKL framework.
+
+
+%=================================
+\section{Deep Learning and Multilayer Kernels}
+%=================================
+
+Recently, a lot of machine learning studies have addressed one limitation of conventional learning techniques (such as SVM) regarding their shallow
+learning architectures. It has been shown that the deep architecture, such as multilayer neural nets, is often more preferable over the shallow ones.
+Very recently, Cho and Saul \cite{nips/ChoS09,nc/ChoS10} first introduced the idea of deep learning to kernel methods,
+which can be applied either in deep architectures or in shallow structures, like SVM.
+An $l$-layer kernel is the inner product after multiple feature mapping of inputs:
+\begin{eqnarray*}
+k^{(l)}(\x_i, \x_j) =\big\langle \underbrace{\Phi(\Phi(\ldots(\Phi(\x_i))))}_{l\mbox{ times}},
+ \underbrace{\Phi(\Phi(\ldots(\Phi(\x_i))))}_{l\mbox{ times}} \big\rangle, \label{eqn:deep-kernel}
+\end{eqnarray*}
+here $\Phi$ is the underlying feature mapping function of $k$,
+$\langle\cdot,\cdot\rangle$ computes the inner product.
+
+Specifically, we consider an example of two-layer RBF kernel. An RBF kernel is typically defined as
+\[k(\x_i, \x_j) = e^{-\gamma\|\x_i - \x_j\|^2},\]
+where $\gamma > 0$ is the kernel parameter. By applying the idea of two-layer
+kernel with the RBF kernel, the composition yields
+\begin{eqnarray}
+\hspace{-0.3in}&&\big\langle\Phi(\Phi(\x_i)), \Phi(\Phi(\x_j))\big\rangle \nonumber\\
+\hspace{-0.3in}&&=e^{-\gamma\| \Phi(\x_i) - \Phi(\x_j) \|^2} = e^{-2\gamma(1 - k(\x_i, \x_j))} = \kappa e^{2\gamma k(\x_i, \x_j)},\quad\;
+\end{eqnarray}
+where $\kappa$ is a constant that can be omitted. The similar idea can be applied for
+other types of kernels. In~\cite{nips/ChoS09,nc/ChoS10}, the authors provided a multiple layer composition approach with respect to a special family of arc-cosine kernel functions.
+
+\begin{remark}
+The work studied in~\cite{nips/ChoS09} has some limitations. First, the proposed multi-layer kernel was applied to only a single type of kernel, typically some special kernel function, such as the arc-cosine kernel~\cite{nips/ChoS09}. In a real application, a more desirable solution is to
+allow a combination of a variety of different kernels when designing the deep kernel. Second, the multi-layer kernel proposed in~\cite{nips/ChoS09}
+is often ``static", i.e., some fixed kernel (where degree $n$ and level $l$ parameters were chosen manually). No solution has been provided to optimize the kernel by learning the optimal parameters automatically. Our work was partially motivated by this work to address the above limitations.
+\end{remark}
+
+%=======================================================
+\section{Two-Layer Multiple Kernel Learning}
+%=======================================================
+In this Section, we first introduce a general framework of Multi-Layer Multiple Kernel Learning (MLMKL), and then present an MLMKL paradigm, i.e., Two-Layer Multiple Kernel Learning.
+
+\subsection{Framework}
+
+Following the optimization framework of MKL, the basic idea of MLMKL is to relax the optimization domain $\mathcal{K}$ in traditional MKL
+optimization by adopting a family of deep kernels. Specifically, we first define a domain of $l$-level multi-layer kernels as follows:
+\begin{equation*}
+\k^{(l)} = \Big\{k^{(l)}(\cdot,\cdot) = g^{(l)}\big([k^{(l-1)}_1(\cdot,\cdot),\ldots,k^{(l-1)}_{m}(\cdot,\cdot)]\big)\Big\},
+\end{equation*}
+where $g^{(l)}$ is some function to combine multiple $(l-1)$-level kernels, which
+must ensure the resulting combination is a valid kernel. With this domain, in a way
+similar to regular MKL, we can formulate the optimization problem of $l$-level
+MLMKL into:
+\begin{eqnarray*}%\vspace{-0.2in}
+&\min_{k \in \k^{(l)}} \min_{f \in \h_k} & \lambda \|f\|_{\h_k} +  \sum_{i=1}^n\ell(y_if(\x_i)).
+\label{eqn:dmkl}
+%\vspace{-0.1in}
+\end{eqnarray*}
+To explain it intuitively, Figure~1 illustrates the architecture of an example three-layer MKL paradigm.
+
+Despite sharing the similar optimization form, MLMKL is much more challenging than the conventional shallow MKL. This is because there are many unknown structures and variables, including the initialization of base kernels, the unknown combination functions $g^{(l)}$ at each level, and the final prediction model $f$. Apparently, it is not possible to fully optimize every aspect. In the following, we attempt to attack this challenge by considering a simplified paradigm, i.e., Two-Layer Multiple Kernel Learning (2LMKL).
+
+\begin{figure*}[htp]\label{fig:example}
+\vspace{-0.1in}
+\begin{center}
+\includegraphics[width=\linewidth]{figures/dmkl.eps}
+\end{center}\vspace{-0.2in}
+\caption{The architecture of the proposed deep multiple kernel learning framework. Here shows an example of three-layer MKL, and some connections are not displayed to simplify the figure.}
+\label{fig:dmkl}%\vspace{-0.2in}
+\end{figure*}
+
+%=================================
+\subsection{Two-Layer Multiple Kernel Learning}
+%=================================
+
+To simplify the notations, we restrict our discussion on a Two-Layer Multiple Kernel Learning task in this Section.
+Our algorithm can also be extended to general multiple-layer MKL. Further, we employ an RBF kernel for the combination
+function $g^{(2)}$ and define the two-layer multiple kernel domain as follows:
+\begin{eqnarray}
+\mathcal{K}^{(2)} \!\!\!&=&\!\!\!\Big\{k^{(2)}(\x_i, \x_j; \bm\mu) =
+\exp\bigg(\sum_{t=1}^m \mu_t k_t^{(1)}(\x_i, \x_j)\bigg): \nonumber\\
+&&\bm\mu\in\mathbb{R}_+^{m} \Big\},\label{eqn:2-layer-mkl}
+\end{eqnarray}
+where $\mu_t$ denotes the weight of $t$-th antecedent-layer kernel. As aforementioned,  the kernel in form of (\ref{eqn:2-layer-mkl}) is an inner product after two layer of feature mapping. Therefore, it is a PSD kernel.
+Thus we can formulate the two-layer MKL with the kernel $\mathcal K^{(2)}$:
+\[\min_{k \in \k^{(2)}}
+\min_{f \in \h_k}  \frac{1}{2}\|f\|_{\h_k}^2 + C\sum_{i=1}^n \max(0,1-y_i f(\x_i))
++ \sum_{t=1}^{m} \mu_t\;.\]
+Note the last term is introduced as a regularization to
+prevent the coefficients being too large. We can further turn the above formulation into the
+following equivalent min-max optimization:
+\begin{eqnarray}
+\hspace{-0.7cm}&\min_{\bm\mu}\!\max_{\ba}\!&\hspace{-0.35cm}\sum_{i=1}^n\a_i \!-\!
+\frac{1}{2}\!\!\sum_{i,j=1}^n\!\! \a_i\a_jy_iy_jk^{(2)}(\x_i, \!\x_j;\!\bm\mu)
+\!\!+\!\! \sum_{t=1}^{m}\!\mu_t  \nonumber\\
+\hspace{-1cm}&\st&\hspace{-0.8cm} 0 \!\leq\! \a_i \leq C,\sum_{i=1}^n \a_iy_i \!=\! 0,\mu_t \!\geq\! 0, t \!=\! 1,\ldots,m,\label{eqn:obj}
+\end{eqnarray}
+where $\bm\alpha=[\alpha_1,\ldots,\alpha_n]^\top$ is the vector of dual variables and $\bm\mu=[\mu_1,\ldots,\mu_{m}]^\top$. Once solving the above
+optimization to find the solutions for $\bm\alpha$ and $\bm\mu$, it is straightforward
+to obtain the final decision function of the Two-Layer MKL machine:
+\begin{eqnarray}\label{eq:deep_f}
+f(\mathbf{x};\alpha,\bm\mu) = \sum_{i=1}^n \alpha_i y_i k^{(2)}(\x_i,\x;\bm\mu)+b,
+\end{eqnarray}
+where the bias term $b$ can be easily determined from KKT conditions. Due to the nonlinearity of $\exp(\cdot)$ function, we expect that the decision function in (\ref{eq:deep_f}) can represent richer prediction tasks than that in the RKHS induced from a one-layer kernel.
+
+The next challenge is how to resolve the above optimization. We consider an
+alternative optimization scheme. That is, (1) fix $\bm\alpha$ and solve $\bm\mu$; and (2) fix $\bm\mu$ and solve $\bm\alpha$. Specifically, let us denote by $J(\ba, \bm\mu)$ the following function:
+\[
+\hspace{-0.1in} J(\ba, \bm\mu) = \frac{1}{2}\sum_{i,j=1}^n \a_i\a_jy_iy_jk^{(2)}(\x_i, \x_j;\bm\mu) - \sum_{i=1}^n\alpha_i-
+\sum_{i=1}^m\mu_i.
+\]
+Since $k^{(2)}$ is positive semi-definite, the objective is
+convex over $\ba$. Thus it can be solved by standard QP solvers for a fixed
+$\bm\mu$. However, for any pair $(i, j)$ of $y_iy_j = -1$, $\alpha_i\alpha_jy_iy_j
+k^{(2)}(\x_i, \x_j;\bm\mu) \leq 0$. Thus, $J$ is non-convex over $\bm\mu$. We simply compute the $d$-th component of the gradient w.r.t. $\bm\mu$:
+\begin{eqnarray}
+\hspace{-0.25in}&&\big[\nabla J_{\bm\mu^{t-1}}\big]_d := \big[\nabla_{\bm\mu} J(\ba^t,\bm\mu^{t-1})\big]_d \nonumber\\
+\hspace{-0.25in}&&= \frac{1}{2}\sum_{ij}\a_i\a_jy_iy_jk^{(2)}(\x_i, \x_j;\bm\mu^{t-1})k^{(1)}_d(\x_i,\x_j) - 1. \quad\quad\label{eqn:gradient-mu}
+\end{eqnarray}
+Then we update $\bm\mu$ by gradient ascent:
+\[
+\bm\mu^{t} = \max(\bm\mu^{t-1} + \eta\nabla J_{\bm\mu^{t-1}}, \0).
+\]
+The step size $\eta$ can be set by Armijo's rule such that the convergence is guaranteed. Let $\Theta = \{\theta_1, \ldots, \theta_m\}$ denote the set of hyper-parameters corresponding to base kernels $k_t^{(1)}$'s inside $k^{(2)}$ in (\ref{eqn:2-layer-mkl}).
+Algorithm~\ref{alg:two-layer-mkl} shows the detailed optimization steps of the proposed two-layer MKL algorithm with the given $\Theta$.
+
+
+\begin{algorithm}[htp]
+\caption{Two-Layer MKL (2LMKL): $(\ba, \bm\mu)$ $=$ TwoLayerMKLwithTheta$( \Theta_0;\mathbf X^n_1)$                         }
+
+\textbf{Input:} Training sample $\mathbf X^n_1$,
+initial set of base kernel parameters $\Theta_0=\{\theta_1,\ldots,\theta_m\}$; \\
+\textbf{Output:} weight vector $\bm\mu$ of base kernels, dual variables $\ba$ of SVM.
+\begin{algorithmic}
+[1] \STATE Randomly initialize $\bm\mu^0$, compute initial base kernels with
+$\Theta$;
+
+\REPEAT
+\STATE Compute the current kernel matrix with $\bm\mu^{t-1}$;
+\STATE $\ba^t = \argmin_{\ba} J(\ba, \bm\mu^{t - 1})$ by SVM solver;
+\STATE Compute $\nabla_{\bm\mu} J(\ba^t, \bm\mu^{t-1})$ by (\ref{eqn:gradient-mu}) as descent direction;
+\STATE Determine the step size $\eta^t$ by Armijo's rule, update $\bm\mu^{t} = \max(\bm\mu^{t - 1} + \eta^t \nabla J_{\bm \mu ^{t-1}}$,\0);
+
+\UNTIL convergence
+\end{algorithmic}
+\label{alg:two-layer-mkl}
+\end{algorithm}
+
+%=================================
+\section{Improve 2-layer MKL with Infinite Base Kernel Learning}
+%=================================
+
+Notice that, similar to traditional MKL algorithms, our proposed MLMKL algorithm also must assume a set of predefined base kernels inside $k^{(2)}$ as in $\k^{(2)}$ provided beforehand. If the number of base kernels is too small, $k^{(2)}$ may not be flexible enough to fit complicated patterns in a real problem. On the other hand, both the time cost and space cost of MKL/MLMKL increase with the cardinality of $\k_{conv}/\k^{(2)}$.
+This may be computationally inefficient when using too many base kernels. Moreover, though the proposed deep MKL architecture provides a flexibility for the design of multi-layer kernels, determining an appropriate set of base kernels usually require some domain knowledge, which may be difficult for some non-expert users.
+
+To partially address some of the above challenges, here we propose to generate the base kernels inside $k^{(2)}$ iteratively. This can be done by selecting a base kernel that optimizes the objective function in (\ref{eqn:obj}), which
+is similar to the idea of infinite kernel learning~\cite{colt/ArgyriouMP05,tr/GehlerN08} except that our base kernels are in the antecedent layer. Assume the inner base kernel is continuously parameterized by $\theta$, for example, the bandwidth parameter of Gaussian kernel, or the degree of polynomial kernel. To expand the base kernel set $\k$, we choose a $\theta$ such that the resultant single kernel maximizes $J$ with the current solution $\ba$:
+\begin{equation}
+\max_{\theta\in\r_+}J(\bm\alpha,\theta) =
+\frac{1}{2}\!\sum_{i, j = 1}^n \!\a_i\a_jy_iy_j\exp(k(\x_i,\! \x_j;\! \theta)). \quad\quad\label{eqn:sub-problem}
+\end{equation}
+Again, this problem is non-convex over $\theta$. Similar to solving $\bm\mu$, we compute the gradient of (\ref{eqn:sub-problem}) w.r.t. $\theta$ and do gradient ascent. For example, if the inner base kernel is a Gaussian kernel
+$k(\x_i, \x_j; \theta) = \exp(-\theta\|\x_i - \x_j\|^2)$, the gradient can be then computed as follows:
+\begin{equation}\label{eqn:sub-problem_grad}
+\hspace{-0.1in} \nabla J_\theta \hspace{-0.05in} = \hspace{-0.05in}\frac{1}{2}\hspace{-0.05in}\sum_{i,j\in\mathbb N_n}\!\a_i\a_jy_iy_j e^{(k(\x_i, \!\x_j; \! \theta))}k(\x_i, \x_j; \theta) \| \x_i \!\!-\!\! \x_j \|^2.
+\end{equation}
+After that, we employ a line search approach to determining the step size for gradient ascent. The proposed improved two-layer MKL algorithm iterates between the following two steps: (1) iteratively solve the dual variables $\ba$ and the kernel weight $\bm\mu$ as similar to the previous algorithm; (2) add a new $\theta$ to $\Theta$ by the base kernel generation method. Finally, Algorithm \ref{alg:deep-mkl} summarizes the details of the improved two-layer multiple kernel learning algorithm, which is denoted as 2LMKL$^{\mathrm{Inf}}$ for short.
+
+\begin{algorithm}[ht]
+\caption{Infinite Two-Layer MKL (2LMKL$^{\mathrm{Inf}}$): $(\ba, \bm\mu, \Theta)$ $=$ TwoLayerMKL$(
+\Theta_0;\mathbf X^n_1 )$}
+
+\textbf{Input:} Initial set of base kernel parameters $\Theta_0$, training sample $\mathbf X^n_1$; \\
+\textbf{Output:} Final set of base kernel parameters $\Theta$, weight vector  $\bm\mu$ of base kernels, dual variables $\ba$.
+
+\begin{algorithmic}
+[1] \STATE Initialize $\Theta = \Theta_0$;
+
+\WHILE{{\bf true}}
+
+\STATE $(\ba, \bm\mu) = $ TwoLayerMKLwithTheta$(\Theta; \mathbf X^n_1)$;
+
+\STATE $\theta = $ NewKernel$(\ba; \mathbf X^n_1)$;
+
+\IF{$J(\ba, \theta) \leq J(\ba, \bm\mu)$}
+
+\STATE {\bf break};
+
+\ENDIF
+
+\STATE $\Theta = \Theta \cup \theta$;
+
+\ENDWHILE
+\\
+%\STATE Determine the bias term $b$ by KKT conditions;\\
+\STATE
+\STATE \textbf{Function} $\theta = $ NewKernel$(\ba; \mathbf X^n_1)$;
+\STATE Randomly initialize $\theta^0$;
+%\FOR{$t < g$}
+\WHILE{$J(\bm\alpha,\theta^{t-1})$ is improving}
+\STATE  Compute the gradient $\nabla J_\theta$ by the similar approach in Eqn.~(\ref{eqn:sub-problem_grad});
+
+\STATE Determine a step size $\eta^{t}$, update $\theta^t = \theta^{t - 1} +
+\eta^t\nabla J_\theta$;
+\ENDWHILE
+
+\end{algorithmic}
+\label{alg:deep-mkl}
+\end{algorithm}
+
+\begin{table*}[!htb] \label{table:dataset-dmkl}
+\centering\caption{The statistics of the 16 binary-class data sets used in our experiments.}
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{l|rrrrrrrrrr}
+\hline
+Data Set    &Breast &Ionosphere &Diabetes   &Waveform  &Sonar &Adult  &Liver  &German\\
+\hline
+\hline
+\# instances      &683  &351  &768    &400    &208    &1,605  &345    &1,000 \\
+\# dimensions &10   &33   &8  &21 &60 &123    &6  &24\\
+\hline
+\hline
+Data Set    &Splice &Australian  &Thyroid &Ringnorm &Heart    &Banana   &Titanic  &FlareSolar\\
+\hline
+\hline
+\# instances      &1,000  &690    &140    &400    &270    &400    &150    &666   \\
+\# dimensions   &60   &14 &5  &20 &13 &2  &3  &9    \\
+\hline
+\end{tabular}
+\end{footnotesize}
+\end{center}
+%\vspace{-0.1in}
+\end{table*}
+
+
+%=================================
+\section{Analysis of Generalization Performance}
+%=================================
+\def\v{{\varepsilon}}
+
+We are aware of the trend of seeking new kernel combination methods beyond
+the traditional MKL. However, the kernel is the prior knowledge of the data. The construction of kernel cannot be fully ``automated". When we add more flexibility to kernel learning, we are also potentially increasing the difficulty of finding the optimal kernel. It calls for theoretical analysis on these generalized kernel combination methods. We base our analysis of two-layer MKL mainly on the notion of {\em pseudo-dimension} of the kernel optimization domain $\mathcal K^{(2)}$ \cite{colt/SrebroB06}.% $\k_{2-layer} = \{k^{(2)}\}$.
+\begin{theorem}\cite{colt/SrebroB06}
+Let $L(f) = \p(f(\x_i)y_i \leq 0)$ be the generalization risk of some prediction
+function $f$ learned by solving (\ref{eqn:mkl}), and $L_n(f) = \frac{1}{n}
+\sum_{i=1}^n \1(f(\x_i)y_i < \gamma)$ be the empirical error. For a kernel family
+$\k$ with pseudo-dimension $d_\k$, the generalization risk of $f$ is bounded as:
+\[
+L(f) \leq L_n(f) + \sqrt{\tilde{O}(d_\k + 1 / \gamma^2) / n},
+\]
+where $\gamma$ is the margin in loss function $\l(t) = \max(0, \gamma - t)$, the
+$\tilde{O}$ notation hides logarithmic factors in its argument, the sample size and the
+allowed failure probability.
+\end{theorem}
+Here the pseudo-dimension $d_\k$ measures the richness / complexity of a kernel domain $\k$:
+\begin{definition}\label{def:pseudo-dim}
+Let $\k$ be a set of kernel functions mapping from $\X\times\X$ to $\r$. We say that
+a set of paired examples $\mathbf S_n = \{(\x_i, \x_i') \in \X\times\X, i = 1, \ldots, n
+\}$ is pseudo-shattered by $\k$ if there are real numbers $\mathbf r \in \r^n \}$ such
+that for any $\mathbf b \in \{-1, 1\}^n$ there is a function $k \in \k$ with property
+$\mbox{sgn}(k(\x_i, \x_i') - r_i) = b_i$ for any $(\x_i, \x_i') \in \mathbf S_n$. Then,
+we define a {\bf pseudo-dimension} $d_{\k}$ of $\k$ to be the largest $n$ such that
+there exist a $\mathbf S_n$ that can be pseudo-shattered by $\k$.
+\end{definition}
+
+\begin{theorem} \label{thm:psd-dim-layer2-mkl}
+Let $\k^{(1)} = \{k_1^{(1)},\ldots, k_m^{(1)}\}$ be the inner base kernel family for
+the 2-layer deep kernel $\k^{(2)}$ defined in (\ref{eqn:2-layer-mkl}), where $m$ is
+the number of base kernels. Assuming the evaluation of $k^{(1)}$ always positive,
+then the pseudo-dimension $d_{\k^{(2)}}$ is bounded by
+\[
+d_{\k^{(2)}} \leq m.
+\]
+\end{theorem}
+\begin{proof}
+%\vspace{-0.1in}
+First, we re-write $\k^{(2)}$ as follows:
+\[\k^{(2)} = \big\{ \prod \exp\big(\mu_tk^{(1)}_t\big): k^{(1)}_t \in
+\k^{(1)} \big\}\;.\]
+Thus each $k^{(2)} \in \k^{(2)}$ is the product of base kernels in
+form of $\exp(\mu k^{(1)})$. Consider the logarithmic operation $\ln\circ\k$, where
+for each kernel $k \in \k$ and any pair $(\x_i, \x_j)$, we have $(\ln\circ k)(\x_i, \x_j)
+= \ln k(\x_i, \x_j)$. Therefore, $\ln\circ\k^{(2)} = \big\{\sum\mu_t k_t^{(1)}:
+k_t^{(1)}\in\k^{(1)}\big\}$. This is a linear space of dimension at most $m$ (with
+basis $\k^{(1)}$ when all $k^{(1)}$ are linearly independent). According to Theorem
+11.4 of \cite{Anthony99}, the Pseudo-dimension \cite{colt/SrebroB06} of
+$\ln\circ\k^{(2)}$ is bounded by $d_{\ln\circ\k^{(2)}} \leq m.$ We can recover
+$\k^{(2)} = \exp\circ\ln\circ\k^{(2)}$. Since the exponential function is monotonic, by applying Theorem 11.3 of \cite{Anthony99}, we arrive at
+\begin{equation}
+d_{\k^{(2)}} = d_{\exp\circ\ln\circ\k^{(2)}} \leq d_{\ln\circ\k^{(2)}} \leq m . \label{eqn:pseudo-dim}
+\end{equation}
+%which completes the proof.
+%\vspace{-0.2in}
+\end{proof}
+
+{\it Remark}: Despite the simplicity of its proof, Theorem 2 implies that the outer exponential computation of our new kernel does not increase the complexity of the kernel domain in terms of pseudo-dimension. Comparing with MKL, our MLMKL method, with more flexible or richer optimization domain, would thus have a better chance in finding the best prediction function without increasing the generalization risk explicitly.
+
+Recently, Ying and Campbell \cite{colt/YingC09} employed the {\em Rademacher chaos complexity} $\eu(\k)$ to measure the richness of $\k$ through its ability of fitting noisy similarity value:
+\[
+\hspace{-0.1in} \eu(\k;\mathbf X^n_1) = \e_{\bm\varepsilon}\sup_{k\in\k}\bigg|\frac{1}{n} \!\sum_{i < j} \v_i\v_jk(\x_i, \x_j)\bigg|: k \!\in\! \k, \x_i\!\in\!\mathbf X^n_1,
+\]
+where $\v_i$ is a Rademacher random variable taking value $\pm1$ with uniform
+probability. We have
+
+\begin{corollary}
+The Rademacher chaos complexity of $\k^{(2)}$ is bounded by
+\begin{equation}
+\eu(\k^{(2)}) \leq (192e + 1)\kappa^2m, \label{eqn:bnd-rdm}
+\end{equation}
+here $\kappa = \max_{\x}k^{(2)}(\x, \x)$, $n$ is the size of training sample, $e$ is
+natural constant.
+\end{corollary}
+The above corollary can be followed directly by combining Theorem~2 and the
+Rademacher chaos complexity result in~\cite[Theorem 3]{tr/rcc010}. Finally, the generalization bound based on $\eu(\k^{(2)})$ can be obtained immediately by combining the above Corollary with Lemma~9 of \cite{colt/YingC09}.
+
+\begin{proof}
+With the metric entropy integral techniques, it is proved by Ying et. al. that the
+Rademacher chaos complexity can be bounded by pseudo-dimension
+\begin{equation}
+\eu(\k_{conv}) \leq \theta d_{\k}(1 + \kappa)^2\ln(2en^2), \label{eqn:eu-pseudo-dim}
+\end{equation}
+here $\theta$ is some constant. Thus, applying Theorem \ref{thm:psd-dim-layer2-mkl} yields the results immediately.
+\end{proof}
+
+
+\begin{table*}[!thb] \label{table:result}
+%\vspace{-0.1in}
+\centering \caption{The evaluation of classification performance by
+comparing with a number of different algorithms. Each element in the table shows the
+mean and standard deviation of classification accuracy (\%). The relative ranking of
+different MKL algorithms on each data is shown in (). The last row shows the average
+rank score over all data sets achieved by each algorithm.}
+\begin{center}
+\setlength{\tabcolsep}{1.8pt}
+{\scriptsize
+\begin{tabular}{l|l|llllllll}
+\hline
+Data Set &SVM & MKL$^{\mathrm{level}}$
+    &LpMKL  &GMKL  &IKL & MKM & 2LMKL & 2LMKL$^{\mathrm{Inf}}$\\
+\hline
+\hline              %SVM                 LevelMKL            LpMKL               GMKL               IKL                                KDL                     DMKL
+Breast             &96.8$\pm$1.0   &96.5$\pm$0.8  (5) &96.2$\pm$0.7 (7)  &{\bf 97.0$\pm$1.0} (2)  &96.5$\pm$0.7 (5)  &{\bf97.1$\pm$1.0} (1) &{\bf 97.0$\pm$1.0} (2) &{\bf96.9$\pm$0.7} (4)\\
+{Diabetes}     &76.7$\pm$1.8   &75.8$\pm$2.5 (4)  &72.6$\pm$2.5 (6)   &66.4$\pm$2.5 (7)   &76.0$\pm$3.0 (3)  &75.8$\pm$2.5  (4)  &{\bf76.6$\pm$1.6} (1)  &{\bf76.6$\pm$1.9} (1)\\
+{Australian}   &84.6$\pm$1.4   &85.0$\pm$1.5 (5)  &84.5$\pm$1.6 (6)  &80.0$\pm$2.3 (7)  &85.4$\pm$1.2 (3)  &85.3$\pm$0.9 (4)    &{\bf85.5$\pm$1.6} (2)   &{\bf85.7$\pm$1.6} (1)\\
+Splice             &85.0$\pm$1.4   &88.4$\pm$2.4 (3)    &87.1$\pm$1.6 (4)   &92.4$\pm$1.4 (2)   &80.0$\pm$1.5 (7)   &84.6$\pm$1.5 (6)     &{\bf92.9$\pm$1.1} (1)    &84.7$\pm$1.2 (5)\\
+{FlareSolar}  &67.5$\pm$2.0   &67.6$\pm$2.0 (2)    &64.8$\pm$1.8 (5)   &65.3$\pm$1.8 (3)    &64.8$\pm$1.8 (5)  &64.4$\pm$1.7 (7)     &{\bf68.1$\pm$1.8} (1)    &65.3$\pm$1.8 (3)\\
+Titanic           &78.0$\pm$3.2   &77.1$\pm$2.9 (2)    &77.0$\pm$3.0 (5)    &76.7$\pm$3.1 (7)   &76.8$\pm$2.8 (6)   &77.1$\pm$3.0 (2)     &77.1$\pm$3.0 (2)    &{\bf77.8$\pm$2.6} (1)\\
+Iono               &92.8$\pm$2.0   &91.7$\pm$1.9 (7)    &92.6$\pm$1.4 (4)   &92.7$\pm$1.8 (3)   &93.7$\pm$1.0 (2)    &91.7$\pm$2.7 (6)     &92.3$\pm$1.5 (5)   &{\bf94.4$\pm$0.9} (1)\\
+Banana          &89.7$\pm$1.5   &{\bf90.2$\pm$2.0} (1)    &87.5$\pm$2.6 (4)   &83.4$\pm$2.7 (6)   &{\bf90.2$\pm$1.8} (1)   &80.5$\pm$5.3 (7)  &86.8$\pm$2.1 (5)    &{\bf90.2$\pm$1.6} (1)\\
+{Ringnorm}  &98.5$\pm$0.7   &98.1$\pm$0.8 (3)    &96.7$\pm$1.0 (7)   &97.5$\pm$1.0 (6)   &{\bf98.5$\pm$0.7} (1)   &97.7$\pm$1.0 (5) &97.9$\pm$0.8 (4)     &{\bf98.5$\pm$0.8} (1)\\
+{Waveform} &89.0$\pm$1.8   &88.2$\pm$1.6 (6)    &88.9$\pm$2.0 (4)   &88.2$\pm$1.8 (6)   &89.7$\pm$2.3 (3)   &{\bf90.0$\pm$1.6} (2)  &88.7$\pm$1.9 (5)     &{\bf90.4$\pm$1.6} (1)\\
+Heart           &82.1$\pm$3.0   &83.0$\pm$2.9 (4)   &76.7$\pm$3.8 (7)   &77.0$\pm$3.6 (6)   &83.3$\pm$2.1 (2)   &82.4$\pm$2.5 (5)  &83.1$\pm$2.5 (3)    &{\bf83.6$\pm$2.1} (1)\\
+Sonar           &83.8$\pm$3.4   &78.3$\pm$3.5 (7)   &{\bf84.8$\pm$3.2} (1)   &78.8$\pm$4.6 (6)   &81.0$\pm$5.0 (4)   &83.1$\pm$3.8 (3)      &79.0$\pm$4.3 (5)    &{\bf84.6$\pm$2.4} (2)\\
+Thyroid       &93.9$\pm$2.9   &92.9$\pm$2.9 (6)    &93.1$\pm$2.2 (5)   &{\bf94.6$\pm$2.1} (3)   &{\bf94.8$\pm$2.0} (1)   &92.6$\pm$3.0 (7)     &93.4$\pm$3.1 (4)     &{\bf94.8$\pm$2.2} (1)\\
+Liver           &70.5$\pm$4.1   &62.3$\pm$4.5 (6)    &69.4$\pm$2.9 (2)   &63.6$\pm$2.6 (4)   &60.0$\pm$2.9 (7)   &{\bf70.1$\pm$3.6} (1)     &66.0$\pm$3.4 (3)    &62.7$\pm$3.1 (5)\\
+Adult           &82.0$\pm$0.7   &81.5$\pm$1.0 (4)    &{\bf82.1$\pm$0.6} (1)   &75.5$\pm$1.1 (6)   &75.1$\pm$1.1 (7)   &81.7$\pm$0.9 (3)     &79.1$\pm$2.4 (5)    &81.8$\pm$1.0 (2)\\
+German          &75.2$\pm$1.9   &71.4$\pm$2.8 (5)    &74.3$\pm$1.4 (3)   &70.4$\pm$1.6 (6)   &70.0$\pm$1.5 (7)   &{\bf75.7$\pm$2.3} (1)    &74.8$\pm$1.8 (2)   &74.2$\pm$2.0 (4)\\
+\hline
+\hline
+%Rank            &N/A &3.88&3.81&4.31&3.31&2.75&2.75&{\bf1.88}\\
+%Rank            &N/A &4.19&4.44&5.06&4.00&4.06&2.75&{\bf1.88}\\
+Rank            &N/A    &4.38   &4.44   &5.00   &4.00   &4.00   &3.13   &2.13\\
+\hline
+\end{tabular}
+}
+\end{center}
+%\vspace{-0.2in}
+\end{table*}
+
+%\vspace{-0.15in}
+%=======================================================
+\section{Experiments}
+%=======================================================
+%\vspace{-0.13in}
+%=================================
+\subsection{Experimental Testbed and Setup}
+%=================================
+%\vspace{-0.13in}
+We evaluate the performance of the proposed Two-Layer MKL algorithms for binary classification tasks over a testbed of 16 publicly available data sets as shown in Table 1\footnote{\scriptsize http://www.csie.ntu.edu.tw/$\sim$cjlin/libsvmtools/datasets/}
+\footnote{\scriptsize http://www.fml.tuebingen.mpg.de/Members/raetsch/benchmark}.
+
+
+Following the settings of previous MKL studies~\cite{nips/XuJKL08}, for each data set, we create the set of base kernels $\k$ as follows: %for MKL as in
+(1) Gaussian kernels with 10 different widths ($\{2^{-3},2^{-2},\ldots,2^6\}$) on all features and on each single feature; (2) polynomial kernels of degree 1 to 3 on all features and on each single feature. Each base kernel matrix is normalized to unit trace.
+%With the above selected base kernels, we single out a batch of publicly available data sets.
+For each data set, we randomly sample $50\%$ of all instances as training data, and
+use the rest as test data. The training instances are normalized to be of zero mean and
+unit variance, and the test instances are also normalized using the same mean and
+variance of the training data. To get stable results, for each data set, we repeat each
+algorithm 20 times and compute the average results of the 20 runs.
+
+For comparison, we have tried our best to compare as many state-of-the-art MKL
+methods as possible, which were proposed under different contexts for various
+applications. The goal of our experiment is mainly to examine if deep MKL is
+effective for improving the performance of the shallow MKL techniques. Specifically,
+we have compared the following algorithms:
+\begin{itemize}
+ \item [] \hspace{-1cm}{\bf SVM}: The Support Vector Machine algorithm with a single Gaussian kernel. The band-width parameter is selected via 5-fold cross
+        validation on the training data;
+  \item []\hspace{-1cm}{\bf MKL$^{\mathrm{Level}}$}: The convex multiple kernel learning algorithm, that is, the target
+         kernel class is $\k_{conv}$ defined in (\ref{eqn:convex-mkl}). We use the
+         extended level method \cite{nips/XuJKL08} to learn the kernel;
+  \item []\hspace{-1cm}{\bf LpMKL}: The MKL algorithm with $L_p$ norm regularization over
+        the kernel weight \cite{nips/KloftBSLMZ09}. We adopt their cutting plane
+        algorithm with second order Taylor approximation of $L_p$;
+
+  \item []\hspace{-1cm}{\bf GMKL}: The Generalized MKL algorithm in \cite{icml/VarmaB09}. The
+        target kernel class is the Hadamard product of single Gaussian kernel defined
+        on each dimension;
+  \item []\hspace{-1cm}{\bf IKL}: The Infinite Kernel Learning algorithm proposed by \cite{tr/GehlerN08}.
+        We use LevelMKL as the embedded algorithm to solve the kernel weight
+        $\bm\mu$ and $\ba$;
+  \item[]\hspace{-1cm}{\bf MKM}: The Multilayer Kernel Machine with deep learning~\cite{nips/ChoS09},
+        which essentially trained SVM with multilayer arc-cosine kernel functions;
+  \item[]\hspace{-1cm}{\bf 2LMKL}: The proposed Two-Layer MKL algorithm described in Algorithm \ref{alg:two-layer-mkl};
+  \item[]\hspace{-1cm}{\bf 2LMKL$^{\mathrm{Inf}}$}: The proposed Infinite Two-Layer MKL algorithm described in Algorithm \ref{alg:deep-mkl}.
+\end{itemize}
+
+For parameter settings, the regularization parameter $C$ in MKL or our 2LMKL algorithms is determined by 5-fold cross validation on the training data over the range of $\{10^{-2}, 10^{-1}, \ldots, 10^2\}$. For a fair comparison, the same set of base kernels was adopted by MKL$^{Level}$, LpMKL, and 2LMKL. For LpMKL, we examine $p=2,3,4$ and report the best result. For fair comparison, in MKM we chose the layer $l = 2$, and found the best degree parameter (\{0,1,2\}) by cross validation. For 2LMKL$^{\mathrm{Inf}}$, the initial base kernel is a Gaussian kernel with 10 parameters and polynomial kernel with 3 degrees calculated on all the features. During the iterative process, we add one Gaussian kernel at each iteration.
+
+
+%=================================
+\subsection{Performance Analysis}
+%=================================
+%\vspace{-0.1in}
+Table 2 shows the detailed results of average classification accuracy and standard deviation values. To compare the overall performance,
+we count the ranks of the algorithms according to their performance on each data set. The average rank is included in the last row. From the results, we can draw several observations as follows.
+
+First of all, by comparing the results between SVM and the four existing MKL
+methods, we found that the existing MKL algorithms do not always outperform SVM with an RBF kernel. For example, for the MKL$^{\mathrm{Level}}$ algorithm, it outperformed SVM only over five data sets ({\it Australian, Splice, FlareSolar, Banana, and Heart}), and was surpassed significantly by SVM over several data sets ({\it German, Sonar, and Liver}, etc). Although it seems a little bit surprising, the similar observation was reported in some previous empirical study~\cite{tr/GehlerN08}, which also found that regular MKL does not always outperform SVM with an RBF kernel who kernel parameter was tuned by cross validation. This observation validates our motivation for overcoming the {\it shallow} limitation of the regular MKL methods.
+
+Second, by comparing the four existing MKL methods, we observed that IKL overall achieved the best performance among them, and GMKL tended to perform slightly worse than the other methods. Specifically, among all the MKL methods, IKL won 3 best cases, LpMKL won 2 best cases, while either MKL$^{\mathrm{Level}}$ or GMKL won only 1 out of 16 cases. We conjecture the reason that IKL performed better is probably because IKL has the possibility of using a largely increased kernel set, which may be flexible for the classification task. Similarly, the reason that GMKL performed worse may be due to the relatively smaller kernel set, in which the base kernel set consists of only $d$ kernels each of them was defined on a single dimension.
+
+Third, by examining the results achieved the two proposed algorithms, 2LMKL and 2LMKL$^{\mathrm{Inf}}$, we found that both of them achieved rather impressive performance. Both of them considerably outperformed the other methods, including the existing MKL methods and the MKM method, over quite a number of data sets. Specifically, among all the MKL methods, 2LMKL won 5 best cases while 2LMKL$^{\mathrm{Inf}}$ won 11 best cases out of 16 cases. The encouraging performance showed our 2LMKL method is more effective than the regular MKL methods through the exploration of deep kernel learning capability, and is also more effective than the previous MKM method with deep learning.
+
+Finally, comparing the two proposed two-layer MKL algorithms themselves, we observed that 2LMKL$^{\mathrm{Inf}}$ performed better than 2LMKL. This validates the efficacy of the proposed improvement by exploiting the idea of indefinite kernel learning.
+
+%=======================================================
+\subsection{Summary}
+%=======================================================
+
+This chapter presented a general framework of multi-layer multiple kernel
+learning (MLMKL) to overcome the shallow learning nature of regular MKL. Under the framework, we propose a Two-Layer Multiple Kernel Learning (2LMKL) method, and developed two effective algorithms to solve it. We analyzed the generalization risk of the proposed two-layer MKL algorithms and conducted an extensive set of experiments. Our empirical results showed that the proposed 2LMKL algorithms usually perform better than the existing shallow MKL methods, demonstrating the efficacy of the 2LMKL approach.
+
+Despite the promising results, MLMKL remains a rather new area for future research. In our future work, we plan to extend the current two-layer MKL scheme to higher-layer MKL solutions to further enhance the efficacy. Akin to the training scheme of deep learning\cite{neco/HintonOT06}, one can learn $\bm\mu^{(l)}$ in a bottom-up and layer-wise manner.In other words, we can embed the learned kernel $k^{(l)}_s$ (summation of base kernels at the current layer) into the base kernel functions to generate the candidate kernels $k^{(l+1)}_1, \ldots, k^{(l+1)}_n$ for the next layer. Then conventional MKL algorithms are adopted to solve the weight $\bm\mu^{(l+1)}$. This process can be repeated to construct deep kernels.  We will also analyze the overfitting issue for MLMKL and investigate more theoretical insights about the power of multi-layer multiple kernel learning.
+

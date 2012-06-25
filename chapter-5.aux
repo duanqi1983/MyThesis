@@ -1,0 +1,103 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Unsupervised Multiple Kernel Learning}{85}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction of UMKL}{85}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Framework of UMKL}{86}}
+\newlabel{sec:acml-umkl}{{5.2}{86}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Problem Formulation}{86}}
+\newlabel{eqn:convex-mkl}{{\unhbox \voidb@x \hbox {\rm  5.1}}{86}}
+\citation{nips/YuZG09}
+\citation{icml/TanWT10}
+\newlabel{eqn:obj}{{\unhbox \voidb@x \hbox {\rm  5.3}}{87}}
+\citation{Boyd}
+\citation{nips/Lee06}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Iterative Optimization Algorithm}{88}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.1}Solving $\boldsymbol  {\mu }$ by Fixing ${\mathbf  D}$}{88}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.2}Solving ${\mathbf  D}$ by Fixing the Kernel}{88}}
+\newlabel{eqn:sparse-coding}{{\unhbox \voidb@x \hbox {\rm  5.5}}{88}}
+\citation{nips/XuJKL08}
+\newlabel{eqn:d}{{\unhbox \voidb@x \hbox {\rm  5.6}}{89}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiments}{89}}
+\newlabel{sec:acml-exp}{{5.3}{89}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Experimental Testbed and Setup}{89}}
+\newlabel{alg:umkl}{{5.2.2.2}{90}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces UMKL: Unsupervised Multiple Kernel Learning}}{90}}
+\newlabel{table:dataset}{{5.3.1}{90}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces The statistics of the 12 binary-class data sets used in our experiments.}}{90}}
+\citation{nips/XuJKL08}
+\citation{nips/KloftBSLMZ09}
+\citation{icml/VarmaB09}
+\citation{icml/Cortes09}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Experiment I:Unsupervised MKL versus Supervised MKL}{91}}
+\newlabel{table:acml-exp1-result}{{5.3.2}{92}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces The evaluation of classification performance by comparing with a number of different algorithms. Each element in the table shows the mean and standard deviation of classification accuracy (\%). The relative ranking of different MKL algorithms on each data is shown in (). The last row shows the average rank score over all data sets achieved by each algorithm. The {\bf  bold} element indicates the best performance.}}{92}}
+\citation{nips/ValizadeganJ06}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Classification accuracy of UMKL and KTA by varying \#train/\#test. }}{93}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.1.a}{\ignorespaces heart}}{93}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.1.b}{\ignorespaces titanic}}{93}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Experiment II: UMKL for Dimensionality Reduction}{93}}
+\newlabel{table:KPCA}{{5.3.3}{94}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces The classification accuracy of a 5-NN classifier on the projected data by KPCA with three different kinds of kerenls, i.e., a gaussian kernel with fixed sigma=1, the average combination of multiple kernels, and the kernel learned by UMKL on 9 benchmark data sets. The parameter $B$ of UMKL is fixed to 10. The {\bf  bold} element indicates the best performance.}}{94}}
+\newlabel{figure:acml-kernel-pca}{{5.3.3}{95}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces The classification accuracy of 5-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL on 9 benchmark data sets. The parameter $B$ of UMKL is fixed to 10.}}{95}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Summary}{95}}
+\newlabel{sec:acml-con}{{5.4}{95}}
+\newlabel{figure:acml-kpca}{{5.3.3}{96}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The classification accuracy of 5-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL with varied dimensions, on the waveform dataset.}}{96}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.3.a}{\ignorespaces 5-NN classification after KPCA with varied number of dimensions}}{96}}
+\newlabel{figure:acml-k-nn}{{5.3.3}{97}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces The classification accuracy of k-NN after KPCA with a gaussian kernel with sigma=1, the average combination of multiple kernels, the kernel learned by UMKL with varied number of nearest neighbours, on the heart dataset.}}{97}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.4.a}{\ignorespaces K-NN classification after KPCA with varied number of nearest neighbours}}{97}}
+\newlabel{figure:acml-kpca-example}{{5.3.3}{98}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces The classification accuracy of k-NN after KPCA with Gaussian kernel with sigma=1,the average combination of multiple kernels, the kernel learned by UMKL with varied number of nearest neighbours.}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.a}{\ignorespaces Waveform}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.b}{\ignorespaces Australian}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.c}{\ignorespaces Breast}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.d}{\ignorespaces Diabetes}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.e}{\ignorespaces Flaresolar}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.f}{\ignorespaces German}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.g}{\ignorespaces Sonar}}{98}}
+\@writefile{lof}{\contentsline {subfigure}{\string\numberline{5.5.h}{\ignorespaces Liver}}{98}}
+\@setckpt{chapter-5}{
+\setcounter{page}{99}
+\setcounter{equation}{6}
+\setcounter{enumi}{6}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{4}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{5}
+\setcounter{table}{3}
+\setcounter{subfigure}{0}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{lotdepth}{1}
+\setcounter{parentequation}{0}
+\setcounter{ALC@line}{13}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
+\setcounter{float@type}{8}
+\setcounter{algorithm}{4}
+\setcounter{theorem}{34}
+\setcounter{theorem}{34}
+\setcounter{lemma}{4}
+\setcounter{lemma}{4}
+\setcounter{corollary}{1}
+\setcounter{corollary}{1}
+\setcounter{definition}{0}
+\setcounter{definition}{0}
+\setcounter{algo}{0}
+\setcounter{algo}{0}
+\setcounter{example}{0}
+\setcounter{alg}{0}
+\setcounter{ccc}{0}
+}

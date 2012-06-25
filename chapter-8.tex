@@ -1,0 +1,47 @@
+%---------------------------------------------------------------------------------
+\chapter{Conclusions and Future Work} \label{chp:conclusion}
+%---------------------------------------------------------------------------------
+
+This chapter sets out the conclusion of this thesis and discusses some future directions.
+
+\section{Thesis Summary}
+
+%We first introduce kernel machines and statistical learning theories. Built on such fundamental knowledge, we conduct a thorough survey on both multiple kernel learning and non-parametric kernel learning algorithms. Then we propose 1) a family of fast non-parametric kernel learning algorithms that are general enough to apply to clustering, classification, and data embedding/dimentionality reduction; 2) a deep multiple kernel learning framework and specific algorithms for the two-layer case; 3) unsupervised kernel learning algorithms which can play important role in unsupervised learning and semi-supervised learning; 4) two important applications: image re-ranking and social strength modeling based on kernel learning techniques. Empirical results verified both the effectiveness and efficiency of the proposed techniques.
+
+In this thesis, we first introduce kernel machines and statistical learning theories. Based on such fundamental knowledge, we conduct a thorough survey on both multiple kernel learning and non-parametric kernel learning algorithms.
+
+We present a family of simple non-parametric kernel learning algorithms (SimpleNPKL). Comparing with parametric kernels (e.g., Gaussian kernel), the non-parametric kernels have more flexibility to fit the diversity of the data. Thus it can yield competitive performance in the transductive inference setting. SiimpleNPKL reduces the time complexity from $O(n^{6.5})$ in traditional semi-definite programming to $O(cn^3)$. Moreover, we generalize SimpleNPKL to applications including clustering, classification, and data embedding. Extensive experiments are conducted on public available data sets and verify both the effectiveness and efficiency of our techniques.  We further explore two novel directions towards effective KL. The first strategy is deep MKL, inspired by recent development in deep architectures. The other is unsupervised kernel learning, which shifts the focus of KL from binary classification to discovering the structure of the data. Experiments on public data sets show these two directions are promising.
+
+We study two important applications of NPKL and MKL: image re-ranking and social strength modeling. Empirical results verify the effectiveness of KL algorithms and bridge the gap between KL and real applications.
+
+Below we address several promising directions towards kernel learning.
+
+%=========================================
+\section{Generalization Risk of Kernel Learning}
+%=========================================
+
+In kernel learning, the candidate kernel class increases the model complexity as it is fixed in traditional kernel based machine, like SVM. Therefore, bounding the risk of kernel learning method is crucial for providing insights of which factors affect the generalization ability of kernel machines. We believe bridging the gap between theories and algorithms in kernel methods is very important.
+
+In section 3.3 we derive the risk bounds of more generalized MKL algorithms ($L_p$-norm MKL\cite{nips/KloftBSLMZ09}, polynomial MKL\cite{nips/CortesMR09}, and generalized MKL\cite{icml/VarmaB09}). Later on new works (\cite{icml/CortesMR10a},\cite{corr/HussainS11}) come out and beat our results. We believe more delicate complexity measures like local Rademacher complexity over kernel class can be explored. Refer to \cite{arxiv/KloftB11} for a successful application in the case of $L_p$-norm MKL.
+
+%=========================================
+\section{Deep Kernel Learning}
+%=========================================
+
+Recently deep learning achieves good results on several pattern recognition tasks, where a multi-layer feature mapping function plays a central role. In our opinion, deep learning is nothing more than traditional neural networks except that it employs an unsupervised pretraining process to initialize the parameters. The researchers from this area argue that kernel machines are local template based methods in the sense that a new test point has to be compared with each support vector by a kernel function.
+
+Recall that a kernel is the inner product after a feature mapping function defined on the input space. Therefore, we can do kernel imbedding to make a kernel deep, i.e., plug the mapped feature space into a new feature mapping function. With such deep kernels,  kernel machines like SVM are still ``local template based". It is interesting to study what really matters for performance: the local mechanism or the quality of the kernel. In chapter 5.1 we proposed a general framework for deep MKL and an algorithm for the two-layer case, where the main contribution has been published in \cite{aistats/ZhuangTH11}. We believe deep MKL is promising where two key problems are worthy of study: 1) how to generate the mapping function between layers, which in turn specifies how to embed kernels into the next layer and generate new base kernels; 2) how to combine the base kernels into a powerful single kernel.
+
+%=========================================
+\section{Unsupervised Kernel Learning}
+%=========================================
+
+Currently kernel learning algorithms, e.g., MKL or kernel target alignment, are supervised. However, we think kernel itself is the prior knowledge related to the marginal distribution $p(\mathbf x)$ only. If a kernel is good enough for discovering the structure of the data, such as manifold or clustering structure, then it should be good for classification or regression.
+
+Recent advances in {\em local coordinate coding} inspires pure unsupervised kernel learning\cite{nips/YuZG09,icml/YuZ10,cvpr/WangYYLHG10}, i.e., for a given point, using the kernel evaluation with anchor points as its coding. It also relates to previous works on random projections\cite{ml/BalcanBV06}. Since in real world unlabeled data is cheap to obtain, we believe this direction can make kernel learning more effective and practical. Our preliminary result shows that 1) unsupervised MKL rivals supervised MKL for classification; 2) unsupervised MKL achieves best results on data embedding.
+
+Note that the unsupervised essence of our work implies we can explore novel heuristics towards kernel learning beyond the traditional SVM-based MKL. Thus it is also promising in designing data-dependent kernel learning algorithms. We believe this would open a new perspective towards KL.
+
+We think the above directions are promising to boost kernel methods and kernel learning. We hope to {\em make kernel machines fully automated}, that is, people need not pay much effort on model selection. Given a training sample, all one has to do is to pass the data to the kernel machines.
+
+

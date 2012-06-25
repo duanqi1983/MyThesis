@@ -1,0 +1,75 @@
+%----------------------------------------------------------------------------
+% File          PpMain.tex
+% Author
+% Description   The main control document of my dissertation
+%-----------------------------------------------------------------------------
+%\nonstopmode               % prologue, empty
+
+\documentclass[12pt,a4paper,twoside]{report}
+\input{PpHd.tex}            % file contains param to format theorem, definition, ... DXH
+\input{definition.tex}
+\begin{document}
+\bibliographystyle{alpha}   % alpha
+\input{PpCover.tex}         % front cover page
+\setlength{\baselineskip}{20pt plus 1pt minus 1pt}  % 1-1/2 spacing for whole document
+% ~~~~~~~ contents, list of figures, list of tables ~~~~~~~~~
+\pagenumbering{roman}       % page numbering with small roman digits for preface and contents
+\input{PpPref.tex}          % preface: abstract, acknowledgement and vita
+\setlength{\baselineskip}{20pt plus 1pt minus 1pt}  % 1-1/2 spacing for whole document
+\setcounter{secnumdepth}{3} % section numbering depth
+\setcounter{tocdepth}{2}    % count to the depth of sections
+\tableofcontents            % table of contents appears here
+
+\newpage
+\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\bf
+List of Figures}}
+\listoffigures              % list of figures appears here
+
+\newpage
+\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\bf
+List of Tables}}
+\listoftables              % list of tables appears here
+
+% ~~~~~~~ page style setting for main part ~~~~~~~
+\addtolength{\headheight}{3pt} \pagestyle{fancy}
+\setlength{\headrulewidth}{0.1pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. #1}{}}
+\lhead{\fancyplain{}{\bfseries\footnotesize\sc\leftmark}} \rhead{}
+\addtolength{\headsep}{-0.1in}
+\cfoot{\fancyplain{}{\bfseries\rm\thepage}}
+
+\newpage
+\pagenumbering {arabic}     % page numbering with arabic
+
+% ~~~~~~~ text part of the dissertation ~~~~~~~~~
+\setlength{\baselineskip}{16pt plus 1pt minus 1pt}  % 1-1/2 spacing for whole document
+
+\include{chapter-1}
+\include{chapter-2}
+\include{chapter-3}
+\include{chapter-4}
+\include{chapter-5}
+\include{chapter-6}
+\include{chapter-7}
+\include{chapter-8}
+
+
+\addcontentsline{toc}{chapter}{Appendix - List of Publications}
+\include{publication_list}
+
+% ~~~~~~~ bibliography ~~~~~~~~
+\newpage
+\setlength{\baselineskip}{18pt plus 1pt minus 1pt}  % 1-1/2 spacing for whole document
+\addcontentsline{toc}{chapter}{References}
+
+%\bibliography{PhDDB}
+\bibliography{proposal_ref}
+
+
+%\addcontentsline{toc}{chapter}{List of Publications}
+%\include{publication_list}
+
+\end{document}
+%-----------------------------------------------------------------------------
+%==== The End Here ====

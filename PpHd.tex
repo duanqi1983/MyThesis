@@ -1,0 +1,234 @@
+%----------------------------------------------------------------------------
+% File          PpHd.tex
+% Author        Ong Kok Leong, Liu Zehua
+% Description   preamble: the global settings
+%-----------------------------------------------------------------------------
+
+\usepackage{subfigure,amssymb,amsmath,epsfig,fancyheadings,algorithmic,algorithm,url}
+
+
+
+\oddsidemargin  +0.10in %
+\evensidemargin +0.00in %
+\topmargin      +0.15in %
+\textheight     +8.50in %
+\textwidth      +6.25in %
+
+\pagestyle{plain}
+
+\font\Bold=cmbx10 scaled \magstep3
+\def\EndOfProof{\nolinebreak\ \hfill\rule{1.5mm}{2.7mm}}
+\def\endOfProof{\ \hfill\rule{1.5mm}{2.7mm}}
+
+\def\proof{\noindent \textbf{Proof:}\quad}
+\newcommand\ci{\stackrel{c}{\equiv }}
+\floatname{algorithm}{Protocol}
+
+
+%\renewcommand{\theequation}{\mbox{\rm Eq.\ \thechapter.\arabic{equation}}}
+\renewcommand{\theequation}{\mbox{\rm \thechapter.\arabic{equation}}}
+
+\newcounter{theorem}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\thechapter.\arabic{theorem}}
+
+\newcounter{lemma}
+\newtheorem{lemma}{Lemma}
+\renewcommand{\thelemma}{\thechapter.\arabic{lemma}}
+
+\newcounter{corollary}
+\newtheorem{corollary}{Corollary}
+\renewcommand{\thecorollary}{\thechapter.\arabic{corollary}}
+
+\newcounter{definition}
+\newtheorem{definition}{Definition}[chapter]
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
+
+\newcounter{algo}
+\newtheorem{algo}{Algorithm}
+\renewcommand{\thealgo}{\thechapter.\arabic{algo}}
+
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thesubfigure}{\thefigure.\alph{subfigure}}
+\makeatletter
+\renewcommand{\@thesubfigure}{\thesubfigure:\space}
+\renewcommand{\p@subfigure}{}
+
+\def\LEQ.#1.#2.#3{#1\!\leqslant\!#2\!\leqslant\!#3}
+\def\GEQ.#1.#2.#3{#1\!\geqslant\!#2\!\geqslant\!#3}
+\def\emptyset{\varnothing}
+\renewcommand{\theenumi}{\rm \roman{enumi}}
+\renewcommand{\labelenumi}{\rm (\theenumi)}
+\renewcommand{\theenumii}{\rm \alph{enumii}}
+\renewcommand{\labelenumii}{\rm (\theenumii)}
+
+\renewcommand{\topfraction}{0.75}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.10}
+
+\newcommand{\summarysep}{\vspace{2em}}
+
+
+%
+% Report specific definitions
+%
+\def\ba{{\bm{\alpha}}}
+\def\a{{\alpha}}
+\def\bt{{\bm\theta}}
+\def\y{\mathbf{y}}
+\def\1{\mathbf{1}}
+\def\0{{\mathbf 0}}
+\def\psd{{\succeq\0}}
+\def\x{\mathbf{x}}
+\def\X{{\cal X}}
+\def\Y{{\cal Y}}
+\def\H{{\cal H}}
+\def\R{{\mathbb R}}
+\def\N{{\mathbb N}}
+\def\la{{\langle}}
+\def\ra{{\rangle}}
+\def\tr{{\mbox{tr}\;}}
+\def\sgn{{\mbox{sgn}}}
+\def\conv{{\mbox{conv}}}
+\def\diag{{\mbox{diag}}}
+\def\st{{\mbox{s.t.}}}
+\def\psd{{\succeq\0}}
+\def\pd{{\succ\0}}
+\def\rk{{\mbox{r}}}
+\def\K{{\mathbf K}}
+\def\bt{{\bm\theta}}
+
+
+%
+% Definition in the context of this report.
+%
+\def\reporttitle    {Kernel Learning: Methods and Applications}
+\def\supp           {\varphi}
+\def\psupp          {\varphi^{\mathcal{P}}}
+\def\conf           {\delta}
+\def\pconf          {\delta^{\mathcal{P}}}
+\def\tab            {\hspace{0.8cm}}
+
+%
+% Define the set of symbols for the constraint set.
+%
+\def\map            {\Pi}
+\def\gen            {\Upsilon}
+\def\prune          {\Phi}
+\def\selcand        {\Psi}
+\def\compute        {\Theta}
+\def\check          {\Omega}
+
+
+
+%
+% The set of operators
+%
+\def\select         {\sigma}
+\def\proj           {\pi}
+\def\join           {\bowtie}
+\def\apply          {\mu}
+\def\undo           {\eta}
+\def\rename         {\leftarrow}
+
+\def\linespaceNormal        {\baselineskip=24pt}
+\def\linespaceTight         {\baselineskip=20pt}
+\def\linespaceVeryTight     {\baselineskip=18pt}
+\def\linespaceSingle     {\baselineskip=12pt}
+
+\renewcommand{\bibname}{References}
+
+\def\WICCAP{\textsc{Wiccap}}
+\def\WIPAP{\textsc{Wipap}}
+\def\WDM{\textsc{Wdm}}
+\def\TSIMMIS{\textsc{Tsimmis}}
+\def\ARANEUS{\textsc{Araneus}}
+\def\ADM{\textsc{Adm}}
+\def\WIEN{\textsc{Wien}}
+\def\ARIADNE{\textsc{Ariadne}}
+\def\STALKER{\textsc{Stalker}}
+\def\EDITOR{\textsc{Editor}}
+\def\XWRAP{\textsc{Xwrap}}
+
+\newcommand{\verbb}{
+%\par%
+\vspace{2mm}%
+%\hrule%
+\vspace{-2mm}
+\scriptsize%
+%\indent%
+%\begin{minipage}[t]{3in}%
+}
+
+\newcommand{\verbe}{
+\vspace{-2mm}%
+\normalsize%
+%\hrule%
+%\baselineskip 0.13in%
+%\par
+}
+
+%
+% for 2nd and 3rd schedule
+%
+\newcommand{\researchschedule}[2]{%
+
+\center{\Large \textbf{#1}}
+
+\vspace{5ex}%
+
+\begin{center}
+\begin{tabular}{ll}
+#2
+\end{tabular}%
+\end{center}%
+
+}%
+
+\newcommand{\timeevent}[2]{
+\vspace{1em}%
+
+\begin{minipage}[t]{0.13\textwidth}
+#1
+\end{minipage}
+& \hspace{4em}
+\begin{minipage}[t]{0.57\textwidth}
+#2
+%begin{latexonly}
+\vspace{1em}
+%end{latexonly}
+\end{minipage}\\}
+
+% Close Itemize
+\newenvironment{close_itemize}{\begin{list}%
+    {$\bullet$}
+    {\setlength{\topsep}{0in}%
+     \setlength{\itemsep}{0.5em}%
+     \settowidth{\labelwidth}{$\bullet$}
+     \settowidth{\leftmargin}{~$\bullet$~}
+     \setlength{\parsep}{\parskip}}}
+  {\end{list}}
+
+% use function in algorithmic
+  \newenvironment{ALC@func}{\begin{ALC@g}}{\end{ALC@g}}
+  \newcommand{\FUNCTION}[2]{\ALC@it\textbf{function} #1(\textit{#2})%
+\begin{ALC@func}}
+  \newcommand{\ENDFUNCTION}{\end{ALC@func}\ALC@it\textbf{end function}}
+  \newcommand{\CALLFUNCTION}[2]{\textbf{#1}(\textit{#2})}
+
+% adjust algorithmic parameters
+%  \renewenvironment{ALC@g}{
+%    \begin{list}{\ALC@lno}{ \itemsep\z@ \itemindent\z@
+%    \listparindent\z@ \rightmargin\z@
+%    \topsep\z@ \partopsep\z@ \parskip\z@\parsep\z@
+%    \leftmargin 1em
+%    \addtolength{\ALC@tlm}{\leftmargin}
+%    }
+%  }
+%  {\end{list}}
+
+
+%
+%-----------------------------------------------------------------------------
+%==== The End Here ====
+%

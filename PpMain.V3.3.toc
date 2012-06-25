@@ -1,0 +1,139 @@
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-0.35in}{\bf Abstract}}{i}
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-.35in}{\bf Acknowledgments}}{ii}
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-.35in}{\bf List of Figures}}{viii}
+\contentsline {section}{\hbox to\@tempdima {\hfil }\hspace {-.35in}{\bf List of Tables}}{xi}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Preliminaries}{2}
+\contentsline {section}{\numberline {1.2}Motivation: Why Kernel Learning?}{3}
+\contentsline {section}{\numberline {1.3}Problems and Research Scope}{4}
+\contentsline {section}{\numberline {1.4}Summary of Contributions}{5}
+\contentsline {section}{\numberline {1.5}Thesis Organizations}{5}
+\contentsline {section}{\numberline {1.6}Notation Table}{8}
+\contentsline {chapter}{\numberline {2}Literature Review}{10}
+\contentsline {section}{\numberline {2.1}Positive Semidefinite Kernels}{10}
+\contentsline {subsection}{\numberline {2.1.1}Positive Definite Kernels}{10}
+\contentsline {subsection}{\numberline {2.1.2}Reproducing Kernel Hilbert Space}{12}
+\contentsline {subsection}{\numberline {2.1.3}Some Examples}{13}
+\contentsline {subsection}{\numberline {2.1.4}General Tricks for Constructing Kernels}{13}
+\contentsline {section}{\numberline {2.2}Support Vector Machine}{14}
+\contentsline {subsection}{\numberline {2.2.1}Maximum Margin Classifier}{14}
+\contentsline {subsection}{\numberline {2.2.2}Supervised Learning in RKHS}{16}
+\contentsline {section}{\numberline {2.3}Generalization Risk of Learning in RKHS}{17}
+\contentsline {section}{\numberline {2.4}Transductive Learning}{23}
+\contentsline {section}{\numberline {2.5}Convex Optimization}{25}
+\contentsline {section}{\numberline {2.6}Kernel Learning}{26}
+\contentsline {subsection}{\numberline {2.6.1}Multiple Kernel Learning}{27}
+\contentsline {subsubsection}{\numberline {2.6.1.1}Convex Multiple Kernel Learning}{27}
+\contentsline {subsubsection}{\numberline {2.6.1.2}$L_p$-norm Multiple Kernel Learning}{29}
+\contentsline {subsubsection}{\numberline {2.6.1.3}Polynomial Multiple Kernel Learning}{30}
+\contentsline {subsubsection}{\numberline {2.6.1.4}More Generalized Multiple Kernel Learning}{30}
+\contentsline {subsection}{\numberline {2.6.2}Nonparametric Kernel Learning}{31}
+\contentsline {subsection}{\numberline {2.6.3}Generalization Bounds of Multiple Kernel Learning}{34}
+\contentsline {subsubsection}{\numberline {2.6.3.1}Transductive Bounds}{34}
+\contentsline {subsubsection}{\numberline {2.6.3.2}Risk Bounds with Rademacher Complexity}{35}
+\contentsline {subsubsection}{\numberline {2.6.3.3}Risk Bounds with Covering Number and Pseudo-Dimension}{35}
+\contentsline {subsubsection}{\numberline {2.6.3.4}Risk Bounds with Rademacher Chaos Complexity}{37}
+\contentsline {chapter}{\numberline {3}Simple Non-Parametric Kernel Learning Algorithms}{39}
+\contentsline {section}{\numberline {3.1}Non-Parametric Kernel Learning from Pairwise Constraints}{41}
+\contentsline {subsection}{\numberline {3.1.1}Side / Label Information}{41}
+\contentsline {subsection}{\numberline {3.1.2}Locality Preserving Regularization}{41}
+\contentsline {subsection}{\numberline {3.1.3}Formulation of Non-Parametric Kernel Learning}{42}
+\contentsline {section}{\numberline {3.2}SimpleNPKL: Simple Non-Parametric Kernel Learning}{43}
+\contentsline {subsection}{\numberline {3.2.1}Regularization on ${\bf K}$}{43}
+\contentsline {subsection}{\numberline {3.2.2}SimpleNPKL with Linear Loss}{43}
+\contentsline {subsection}{\numberline {3.2.3}SimpleNPKL with Square Hinge Loss}{46}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Dual Formulation: The Saddle-Point Minimax Problem}{46}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Iterative Algorithm}{47}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Estimating the Rank of $K$}{48}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Determining the Convergence Properties}{49}
+\contentsline {subsection}{\numberline {3.2.4}SimpleNPKL with Square Loss}{52}
+\contentsline {subsection}{\numberline {3.2.5}SimpleNPKL with Hinge Loss}{52}
+\contentsline {section}{\numberline {3.3}Implementation Issues}{53}
+\contentsline {subsection}{\numberline {3.3.1}Building a Sparse Graph Laplacian}{53}
+\contentsline {subsection}{\numberline {3.3.2}Fast Eigendecomposition by Lanczos Algorithm}{53}
+\contentsline {subsection}{\numberline {3.3.3}Active Constraint Selection }{54}
+\contentsline {subsection}{\numberline {3.3.4}Low Rank Approximation of ${\bf K}$}{54}
+\contentsline {section}{\numberline {3.4}Applications of SimpleNPKL}{55}
+\contentsline {subsection}{\numberline {3.4.1}Colored Maximum Variance Unfolding}{55}
+\contentsline {subsection}{\numberline {3.4.2}Minimum Volume Embedding}{56}
+\contentsline {subsection}{\numberline {3.4.3}Structure Preserving Embedding}{56}
+\contentsline {section}{\numberline {3.5}Experiments}{58}
+\contentsline {subsection}{\numberline {3.5.1}Experimental Setup}{58}
+\contentsline {subsection}{\numberline {3.5.2}Comparisons on Benchmark Data Sets}{59}
+\contentsline {subsection}{\numberline {3.5.3}Scalability Study on Adult Data Set}{61}
+\contentsline {subsection}{\numberline {3.5.4}Comparisons on Constraint Selection}{63}
+\contentsline {subsection}{\numberline {3.5.5}Evaluations on Data Embedding Applications}{64}
+\contentsline {subsubsection}{\numberline {3.5.5.1}Colored Maximum Variance Unfolding}{64}
+\contentsline {subsubsection}{\numberline {3.5.5.2}Minimum Volume Embedding and Structure Preserving Embedding}{65}
+\contentsline {section}{\numberline {3.6}Summary}{70}
+\contentsline {chapter}{\numberline {4}Deep Multiple Kernel Learning}{72}
+\contentsline {section}{\numberline {4.1}Deep Learning and Multilayer Kernels}{73}
+\contentsline {section}{\numberline {4.2}Two-Layer Multiple Kernel Learning}{74}
+\contentsline {subsection}{\numberline {4.2.1}Framework}{74}
+\contentsline {subsection}{\numberline {4.2.2}Two-Layer Multiple Kernel Learning}{75}
+\contentsline {section}{\numberline {4.3}Improve 2-layer MKL with Infinite Base Kernel Learning}{76}
+\contentsline {section}{\numberline {4.4}Analysis of Generalization Performance}{78}
+\contentsline {section}{\numberline {4.5}Experiments}{81}
+\contentsline {subsection}{\numberline {4.5.1}Experimental Testbed and Setup}{81}
+\contentsline {subsection}{\numberline {4.5.2}Performance Analysis}{83}
+\contentsline {subsection}{\numberline {4.5.3}Summary}{84}
+\contentsline {chapter}{\numberline {5}Unsupervised Multiple Kernel Learning}{85}
+\contentsline {section}{\numberline {5.1}Introduction of UMKL}{85}
+\contentsline {section}{\numberline {5.2}Framework of UMKL}{86}
+\contentsline {subsection}{\numberline {5.2.1}Problem Formulation}{86}
+\contentsline {subsection}{\numberline {5.2.2}Iterative Optimization Algorithm}{88}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Solving $\boldsymbol {\mu }$ by Fixing ${\mathbf D}$}{88}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Solving ${\mathbf D}$ by Fixing the Kernel}{88}
+\contentsline {section}{\numberline {5.3}Experiments}{89}
+\contentsline {subsection}{\numberline {5.3.1}Experimental Testbed and Setup}{89}
+\contentsline {subsection}{\numberline {5.3.2}Experiment I:Unsupervised MKL versus Supervised MKL}{91}
+\contentsline {subsection}{\numberline {5.3.3}Experiment II: UMKL for Dimensionality Reduction}{93}
+\contentsline {section}{\numberline {5.4}Summary}{95}
+\contentsline {chapter}{\numberline {6}Image Ranking by Non-Parametric Kernel Learning}{99}
+\contentsline {section}{\numberline {6.1}Problem Setting}{101}
+\contentsline {section}{\numberline {6.2}VisualRank for Web Image Search}{102}
+\contentsline {section}{\numberline {6.3}Nonparametric Kernel Ranking for Social Image Retrieval}{102}
+\contentsline {subsection}{\numberline {6.3.1}Learning Semantics-Preserving Kernels}{103}
+\contentsline {subsection}{\numberline {6.3.2}Efficient Kernel Learning Algorithm}{104}
+\contentsline {subsection}{\numberline {6.3.3}Extension of Handling Unseen Data}{106}
+\contentsline {subsection}{\numberline {6.3.4}Implementation Issues: Further Speedup}{106}
+\contentsline {section}{\numberline {6.4}Experiments}{107}
+\contentsline {subsection}{\numberline {6.4.1}Experimental Testbed}{107}
+\contentsline {subsection}{\numberline {6.4.2}Compared Methods and Experimental Setup}{107}
+\contentsline {subsection}{\numberline {6.4.3}Feature Extraction and Evaluation Metric}{108}
+\contentsline {subsection}{\numberline {6.4.4}Experiment I: Retrieval Accuracy}{109}
+\contentsline {subsection}{\numberline {6.4.5}Experiment II: Computational Cost}{112}
+\contentsline {section}{\numberline {6.5}Related Work}{113}
+\contentsline {section}{\numberline {6.6}Summary}{114}
+\contentsline {chapter}{\numberline {7}Kernel-Based Social Strength Modeling}{115}
+\contentsline {section}{\numberline {7.1}Problem Setting}{115}
+\contentsline {section}{\numberline {7.2}Kernel-based Social Strength Modeling}{120}
+\contentsline {subsection}{\numberline {7.2.1}Motivations}{120}
+\contentsline {subsection}{\numberline {7.2.2}Kernels for Measuring User Similarity}{120}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Similarity in Visual Space}{121}
+\contentsline {subsubsection}{\numberline {7.2.2.2}Similarity in Textual Space}{121}
+\contentsline {subsubsection}{\numberline {7.2.2.3}Similarity by Mutual Comments}{122}
+\contentsline {subsubsection}{\numberline {7.2.2.4}Similarity by Common Interest Groups}{122}
+\contentsline {subsubsection}{\numberline {7.2.2.5}Similarity by Common Friends}{122}
+\contentsline {subsubsection}{\numberline {7.2.2.6}Similarity via Geo-tags}{122}
+\contentsline {subsubsection}{\numberline {7.2.2.7}Similarity via Favorite Photos}{123}
+\contentsline {section}{\numberline {7.3}Optimal Combination of Multiple Kernels}{123}
+\contentsline {section}{\numberline {7.4}Kernel-based Learning to Rank}{125}
+\contentsline {subsection}{\numberline {7.4.1}Framework}{125}
+\contentsline {subsection}{\numberline {7.4.2}Training Pair Selection}{126}
+\contentsline {subsection}{\numberline {7.4.3}Applications}{126}
+\contentsline {section}{\numberline {7.5}Experiments}{127}
+\contentsline {subsection}{\numberline {7.5.1}Friend Recommendation}{127}
+\contentsline {subsection}{\numberline {7.5.2}Group Recommendation}{130}
+\contentsline {subsection}{\numberline {7.5.3}Semi-supervised Classification}{131}
+\contentsline {section}{\numberline {7.6}Discussion and Related Work}{131}
+\contentsline {subsection}{\numberline {7.6.1}Data Mining with Flickr Data}{132}
+\contentsline {subsection}{\numberline {7.6.2}Social Strength Modeling}{133}
+\contentsline {subsection}{\numberline {7.6.3}Multiple Kernel Learning to Rank}{134}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{135}
+\contentsline {section}{\numberline {8.1}Thesis Summary}{135}
+\contentsline {section}{\numberline {8.2}Generalization Risk of Kernel Learning}{135}
+\contentsline {section}{\numberline {8.3}Deep Kernel Learning}{136}
+\contentsline {section}{\numberline {8.4}Unsupervised Kernel Learning}{136}
+\contentsline {chapter}{Appendix - List of Publications}{138}
+\contentsline {chapter}{References}{139}
